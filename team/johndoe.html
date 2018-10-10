@@ -139,7 +139,7 @@
 <div class="sect2">
 <h3 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">Undoing previous command : <code>undo</code></a></h3>
 <div class="paragraph">
-<p>Restores the address book to the state before the previous <em>undoable</em> command was executed.<br>
+<p>Restores the database to the state before the previous <em>undoable</em> command was executed.<br>
 Format: <code>undo</code></p>
 </div>
 <div class="admonitionblock note">
@@ -150,7 +150,7 @@ Format: <code>undo</code></p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Undoable commands: those commands that modify the address book&#8217;s content (<code>add</code>, <code>delete</code>, <code>edit</code> and <code>clear</code>).</p>
+<p>Undoable commands: those commands that modify the database&#8217;s content (<code>add</code>, <code>delete</code>, <code>edit</code> and <code>clear</code>).</p>
 </div>
 </td>
 </tr>
@@ -211,6 +211,43 @@ The <code>redo</code> command fails as there are no <code>undo</code> commands e
 <code>redo</code> (reapplies the <code>clear</code> command)<br></p>
 </li>
 </ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="intuitive-command-prompting"><a class="link" href="#intuitive-command-prompting">Intuitive Command Prompting</a></h3>
+<div class="paragraph">
+<p>Intuitive prompting for the user when a command that takes in parameters is entered without any parameters specified. This feature aids new users and makes it easier and more natural for them to use the system. The nature of this feature allows users to enter data without adding prefix tags, and also supports cases where certain data fields are intentionally left blank. The original command input format is still supported to allow quick command entry for seasoned users.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Use <code>/bk</code> to re-enter previous field.<br>
+Use <code>//</code> if the field is to be blank.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>add
+
+You entered: add
+Is this a patient or a doctor? (Please enter patient or doctor)
+
+patient
+
+You entered: patient
+Please enter person's name
+
+...</code></pre>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -452,4 +489,4 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-09-11 09:48:20 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-10 12:29:35 UTC</div></div></div></body></html>
