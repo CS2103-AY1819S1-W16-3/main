@@ -15,25 +15,23 @@
 <ul class="sectlevel2">
 <li><a href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></li>
 <li><a href="#adding-a-person-code-add-code">3.2. Adding a person: <code>add</code></a></li>
-<li><a href="#listing-all-relevent-personnels-code-list-code">3.3. Listing all relevent personnels : <code>list</code></a></li>
-<li><a href="#editing-a-patient-code-edit-code">3.4. Editing a patient : <code>edit</code></a></li>
-<li><a href="#locating-patient-by-any-attribute-code-find-code">3.5. Locating patient by any attribute: <code>find</code></a></li>
-<li><a href="#deleting-a-patient-code-delete-code">3.6. Deleting a patient : <code>delete</code></a></li>
-<li><a href="#selecting-a-patient-code-select-code">3.7. Selecting a patient : <code>select</code></a></li>
+<li><a href="#listing-all-relevant-personnel-code-list-code">3.3. Listing all relevant personnel : <code>list</code></a></li>
+<li><a href="#editing-a-person-code-edit-code">3.4. Editing a person : <code>edit</code></a></li>
+<li><a href="#locating-person-by-any-attribute-code-find-code">3.5. Locating person by any attribute: <code>find</code></a></li>
+<li><a href="#deleting-a-person-code-delete-code">3.6. Deleting a person : <code>delete</code></a></li>
+<li><a href="#selecting-a-person-code-select-code">3.7. Selecting a person : <code>select</code></a></li>
 <li><a href="#listing-entered-commands-code-history-code">3.8. Listing entered commands : <code>history</code></a></li>
 <li><a href="#undoing-previous-command-code-undo-code">3.9. Undoing previous command : <code>undo</code></a></li>
 <li><a href="#redoing-the-previously-undone-command-code-redo-code">3.10. Redoing the previously undone command : <code>redo</code></a></li>
 <li><a href="#clearing-all-entries-code-clear-code">3.11. Clearing all entries : <code>clear</code></a></li>
-<li><a href="#adding-a-doctor-code-adddoc-code">3.12. Adding a doctor : <code>adddoc</code></a></li>
-<li><a href="#listing-doctors-code-listdoc-code">3.13. Listing doctors : <code>listdoc</code></a></li>
-<li><a href="#displaying-medical-appointments-code-appts-code">3.14. Displaying medical appointments : <code>appts</code></a></li>
-<li><a href="#scheduling-medical-appointments-code-schedule-code">3.15. Scheduling medical appointments : <code>schedule</code></a></li>
-<li><a href="#viewing-medical-records-of-patients-code-records-code">3.16. Viewing medical records of patients : <code>records</code></a></li>
-<li><a href="#updating-medical-records-of-patients-code-update-code">3.17. Updating medical records of patients : <code>update</code></a></li>
-<li><a href="#exiting-the-program-code-exit-code">3.18. Exiting the program : <code>exit</code></a></li>
-<li><a href="#saving-the-data">3.19. Saving the data</a></li>
-<li><a href="#intuitive-command-prompting">3.20. Intuitive Command Prompting</a></li>
-<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.21. Encrypting data files <code>[coming in v2.0]</code></a></li>
+<li><a href="#displaying-medical-appointments-code-appts-code">3.12. Displaying medical appointments : <code>appts</code></a></li>
+<li><a href="#scheduling-medical-appointments-code-schedule-code">3.13. Scheduling medical appointments : <code>schedule</code></a></li>
+<li><a href="#viewing-medical-records-of-patients-code-records-code">3.14. Viewing medical records of patients : <code>records</code></a></li>
+<li><a href="#updating-medical-records-of-patients-code-update-code">3.15. Updating medical records of patients : <code>update</code></a></li>
+<li><a href="#exiting-the-program-code-exit-code">3.16. Exiting the program : <code>exit</code></a></li>
+<li><a href="#saving-the-data">3.17. Saving the data</a></li>
+<li><a href="#intuitive-command-prompting">3.18. Intuitive Command Prompting</a></li>
+<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.19. Encrypting data files <code>[coming in v2.0]</code></a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
@@ -141,11 +139,11 @@ Format: <code>help</code></p>
 </div>
 <div class="paragraph">
 <p><strong>Adding a patient</strong><br>
-Format: <code>add r/patient n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203; ic/NRIC</code></p>
+Format: <code>add r/patient n/NAME ic/NRIC p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;</code></p>
 </div>
 <div class="paragraph">
 <p><strong>Adding a doctor</strong><br>
-Format: <code>add r/doctor n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203; md/MEDICAL_DEPARTMENT</code></p>
+Format: <code>add r/doctor n/NAME ic/NRIC p/PHONE_NUMBER e/EMAIL a/ADDRESS md/MEDICAL_DEPARTMENT [t/TAG]&#8230;&#8203;</code></p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -154,7 +152,7 @@ Format: <code>add r/doctor n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-A patient can have any number of tags (including 0)
+A person can have any number of tags (including 0)
 </td>
 </tr>
 </table>
@@ -165,10 +163,11 @@ A patient can have any number of tags (including 0)
 <div class="ulist">
 <ul>
 <li>
-<p><code>add r/patient n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01 ic/S1234567A</code></p>
+<p><code>add r/patient n/John Doe Xiao Huang ic/S1234567A p/98765432 e/johnd@example.com a/John street, block 123, #01-01
+t/Hokkien-speaker</code></p>
 </li>
 <li>
-<p><code>add r/doctor n/Betsy Crowe t/friend e/betsycrowe@example.com a/Newgate Prison p/1234567 t/criminal md/dentistry</code></p>
+<p><code>add r/doctor n/Betsy Crowe ic/S8234567F e/betsycrowe@example.com a/Newgate Estates p/1234567 md/dentistry</code></p>
 </li>
 </ul>
 </div>
@@ -179,32 +178,51 @@ A patient can have any number of tags (including 0)
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-When adding a Patient, you are required to specify his/her NRIC,
-whilst adding a Doctor requires you to specify the Medical Department.
+When adding a new doctor you are required to specify his/her medical department.
 </td>
 </tr>
 </table>
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-all-relevent-personnels-code-list-code"><a class="link" href="#listing-all-relevent-personnels-code-list-code">3.3. Listing all relevent personnels : <code>list</code></a></h3>
+<h3 id="listing-all-relevant-personnel-code-list-code"><a class="link" href="#listing-all-relevant-personnel-code-list-code">3.3. Listing all relevant personnel : <code>list</code></a></h3>
 <div class="paragraph">
-<p>Shows a list of all patients in the database.<br>
-Format: <code>list</code></p>
+<p>Shows a list of all of the people in the database.<br>
+Format: <code>list [r/ROLE]</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list</code><br>
+Lists all doctors and patients in the database.</p>
+</li>
+<li>
+<p><code>list r/patient</code><br>
+Lists all patients in the database.</p>
+</li>
+<li>
+<p><code>list r/doctor</code><br>
+Lists all the doctors in the database.</p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="editing-a-patient-code-edit-code"><a class="link" href="#editing-a-patient-code-edit-code">3.4. Editing a patient : <code>edit</code></a></h3>
+<h3 id="editing-a-person-code-edit-code"><a class="link" href="#editing-a-person-code-edit-code">3.4. Editing a person : <code>edit</code></a></h3>
 <div class="paragraph">
-<p>Edits an existing patient in the database.<br>
-Format: <code>edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code></p>
+<p>Edits an existing person in the database.<br>
+Format: <code>edit INDEX [n/NAME] [ic/NRIC] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Edits the patient at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed patient list. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+<p>Edits the person at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed patient list.
+The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
 </li>
 <li>
 <p>At least one of the optional fields must be provided.</p>
@@ -213,10 +231,10 @@ Format: <code>edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;
 <p>Existing values will be updated to the input values.</p>
 </li>
 <li>
-<p>When editing tags, the existing tags of the patient will be removed i.e adding of tags is not cumulative.</p>
+<p>When editing tags, the existing tags of the person will be removed i.e adding of tags is not cumulative.</p>
 </li>
 <li>
-<p>You can remove all the patient&#8217;s tags by typing <code>t/</code> without specifying any tags after it.</p>
+<p>You can remove all the person&#8217;s tags by typing <code>t/</code> without specifying any tags after it.</p>
 </li>
 </ul>
 </div>
@@ -229,19 +247,20 @@ Format: <code>edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;
 <ul>
 <li>
 <p><code>edit 1 p/91234567 e/johndoe@example.com</code><br>
-Edits the phone number and email address of the 1st patient to be <code>91234567</code> and <code>johndoe@example.com</code> respectively.</p>
+Edits the phone number and email address of the 1st person to be <code>91234567</code> and <code>johndoe@example.com</code> respectively.</p>
 </li>
 <li>
 <p><code>edit 2 n/Betsy Crower t/</code><br>
-Edits the name of the 2nd patient to be <code>Betsy Crower</code> and clears all existing tags.</p>
+Edits the name of the 2nd person to be <code>Betsy Crower</code> and clears all existing tags.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="locating-patient-by-any-attribute-code-find-code"><a class="link" href="#locating-patient-by-any-attribute-code-find-code">3.5. Locating patient by any attribute: <code>find</code></a></h3>
+<h3 id="locating-person-by-any-attribute-code-find-code"><a class="link" href="#locating-person-by-any-attribute-code-find-code">3.5. Locating person by any attribute: <code>find</code></a></h3>
 <div class="paragraph">
-<p>Finds patients with the keyword specified by the user. Specified keyword can belong to any part of any attribute of the patient (i.e. name, phone number, address, tags etc).
+<p>Finds people with the keyword specified by the user. Specified keyword can belong to any part of any attribute of the
+person (i.e. name, phone number, address, tags etc).
 <br>
 Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
 </div>
@@ -253,7 +272,8 @@ Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
 <p>The search is case-insensitive. e.g. <code>nelvin</code> will match <code>Nelvin</code>.</p>
 </li>
 <li>
-<p>The search is a global search. e.g. <code>Kang</code> will return patients whose name includes <code>Kang</code> and patients with street address <code>Choa Chu Kang</code>.</p>
+<p>The search is a global search. e.g. <code>Kang</code> will return people whose name includes <code>Kang</code> and patients with street
+address <code>Choa Chu Kang</code>.</p>
 </li>
 <li>
 <p>The order of the keywords does not matter. e.g. <code>Hans Bo</code> will match <code>Bo Hans</code></p>
@@ -262,7 +282,8 @@ Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
 <p>Only full words will be matched. e.g. <code>Tris</code> will not return <code>Tristan</code>.</p>
 </li>
 <li>
-<p>Patients with at least one keyword will be returned. e.g. <code>Goh</code> will return <code>Gary Goh Yipeng</code> and <code>Kenneth Goh Jun Teck</code>.</p>
+<p>People with at least one keyword will be returned. e.g. <code>Goh</code> will return <code>Gary Goh Yipeng</code> and <code>Kenneth Goh Jun
+Teck</code>.</p>
 </li>
 </ul>
 </div>
@@ -279,15 +300,15 @@ Returns <code>Gary Goh Yipeng</code> and <code>Kenneth Goh Jun Teck</code>.</p>
 </li>
 <li>
 <p><code>find Ng Tan</code><br>
-Returns any patient having names <code>Ng Kang Tze</code> and <code>Tan Thong Cai, Nelvin</code>.</p>
+Returns any person having names <code>Ng Kang Tze</code> and <code>Tan Thong Cai, Nelvin</code>.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-patient-code-delete-code"><a class="link" href="#deleting-a-patient-code-delete-code">3.6. Deleting a patient : <code>delete</code></a></h3>
+<h3 id="deleting-a-person-code-delete-code"><a class="link" href="#deleting-a-person-code-delete-code">3.6. Deleting a person : <code>delete</code></a></h3>
 <div class="paragraph">
-<p>Deletes the specified patient from the database.<br>
+<p>Deletes the specified person from the database.<br>
 Format: <code>delete INDEX</code></p>
 </div>
 <div class="sidebarblock">
@@ -295,10 +316,10 @@ Format: <code>delete INDEX</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Deletes the patient at the specified <code>INDEX</code>.</p>
+<p>Deletes the person at the specified <code>INDEX</code>.</p>
 </li>
 <li>
-<p>The index refers to the index number shown in the displayed patient list.</p>
+<p>The index refers to the index number shown in the displayed person list.</p>
 </li>
 <li>
 <p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
@@ -315,20 +336,20 @@ Format: <code>delete INDEX</code></p>
 <li>
 <p><code>list</code><br>
 <code>delete 2</code><br>
-Deletes the 2nd patient in the database.</p>
+Deletes the 2nd person in the database.</p>
 </li>
 <li>
 <p><code>find Betsy</code><br>
 <code>delete 1</code><br>
-Deletes the 1st patient in the results of the <code>find</code> command.</p>
+Deletes the 1st person in the results of the <code>find</code> command.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="selecting-a-patient-code-select-code"><a class="link" href="#selecting-a-patient-code-select-code">3.7. Selecting a patient : <code>select</code></a></h3>
+<h3 id="selecting-a-person-code-select-code"><a class="link" href="#selecting-a-person-code-select-code">3.7. Selecting a person : <code>select</code></a></h3>
 <div class="paragraph">
-<p>Selects the patient identified by the index number used in the displayed patient list.<br>
+<p>Selects the person identified by the index number used in the displayed person list.<br>
 Format: <code>select INDEX</code></p>
 </div>
 <div class="sidebarblock">
@@ -336,10 +357,10 @@ Format: <code>select INDEX</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Selects the patient and loads the Google search page the patient at the specified <code>INDEX</code>.</p>
+<p>Selects the person and loads the Google search page the person at the specified <code>INDEX</code>.</p>
 </li>
 <li>
-<p>The index refers to the index number shown in the displayed patient list.</p>
+<p>The index refers to the index number shown in the displayed person list.</p>
 </li>
 <li>
 <p>The index <strong>must be a positive integer</strong> <code>1, 2, 3, &#8230;&#8203;</code></p>
@@ -356,7 +377,7 @@ Format: <code>select INDEX</code></p>
 <li>
 <p><code>list</code><br>
 <code>select 2</code><br>
-Selects the 2nd patient in the database.</p>
+Selects the 2nd person in the database.</p>
 </li>
 <li>
 <p><code>find Betsy</code><br>
@@ -472,39 +493,14 @@ Format: <code>clear</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="adding-a-doctor-code-adddoc-code"><a class="link" href="#adding-a-doctor-code-adddoc-code">3.12. Adding a doctor : <code>adddoc</code></a></h3>
-<div class="paragraph">
-<p>Create and add a new doctor into the database.<br>
-Format: <code>adddoc n/NAME p/PHONE_NUMBER e/EMAIL md/MEDICAL_DEPARTMENT [t/TAG]</code></p>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>adddoc n/Chew Tiong Seng p/91234567 e/chew@gmail.com md/oncology t/HOD</code><br>
-Creates a new doctor in the database.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="listing-doctors-code-listdoc-code"><a class="link" href="#listing-doctors-code-listdoc-code">3.13. Listing doctors : <code>listdoc</code></a></h3>
-<div class="paragraph">
-<p>Lists all doctors in the database and their current availability based on their appointment.<br>
-Format: <code>listdoc</code></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="displaying-medical-appointments-code-appts-code"><a class="link" href="#displaying-medical-appointments-code-appts-code">3.14. Displaying medical appointments : <code>appts</code></a></h3>
+<h3 id="displaying-medical-appointments-code-appts-code"><a class="link" href="#displaying-medical-appointments-code-appts-code">3.12. Displaying medical appointments : <code>appts</code></a></h3>
 <div class="paragraph">
 <p>Displays a list of medical appointments that are currently scheduled. All appointments will be listed if date is not entered.<br>
 Format: <code>appts[d/DATE]</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="scheduling-medical-appointments-code-schedule-code"><a class="link" href="#scheduling-medical-appointments-code-schedule-code">3.15. Scheduling medical appointments : <code>schedule</code></a></h3>
+<h3 id="scheduling-medical-appointments-code-schedule-code"><a class="link" href="#scheduling-medical-appointments-code-schedule-code">3.13. Scheduling medical appointments : <code>schedule</code></a></h3>
 <div class="paragraph">
 <p>Schedules a patient/doctor for a medical appointment at a specific date and time.
 Format: <code>schedule INDEX d/DATE st/START_TIME et/END_TIME dn/DOCTOR_NAME md/DOCTOR_MEDICAL_DEPARTMENT pn/PATIENT_NAME ic/PATIENT_NRIC</code></p>
@@ -548,7 +544,7 @@ Schedules `John Doe</code> for an appointment with doctor <code>Jack</code> of t
 </div>
 </div>
 <div class="sect2">
-<h3 id="viewing-medical-records-of-patients-code-records-code"><a class="link" href="#viewing-medical-records-of-patients-code-records-code">3.16. Viewing medical records of patients : <code>records</code></a></h3>
+<h3 id="viewing-medical-records-of-patients-code-records-code"><a class="link" href="#viewing-medical-records-of-patients-code-records-code">3.14. Viewing medical records of patients : <code>records</code></a></h3>
 <div class="paragraph">
 <p>Displays the most updated medical records of a given patient if no date is specified. Else, displays the most recent medical record before the specified date.<br>
 Format: <code>records n/name [d/DATE]</code></p>
@@ -581,10 +577,10 @@ Displays the most recent medical records of <code>Jack</code>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="updating-medical-records-of-patients-code-update-code"><a class="link" href="#updating-medical-records-of-patients-code-update-code">3.17. Updating medical records of patients : <code>update</code></a></h3>
+<h3 id="updating-medical-records-of-patients-code-update-code"><a class="link" href="#updating-medical-records-of-patients-code-update-code">3.15. Updating medical records of patients : <code>update</code></a></h3>
 <div class="paragraph">
 <p>Adds a new medical record for the patient as the most updated record using the current date as date of record.<br>
-Format: <code>update n/NAME mr/NEW_MEDICAL_RECORDS</code></p>
+Format: <code>update INDEX d/DATE dg/DIAGNOSIS tr/TREATMENT [c/COMMENTS]</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -592,28 +588,28 @@ Format: <code>update n/NAME mr/NEW_MEDICAL_RECORDS</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>update n/Jack mr/Patient diagnosed with flu. Tamiflu prescribed.</code><br>
-Updates <code>Jack</code> medical records with the given sentences.</p>
+<p><code>update 1 d/22.11.2018 dg/flu tr/tamiflu</code><br>
+Updates patient at index 1 medical records with the given description.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.18. Exiting the program : <code>exit</code></a></h3>
+<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.16. Exiting the program : <code>exit</code></a></h3>
 <div class="paragraph">
 <p>Exits the program.<br>
 Format: <code>exit</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.19. Saving the data</a></h3>
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.17. Saving the data</a></h3>
 <div class="paragraph">
 <p>One Life data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="intuitive-command-prompting"><a class="link" href="#intuitive-command-prompting">3.20. Intuitive Command Prompting</a></h3>
+<h3 id="intuitive-command-prompting"><a class="link" href="#intuitive-command-prompting">3.18. Intuitive Command Prompting</a></h3>
 <div class="paragraph">
 <p>Intuitive prompting for the user when a command that takes in parameters is entered without any parameters specified. This feature aids new users and makes it easier and more natural for them to use the system. The nature of this feature allows users to enter data without adding prefix tags, and also supports cases where certain data fields are intentionally left blank. The original command input format is still supported to allow quick command entry for seasoned users.</p>
 </div>
@@ -650,7 +646,7 @@ Please enter person's name
 </div>
 </div>
 <div class="sect2">
-<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.21. Encrypting data files <code>[coming in v2.0]</code></a></h3>
+<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.19. Encrypting data files <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p><em>{explain how the user can enable/disable data encryption}</em></p>
 </div>
@@ -672,11 +668,13 @@ Please enter person's name
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Add Patient</strong> : <code>add r/patient n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203; ic/NRIC</code><br>
-e.g. <code>add r/patient n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague ic/S1234567A</code></p>
+<p><strong>Add Patient</strong> : <code>add r/patient n/NAME ic/NRIC p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;</code><br>
+e.g. <code>add r/patient n/James Ho ic/S1234567A p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend
+t/colleague ic/S1234567A</code></p>
 </li>
 <li>
-<p><strong>Add Doctor</strong> : <code>add r/doctor n/Bobby Tan p/91234567 e/BBTan@example.com a/123, Clementi Rd, 123456 md/Dentistry</code></p>
+<p><strong>Add Doctor</strong> : <code>add r/doctor n/Bobby Tan ic/S1234567B p/91234567 e/BBTan@example.com a/123, Clementi Rd, 123456
+md/Dentistry</code></p>
 </li>
 <li>
 <p><strong>Clear</strong> : <code>clear</code></p>
@@ -694,7 +692,7 @@ e.g. <code>edit 2 n/James Lee e/jameslee@example.com</code></p>
 e.g. <code>find James Jake</code></p>
 </li>
 <li>
-<p><strong>List Patients</strong> : <code>list</code></p>
+<p><strong>List People</strong> : <code>list</code></p>
 </li>
 <li>
 <p><strong>Help</strong> : <code>help</code></p>
@@ -713,13 +711,6 @@ e.g.<code>select 2</code></p>
 <p><strong>Redo</strong> : <code>redo</code></p>
 </li>
 <li>
-<p><strong>Add Doctor</strong> : <code>adddoc n/NAME p/PHONE_NUMBER e/EMAIL md/MEDICAL_DEPARTMENT [t/TAG]</code><br>
-e.g. <code>adddoc n/Chew Tiong Seng p/91234567 e/chew@gmail.com md/oncology t/HOD</code></p>
-</li>
-<li>
-<p><strong>List Doctors</strong> : <code>listdoc</code></p>
-</li>
-<li>
 <p><strong>Display Medical Appointments</strong> : <code>appts</code></p>
 </li>
 <li>
@@ -730,10 +721,10 @@ e.g. <code>schedule 1 s/22.11.2018,1300,1400,Jack,Heart,Jill,S1234567I</code></p
 <p><strong>View Medical Records</strong> : <code>records n/NAME [d/DATE]</code></p>
 </li>
 <li>
-<p><strong>Update Medical Records</strong> : <code>update n/NAME mr/NEW_MEDICAL_RECORDS</code><br>
-e.g. <code>update n/Jack mr/Patient diagnosed with flu. Tamiflu prescribed.</code></p>
+<p><strong>Update Medical Records</strong> : <code>update INDEX d/DATE dg/DIAGNOSIS tr/TREATMENT c/COMMENTS<br>
+e.g. `update 2 d/22.11.2018 dg/flu tr/tamiflu</code></p>
 </li>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-10 12:29:35 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-16 23:55:23 UTC</div></div></div></body></html>

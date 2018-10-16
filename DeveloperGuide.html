@@ -30,9 +30,14 @@
 <li><a href="#implementation">3. Implementation</a>
 <ul class="sectlevel2">
 <li><a href="#undo-redo-feature">3.1. Undo/Redo feature</a></li>
-<li><a href="#proposed-data-encryption">3.2. [Proposed] Data Encryption</a></li>
-<li><a href="#logging">3.3. Logging</a></li>
-<li><a href="#Implementation-Configuration">3.4. Configuration</a></li>
+<li><a href="#schedule-command-feature">3.2. Schedule Command Feature</a></li>
+<li><a href="#intuitive-command-prompt">3.3. Intuitive Command Prompt</a></li>
+<li><a href="#display-doctor-s-current-availability-feature">3.4. Display doctor&#8217;s current availability feature</a></li>
+<li><a href="#update-command-feature">3.5. Update Command Feature</a></li>
+<li><a href="#find-command-feature">3.6. Find Command Feature</a></li>
+<li><a href="#proposed-data-encryption">3.7. [Proposed] Data Encryption</a></li>
+<li><a href="#logging">3.8. Logging</a></li>
+<li><a href="#Implementation-Configuration">3.9. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">4. Documentation</a>
@@ -65,7 +70,7 @@
 <li><a href="#GetStartedProgramming">Appendix A: Suggested Programming Tasks to Get Started</a>
 <ul class="sectlevel2">
 <li><a href="#GetStartedProgramming-EachComponent">A.1. Improving each component</a></li>
-<li><a href="#GetStartedProgramming-RemarkCommand">A.2. Creating a new command: <code>appointment</code></a></li>
+<li><a href="#GetStartedProgramming-RemarkCommand">A.2. Creating a new command: <code>remark</code></a></li>
 </ul>
 </li>
 <li><a href="#product-scope">Appendix B: Product Scope</a></li>
@@ -202,7 +207,7 @@ This will generate all resources required by the application and tests.</p>
 <div class="sect3">
 <h4 id="configuring-the-coding-style"><a class="link" href="#configuring-the-coding-style">1.4.1. Configuring the coding style</a></h4>
 <div class="paragraph">
-<p>This project follows <a href="https://github.com/oss-generic/process/blob/master/docs/CodingStandards.adoc">oss-generic coding standards</a>. IntelliJ&#8217;s default style is mostly compliant with ours but it uses a different import order from ours. To rectify,</p>
+<p>This project follows <a href="https://github.com/oss-generic/process/blob/master/docs/CodingStandards.adoc">oss-generic coding standards</a>. IntelliJ&#8217;s default style is mostly compliant with ours but it uses a different import order from ours. To rectify, follow these steps:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -220,7 +225,7 @@ This will generate all resources required by the application and tests.</p>
 <p>For <code>Class count to use import with '*'</code> and <code>Names count to use static import with '*'</code>: Set to <code>999</code> to prevent IntelliJ from contracting the import statements</p>
 </li>
 <li>
-<p>For <code>Import Layout</code>: The order is <code>import static all other imports</code>, <code>import java.*</code>, <code>import javax.*</code>, <code>import org.*</code>, <code>import com.*</code>, <code>import all other imports</code>. Add a <code>&lt;blank line&gt;</code> between each <code>import</code></p>
+<p>For <code>Import Layout</code>: Change the import order to <code>import static all other imports</code>, <code>import java.*</code>, <code>import javax.*</code>, <code>import org.*</code>, <code>import com.*</code>, <code>import all other imports</code>. Add a <code>&lt;blank line&gt;</code> between each <code>import</code></p>
 </li>
 </ul>
 </div>
@@ -289,7 +294,7 @@ Having both Travis and AppVeyor ensures your App works on both Unix-based platfo
 <div class="sect3">
 <h4 id="getting-started-with-coding"><a class="link" href="#getting-started-with-coding">1.4.4. Getting started with coding</a></h4>
 <div class="paragraph">
-<p>When you are ready to start coding,</p>
+<p>When you are ready to start coding:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -332,15 +337,15 @@ The <code>.pptx</code> files used to create diagrams in this document can be fou
 </table>
 </div>
 <div class="paragraph">
-<p><code>Main</code> has only one class called <a href="https://github.com/CS2103-AY1819S1-W16-3/main/src/main/java/seedu/address/MainApp.java"><code>MainApp</code></a>. It is responsible for,</p>
+<p><code>Main</code> has only one class called <a href="https://github.com/CS2103-AY1819S1-W16-3/main/src/main/java/seedu/address/MainApp.java"><code>MainApp</code></a>. It is responsible for:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>At app launch: Initializes the components in the correct sequence, and connects them up with each other.</p>
+<p>At app launch: Initializing the components in the correct sequence, and connecting them up with each other.</p>
 </li>
 <li>
-<p>At shut down: Shuts down the components and invokes cleanup method where necessary.</p>
+<p>At shut down: Shutting down the components and invoking cleanup method where necessary.</p>
 </li>
 </ul>
 </div>
@@ -353,7 +358,7 @@ The <code>.pptx</code> files used to create diagrams in this document can be fou
 <p><code>EventsCenter</code> : This class (written using <a href="https://github.com/google/guava/wiki/EventBusExplained">Google&#8217;s Event Bus library</a>) is used by components to communicate with other components using events (i.e. a form of <em>Event Driven</em> design)</p>
 </li>
 <li>
-<p><code>LogsCenter</code> : Used by many classes to write log messages to the App&#8217;s log file.</p>
+<p><code>LogsCenter</code> : This class is used by many classes to write log messages to the App&#8217;s log file.</p>
 </li>
 </ul>
 </div>
@@ -491,8 +496,8 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 <p><strong>API</strong> :
 <a href="https://github.com/CS2103-AY1819S1-W16-3/main/src/main/java/seedu/address/logic/Logic.java"><code>Logic.java</code></a></p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
+<div class="ulist">
+<ul>
 <li>
 <p><code>Logic</code> uses the <code>AddressBookParser</code> class to parse the user command.</p>
 </li>
@@ -505,7 +510,7 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 <li>
 <p>The result of the command execution is encapsulated as a <code>CommandResult</code> object which is passed back to the <code>Ui</code>.</p>
 </li>
-</ol>
+</ul>
 </div>
 <div class="paragraph">
 <p>Given below is the Sequence Diagram for interactions within the <code>Logic</code> component for the <code>execute("delete 1")</code> API call.</p>
@@ -740,7 +745,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Saves the entire address book.</p>
+<p><strong>Alternative 1 (current choice):</strong> Save the entire address book.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -753,14 +758,14 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong> Individual command knows how to undo/redo by itself.</p>
+<p><strong>Alternative 2:</strong> Use individual commands to undo/redo by itself.</p>
 <div class="ulist">
 <ul>
 <li>
 <p>Pros: Will use less memory (e.g. for <code>delete</code>, just save the person being deleted).</p>
 </li>
 <li>
-<p>Cons: We must ensure that the implementation of each individual command are correct.</p>
+<p>Cons: Must ensure that the implementations of individual commands are correct.</p>
 </li>
 </ul>
 </div>
@@ -804,20 +809,629 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">3.2. [Proposed] Data Encryption</a></h3>
+<h3 id="schedule-command-feature"><a class="link" href="#schedule-command-feature">3.2. Schedule Command Feature</a></h3>
+<div class="sect3">
+<h4 id="current-implementation-2"><a class="link" href="#current-implementation-2">3.2.1. Current Implementation</a></h4>
+<div class="paragraph">
+<p>The scheduling appointment mechanism is facilitated by <code>ScheduleCommandParser</code>, <code>ScheduleCommand</code>, <code>Appointment</code> and <code>AppointmentManager</code>.
+<code>ScheduleCommand</code> extends from <code>Command</code> and <code>ScheduleCommandParser</code> implements <code>Parser</code>.
+The key operation implemented is <code>ScheduleCommand#execute</code>.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the schedule command mechanism behaves at each step.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user wants to schedule an appointment. User proceeds to fill in the details behind the respective prefixes.</p>
+</div>
+<div class="paragraph">
+<p>For example: <code>schedule 1 d/23.11.2018 st/1300 et/1400 dn/Jack md/Heart pn/John Doe ic/S1234567A</code></p>
+</div>
+<div class="paragraph">
+<p>Step 2. The user executes the <code>ScheduleCommand</code> which calls the <code>ScheduleCommandParser</code>.
+<code>ScheduleCommandParser</code> will parse the inputs and return a <code>ScheduleCommand</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 3. <code>ScheduleCommand</code> will then be executed.
+Various checks will be conducted to ensure that the appointment scheduled is valid.
+If it is invalid, an exception message will be thrown.
+The <code>Appointment</code> will not be scheduled.</p>
+</div>
+<div class="paragraph">
+<p>Checks:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Whether the index of input person is valid.</p>
+</li>
+<li>
+<p>Whether the nric of the patient is valid.</p>
+</li>
+<li>
+<p>Whether the start and end times of the appointment are valid</p>
+</li>
+<li>
+<p>Whether there are any timing clashes between this appointment and the appointments currently stored in the appointment list under the person selected.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Step 4. A successful check will give 2 objects, <code>personToEdit</code> and <code>Appointment</code> object.
+Program creates another <code>Person</code> object called <code>editedPerson</code> that is equal to <code>personToEdit</code>.
+<code>Appointment</code> will be added to the <code>appointmentList</code> of <code>editedPerson</code>.
+Lastly, we edit the <code>personToEdit</code> with <code>editedPerson</code> in our model.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ScheduleCommandStep4.png" alt="ScheduleCommandStep4" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Step 5. <code>appointmentList</code> will be updated in storage under <code>XmlAdaptedPerson</code>.</p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the schedule appointment operation works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ScheduleSequenceDiagram.png" alt="ScheduleSequenceDiagram" width="800">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">3.2.2. Design Considerations</a></h4>
+<div class="paragraph">
+<p>An alternative considered is to use a comma-separated long string in the command prompt to schedule an appointment.
+In our current implementation, we split up the various parts of an appointment into their respective prefixes.</p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="paragraph">
+<p><code>schedule 1 s/23.11.2018,1300,1400,Jack,Heart,John Doe,S1234567A</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: The user has to type less when scheduling a command.
+The user is not required to type all the prefixes, he just has to type 1.</p>
+</li>
+<li>
+<p>Cons: The design would not be consistent with the other commands.
+This might confuse the user.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="intuitive-command-prompt"><a class="link" href="#intuitive-command-prompt">3.3. Intuitive Command Prompt</a></h3>
+<div class="sect3">
+<h4 id="current-implementation-3"><a class="link" href="#current-implementation-3">3.3.1. Current Implementation</a></h4>
+<div class="paragraph">
+<p>The Intuitive Command Prompt feature is facilitated mainly by two classes: <code>IntuitivePromptManager</code>
+and <code>IntuitiveEntryCommand</code>.</p>
+</div>
+<div class="paragraph">
+<p><code>IntuitiveEntryCommand</code> extends <code>Command</code>, and represents the logic to be
+executed when the user enters an input during the execution of an intuitive command. The <code>IntuitiveEntryCommand</code>
+communicates with the <code>Model</code> interface in order to add an input into, or remove an input from the
+<code>IntuitivePromptManager</code>.</p>
+</div>
+<div class="paragraph">
+<p>The <code>IntuitivePromptManager</code> exists to store the inputs entered by the user during the execution of an
+intuitive command, and once all prompts or fields of the intuitive command have been filled, uses the stored inputs
+to prepare a String that represents a non-intuitive command (e.g. <code>add n/NAME p/PHONE &#8230;&#8203;</code>) back to the
+AddressBookParser in order to execute this command.</p>
+</div>
+<div class="paragraph">
+<p><code>IntuitivePromptManager</code> has six public-access methods that allow the <code>Model</code> to communicate with it.
+They are the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>IntuitivePromptManager#addArgument(input)</code>: takes in a string input and stores it as an argument</p>
+</li>
+<li>
+<p><code>IntuitivePromptManager#removeArgument()</code>: removes the latest stored argument(s)</p>
+</li>
+<li>
+<p><code>IntuitivePromptManager#getInstruction()</code>: retrieves the instruction or prompt to be shown to the user
+(for the field that One Life is currently prompting the user for)</p>
+</li>
+<li>
+<p><code>IntuitivePromptManager#retrieveArguments()</code>: prepares and returns the String that represents the non-intuitive
+command, called when all fields have been filled</p>
+</li>
+<li>
+<p><code>IntuitivePromptManager#isIntuitiveMode()</code>: checks if One Life is currently executing an intuitive command</p>
+</li>
+<li>
+<p><code>IntuitivePromptManager#areArgsAvailable()</code>: checks if there are any arguments still being stored in the
+<code>IntuitivePromptManager</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>With the above operations in mind, below is an example usage scenario of how an intuitive command works at each step.
+We will be using the example of an intuitive <code>add</code> command.</p>
+</div>
+<div class="sect4">
+<h5 id="start-of-intuitive-command"><a class="link" href="#start-of-intuitive-command">Start of Intuitive Command</a></h5>
+<div class="paragraph">
+<p>The intuitive command first needs to be triggered:</p>
+</div>
+<div class="paragraph">
+<p>Step 1. User wishes to add a new patient. User types <code>add</code> into the command prompt and submits.</p>
+</div>
+<div class="paragraph">
+<p>Step 2. <code>AddressBookParser</code> parses the input and detects the <code>add</code> command word without any trailing arguments.
+Intuitive mode is triggered and a new <code>IntuitiveEntryCommand</code> is created.</p>
+</div>
+<div class="paragraph">
+<p>Step 3. <code>LogicManager</code> executes the <code>IntuitiveEntryCommand</code>.
+<code>IntuitiveEntryCommand</code> interfaces with <code>Model</code> to add and store the user&#8217;s input
+in the <code>IntuitivePromptManager</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 4. <code>Model</code> calls the <code>IntuitivePromptManager</code> to store the user&#8217;s input as an argument. Since the user&#8217;s
+input is the <code>add</code> command word, the user&#8217;s input is stored as a <code>commandWord</code> and the <code>IntuitivePromptManager</code>
+triggers it&#8217;s intuitive mode.</p>
+</div>
+<div class="paragraph">
+<p>Step 5. <code>Model</code> then calls the <code>IntuitivePromptManager</code> to retrieve the next prompt to be shown to the user.
+A String instruction representing the prompt to be shown is returned by <code>IntuitivePromptManager</code> and <code>Model</code> then
+proceeds to return this String instruction to the executing <code>IntuitiveEntryCommand</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 6. <code>IntuitiveEntryCommand</code> uses the String instruction to create a new <code>CommandResult</code>, which is then returned
+to the <code>LogicManager</code> to be displayed to the user.</p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram describes the above process:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/IntuitiveCommandWordSequenceDiagram.png" alt="IntuitiveCommandWordSequenceDiagram" width="800">
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="middle-of-intuitive-command"><a class="link" href="#middle-of-intuitive-command">Middle of Intuitive Command</a></h5>
+<div class="paragraph">
+<p>As the intuitive command has now started and is in the midst of execution, the system prompts the
+user for an input for the next field:</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The system displays the instruction which prompts the user for the role of the person to be added.
+The user enters <code>patient</code> to indicate that the person added is a patient.</p>
+</div>
+<div class="paragraph">
+<p>Step 2-3. Remains the same as before with <code>patient</code> as the user&#8217;s input.</p>
+</div>
+<div class="paragraph">
+<p>Step 4. <code>Model</code> calls the <code>IntuitivePromptManager</code> to store the user&#8217;s input as an argument. Since the intuitive
+command is already executing, the user&#8217;s input is stored as an argument in the <code>arguments</code> list.
+The <code>currentArgIndex</code>, which allows the <code>IntuitivePromptManager</code> to determine the what field it should prompt for next
+is incremented accordingly.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/IntuitiveInternalDiagram.png" alt="IntuitiveInternalDiagram" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Step 5-6. Remains the same.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="end-of-intuitive-command"><a class="link" href="#end-of-intuitive-command">End of Intuitive Command</a></h5>
+<div class="paragraph">
+<p>Once all fields have been filled by the user, the system will exit intuitive mode as follows:</p>
+</div>
+<div class="paragraph">
+<p>Step 1-3. Remains the same. Take note that this is the last field that the user has to fill.</p>
+</div>
+<div class="paragraph">
+<p>Step 4. <code>Model</code> calls the <code>IntuitivePromptManager</code> to store the user&#8217;s input as an argument. The input is
+stored as an argument in the <code>arguments</code> list. The <code>IntuitivePromptManager</code> detects that this is the last
+field required to be filled and calls <code>IntuitivePromptManager#exitIntuitiveMode()</code> to signal the end of
+the intuitive command.</p>
+</div>
+<div class="paragraph">
+<p>Step 5. <code>Model</code> retrieves the next prompt from the <code>IntuitivePromptManager</code> but since there are no more
+fields needing to be filled, <code>IntuitivePromptManager</code> returns a loading message to be displayed to the user,
+to inform the user that the intuitive command is complete and the arguments provided by the user are being processed</p>
+</div>
+<div class="paragraph">
+<p>Step 6. <code>LogicManager</code> detects that the intuitive command has exited and that there are arguments stored in the
+<code>IntuitivePromptManager</code>. Using the <code>Model</code> interface, it requests to retrieve the arguments in the
+<code>IntuitivePromptManager</code> as a String line (representing a non-intuitive command).</p>
+</div>
+<div class="paragraph">
+<p>Step 7. This String line is passed into the <code>AddressBookParser</code> to be parsed. The sequence flow from here is
+the same as if the user entered the non-intuitive version of the command.</p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram describes Step 6 and onwards.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/IntuitiveEndSequenceDiagram.png" alt="IntuitiveEndSequenceDiagram" width="800">
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="going-back"><a class="link" href="#going-back">Going Back</a></h5>
+<div class="paragraph">
+<p>The user has the ability to undo the inputs that he enters into each field. This is known as going back,
+and is achieved when the user types <code>/bk</code>. The following usage scenario describes how this takes place:</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user decides to undo his input for the previous field, and types <code>/bk</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 2. The system behaves as per normal as mentioned above, treating <code>/bk</code> as a normal input.</p>
+</div>
+<div class="paragraph">
+<p>Step 3. When <code>IntuitiveEntryCommand#execute()</code> is called, it detects that the input is the go back command
+<code>/bk</code>. It calls <code>Model#removeIntuitiveEntry()</code> to remove the input filled into the latest field.</p>
+</div>
+<div class="paragraph">
+<p>Step 4. <code>Model#removeIntuitiveEntry()</code> calls <code>IntuitivePromptManager#removeArgument()</code>, and the
+<code>IntuitivePromptManager</code> removes the input filled into the latest field, and decrements the <code>currentArgIndex</code>
+as accordingly.</p>
+</div>
+<div class="paragraph">
+<p>Step 5. <code>Model</code> retrieves the instruction of the field indicated by the <code>currentArgIndex</code> of the
+<code>IntuitivePromptManager</code>. Execution continues normally as described in the above sections.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="supported-commands"><a class="link" href="#supported-commands">3.3.2. Supported Commands</a></h4>
+<div class="paragraph">
+<p>The following commands are supported by the Intuitive Command Prompt feature, and thus have an intuitive version:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add</code></p>
+</li>
+<li>
+<p><code>delete</code></p>
+</li>
+<li>
+<p><code>find</code></p>
+</li>
+<li>
+<p><code>edit</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="display-doctor-s-current-availability-feature"><a class="link" href="#display-doctor-s-current-availability-feature">3.4. Display doctor&#8217;s current availability feature</a></h3>
+<div class="sect3">
+<h4 id="current-implementation-4"><a class="link" href="#current-implementation-4">3.4.1. Current Implementation</a></h4>
+<div class="paragraph">
+<p>The display of each doctor&#8217;s current availability is facilitated by <code>PersonCard</code>, <code>Doctor</code>, <code>AppointmentManager</code>.
+Given below is an example usage scenario and how the information is generated and propagated to be displayed in the
+<code>PersonCard</code> at the final stage.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user launches the application for the first time. The <code>MainWindow</code> will be initialized and construct a
+<code>PersonListPanel</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 2. The <code>PersonListPanel</code> will then construct a list of <code>PersonCard</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 3. Each <code>PersonCard</code> is associated with a person&#8217;s particulars, be it a doctor or patient. In the event that
+ this <code>PersonCard</code> belongs to a doctor, it will call the method <code>Doctor#currentAvailStatus</code> to get information on
+ the doctor&#8217;s current availability.</p>
+</div>
+<div class="paragraph">
+<p>Step 4. Upon calling the method <code>Doctor#currentAvailStatus</code>, a helper method in <code>AppointmentManager</code>, called
+<code>AppointmentManager#isAnyAppointmentOngoing</code> will be executed.</p>
+</div>
+<div class="paragraph">
+<p>Step 5. <code>AppointmentManager</code> will then get the current locale time from Java&#8217;s <code>ZoneDateTime</code> class and compare the
+current time with all the scheduled appointments that the doctor has, and determines if the doctor is currently
+available.</p>
+</div>
+<div class="paragraph">
+<p>Step 6. The status information generated in <code>AppointmentManager</code> will then be propagated back up to the <code>PersonCard</code>
+which then sets a badge to reflect the availability status of that doctor.</p>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user launches the application:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DisplayDoctorAvailabilitySequenceDiagram.png" alt="DisplayDoctorAvailabilitySequenceDiagram" width="800">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">3.4.2. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-to-display-each-doctor-s-availability"><a class="link" href="#aspect-how-to-display-each-doctor-s-availability">Aspect: How to display each doctor&#8217;s availability</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> A badge on each doctor&#8217;s card display that shows his/her current availability.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Convenient for the user to refer to since the badge is always on the display.</p>
+</li>
+<li>
+<p>Cons: Does not integrate any form of auto-updating nor is there any dedicated command to allow the user to refresh
+the information, thus the information provided can be outdated.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> A separate command that the user can call upon to look up the current availability of each doctor.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Able to call this method repeatedly/when needed and will be provided with the latest information.</p>
+</li>
+<li>
+<p>Cons: Have a separate command dedicated to this feature which may not be necessary and not as convenient as compared
+to having a badge that is on the display at all times. Also this adds on to the list of commands
+that the user has to get familiar with.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-how-to-update-the-status-of-each-doctor-s-availability"><a class="link" href="#aspect-how-to-update-the-status-of-each-doctor-s-availability">Aspect: How to update the status of each doctor&#8217;s availability</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Updates the status/badge only on launch of application and when there is a
+change in doctor&#8217;s appointment.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement.</p>
+</li>
+<li>
+<p>Cons: Information is outdated aas it does not truly reflect the doctor&#8217;s current availability.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> A function that will refresh the badge every few minutes.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Provides accurate information on the doctor&#8217;s availability.</p>
+</li>
+<li>
+<p>Cons: Affects the performance of the application due to this function continuously running in the background.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="update-command-feature"><a class="link" href="#update-command-feature">3.5. Update Command Feature</a></h3>
+<div class="sect3">
+<h4 id="current-implementation-5"><a class="link" href="#current-implementation-5">3.5.1. Current Implementation</a></h4>
+<div class="paragraph">
+<p>The updating medical record mechanism is facilitated by <code>UpdateCommandParser</code>, <code>UpdateCommand</code> and <code>MedicalRecord</code>.
+<code>UpdateCommand</code> extends from <code>Command</code> and <code>UpdateCommandParser</code> extends from <code>Parser</code>.
+The key operation implemented is <code>UpdateCommand#execute</code>.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the update command mechanism behaves at each step.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user wants to update the medical record library of a <code>Patient</code>. User proceeds to fill in the details behind the respective prefixes.</p>
+</div>
+<div class="paragraph">
+<p>For example: <code>update 1 d/16.10.2018 dg/flu tr/tamiflu c/to be taken thrice a day</code></p>
+</div>
+<div class="paragraph">
+<p>Step 2. The user executes the command which calls the <code>UpdateCommandParser</code>.
+<code>UpdateCommandParser</code> will first parse the inputs and create a <code>MedicalRecord</code> with the given date, diagnosis, treatment and comment, and return an <code>UpdateCommand</code> with the new <code>MedicalRecord</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If no comment is given the default comment "-" is used.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Step 3. <code>UpdateCommand</code> will then be executed.
+<code>UpdateCommand</code> will first do the following checks on the user input to ensure that the command input was valid:</p>
+</div>
+<div class="paragraph">
+<p>Checks:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Whether the index of input person is valid.</p>
+</li>
+<li>
+<p>Whether the person specified by the index is a patient.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If it was invalid, an exception message will be thrown and the <code>MedicalRecord</code> will not be added into the patient&#8217;s medical record library.</p>
+</div>
+<div class="paragraph">
+<p>Step 4. If the checks are successful, all the attributes of all the attributes of the specified person will first be copied, including the existing medical record library of the specified <code>Patient</code></p>
+</div>
+<div class="paragraph">
+<p>Step 5. The new <code>MedicalRecord</code> will be added into the copied medical record library. The medical record library is an <code>ArrayList</code> of <code>MedicalRecord</code>. The new <code>MedicalRecord</code> is added to the back of the list and the pointer to the latest <code>MedicalRecord</code> is updated.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/UpdateSequenceDiagramStep5.png" alt="UpdateSequenceDiagramStep5" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Step 6. A new <code>Patient</code> is created with all the copied attributes and the updated medical record library.</p>
+</div>
+<div class="paragraph">
+<p>Step 7. The existing <code>Patient</code> that was specified is updated to the newly created <code>Patient</code> in the model.</p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the update medical record operation works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/UpdateSequenceDiagram.png" alt="UpdateSequenceDiagram" width="800">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">3.5.2. Design Considerations</a></h4>
+<div class="paragraph">
+<p>An alternative considered is to use a comma-separated long string in the command prompt to schedule an appointment.
+In our current implementation, we split up the various parts of an appointment into their respective prefixes.</p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="paragraph">
+<p><code>schedule 1 s/23.11.2018,1300,1400,Jack,Heart,John Doe,S1234567A</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: The user has to type less when scheduling a command.
+The user is not required to type all the prefixes, he just has to type 1.</p>
+</li>
+<li>
+<p>Cons: The design would not be consistent with the other commands.
+This might confuse the user.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="find-command-feature"><a class="link" href="#find-command-feature">3.6. Find Command Feature</a></h3>
+<div class="sect3">
+<h4 id="current-implementation-6"><a class="link" href="#current-implementation-6">3.6.1. Current Implementation</a></h4>
+<div class="paragraph">
+<p>The find mechanism is facilitated by <code>FindCommand</code>, <code>FindCommandParser</code> and <code>PersonContainsKeywordPredicate</code>.
+<code>FindCommand</code> extends from <code>Command</code>, <code>FindCommandParser</code> implements <code>Parser</code> and <code>PersonContainsKeywordPredicate</code> implements <code>Predicate</code>.
+The key operation implemented is <code>FindCommand#execute</code>.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the find command mechanism behaves at each step.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user wants to find all <code>Person</code> with <code>Name</code> Alex by executing <code>find Alex</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 2. <code>FindCommandParser</code> will parse the input and verify that is it valid before returning a <code>PersonContainsKeywordsPredicate</code>, which is passed into <code>FindCommand</code>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If there is no input after the "find" keyword, <code>IntuitiveEntryCommand</code> will be triggered, which will prompt the user to input search parameters.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Step 3. <code>FindCommand</code> will then be executed.</p>
+</div>
+<div class="paragraph">
+<p>Step 4. <code>Model#updateFilteredPersonList()</code> will be called, which will update <code>Model</code> to show all <code>Person</code> that contains the searched parameter.</p>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarises what happens when a user launches the application:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/FindSequenceDiagram.png" alt="FindSequenceDiagram" width="800">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">3.6.2. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-to-input-search-fields"><a class="link" href="#aspect-how-to-input-search-fields">Aspect: How to input search fields</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Allow users to perform global search using any keywords</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Allows for a powerful search function by allowing the user to search through all <code>Person</code> attributes.</p>
+</li>
+<li>
+<p>Cons: Users will not be able to filter the unwanted results.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Allow the use of tags to specify certain fields if needed.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Allows for a more precise search.</p>
+</li>
+<li>
+<p>Cons: Increased inconvenience of having to tag search fields.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">3.7. [Proposed] Data Encryption</a></h3>
 <div class="paragraph">
 <p><em>{Explain here how the data encryption feature will be implemented}</em></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">3.3. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">3.8. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.4, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.9, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -848,7 +1462,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.4. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.9. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g App name, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -1258,7 +1872,7 @@ b. Require developers to download those libraries manually (this creates extra w
 <p>First, add small local-impact (i.e. the impact of the change does not go beyond the component) enhancements to one component at a time. Some suggestions are given in <a href="#GetStartedProgramming-EachComponent">Section A.1, &#8220;Improving each component&#8221;</a>.</p>
 </li>
 <li>
-<p>Next, add a feature that touches multiple components to learn how to implement an end-to-end feature across all components. <a href="#GetStartedProgramming-RemarkCommand">Section A.2, &#8220;Creating a new command: <code>appointment</code>&#8221;</a> explains how to go about adding such a feature.</p>
+<p>Next, add a feature that touches multiple components to learn how to implement an end-to-end feature across all components. <a href="#GetStartedProgramming-RemarkCommand">Section A.2, &#8220;Creating a new command: <code>remark</code>&#8221;</a> explains how to go about adding such a feature.</p>
 </li>
 </ol>
 </div>
@@ -1673,7 +2287,7 @@ Do take a look at <a href="#Design-Storage">Section 2.5, &#8220;Storage componen
 </div>
 </div>
 <div class="sect2">
-<h3 id="GetStartedProgramming-RemarkCommand"><a class="link" href="#GetStartedProgramming-RemarkCommand">A.2. Creating a new command: <code>appointment</code></a></h3>
+<h3 id="GetStartedProgramming-RemarkCommand"><a class="link" href="#GetStartedProgramming-RemarkCommand">A.2. Creating a new command: <code>remark</code></a></h3>
 <div class="paragraph">
 <p>By creating this command, you will get a chance to learn how to implement a feature end-to-end, touching all major components of the app.</p>
 </div>
@@ -1683,8 +2297,8 @@ Do take a look at <a href="#Design-Storage">Section 2.5, &#8220;Storage componen
 <div class="sect3">
 <h4 id="description"><a class="link" href="#description">A.2.1. Description</a></h4>
 <div class="paragraph">
-<p>Edits the appointment for a person specified in the <code>INDEX</code>.<br>
-Format: <code>appointment INDEX r/[REMARK]</code></p>
+<p>Edits the remark for a person specified in the <code>INDEX</code>.<br>
+Format: <code>remark INDEX r/[REMARK]</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -1692,12 +2306,12 @@ Format: <code>appointment INDEX r/[REMARK]</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>appointment 1 r/Likes to drink coffee.</code><br>
-Edits the appointment for the first person to <code>Likes to drink coffee.</code></p>
+<p><code>remark 1 r/Likes to drink coffee.</code><br>
+Edits the remark for the first person to <code>Likes to drink coffee.</code></p>
 </li>
 <li>
-<p><code>appointment 1 r/</code><br>
-Removes the appointment for the first person.</p>
+<p><code>remark 1 r/</code><br>
+Removes the remark for the first person.</p>
 </li>
 </ul>
 </div>
@@ -1705,9 +2319,9 @@ Removes the appointment for the first person.</p>
 <div class="sect3">
 <h4 id="step-by-step-instructions"><a class="link" href="#step-by-step-instructions">A.2.2. Step-by-step Instructions</a></h4>
 <div class="sect4">
-<h5 id="step-1-logic-teach-the-app-to-accept-appointment-which-does-nothing"><a class="link" href="#step-1-logic-teach-the-app-to-accept-appointment-which-does-nothing">[Step 1] Logic: Teach the app to accept 'appointment' which does nothing</a></h5>
+<h5 id="step-1-logic-teach-the-app-to-accept-remark-which-does-nothing"><a class="link" href="#step-1-logic-teach-the-app-to-accept-remark-which-does-nothing">[Step 1] Logic: Teach the app to accept 'remark' which does nothing</a></h5>
 <div class="paragraph">
-<p>Let&#8217;s start by teaching the application how to parse a <code>appointment</code> command. We will add the logic of <code>appointment</code> later.</p>
+<p>Let&#8217;s start by teaching the application how to parse a <code>remark</code> command. We will add the logic of <code>remark</code> later.</p>
 </div>
 <div class="paragraph">
 <p><strong>Main:</strong></p>
@@ -1731,7 +2345,7 @@ Removes the appointment for the first person.</p>
 <p>Add <code>RemarkCommandTest</code> that tests that <code>execute()</code> throws an Exception.</p>
 </li>
 <li>
-<p>Add new test method to <a href="https://github.com/CS2103-AY1819S1-W16-3/main/src/test/java/seedu/address/logic/parser/AddressBookParserTest.java"><code>AddressBookParserTest</code></a>, which tests that typing "appointment" returns an instance of <code>RemarkCommand</code>.</p>
+<p>Add new test method to <a href="https://github.com/CS2103-AY1819S1-W16-3/main/src/test/java/seedu/address/logic/parser/AddressBookParserTest.java"><code>AddressBookParserTest</code></a>, which tests that typing "remark" returns an instance of <code>RemarkCommand</code>.</p>
 </li>
 </ol>
 </div>
@@ -2662,4 +3276,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-10 12:29:35 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-16 23:55:23 UTC</div></div></div></body></html>
