@@ -1,6 +1,6 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>AddressBook Level 4 - Developer Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>OneLife - Developer Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level3">AB-3</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level4</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level4"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>AddressBook Level 4 - Developer Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level3">AB-3</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level4</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level4"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>OneLife - Developer Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>By: <code>Team W16-3</code>      Since: <code>Sep 2018</code>      Licence: <code>MIT</code></p>
@@ -9,7 +9,7 @@
 <div id="toc" class="toc">
 <div id="toctitle"></div>
 <ul class="sectlevel1">
-<li><a href="#setting-up">1. Setting up</a>
+<li><a href="#setting-up">1. Setting Up</a>
 <ul class="sectlevel2">
 <li><a href="#prerequisites">1.1. Prerequisites</a></li>
 <li><a href="#setting-up-the-project-in-your-computer">1.2. Setting up the project in your computer</a></li>
@@ -30,41 +30,41 @@
 <li><a href="#implementation">3. Implementation</a>
 <ul class="sectlevel2">
 <li><a href="#undo-redo-feature">3.1. Undo/Redo feature</a></li>
-<li><a href="#schedule-command-feature">3.2. Schedule Command Feature</a></li>
-<li><a href="#intuitive-command-prompt">3.3. Intuitive Command Prompt</a></li>
+<li><a href="#schedule-command-feature">3.2. Schedule command feature</a></li>
+<li><a href="#intuitive-command-prompt">3.3. Intuitive command prompt</a></li>
 <li><a href="#display-doctor-s-current-availability-feature">3.4. Display doctor&#8217;s current availability feature</a></li>
-<li><a href="#update-command-feature">3.5. Update Command Feature</a></li>
-<li><a href="#find-command-feature">3.6. Find Command Feature</a></li>
-<li><a href="#proposed-data-encryption">3.7. [Proposed] Data Encryption</a></li>
+<li><a href="#update-command-feature">3.5. Update command feature</a></li>
+<li><a href="#find-command-feature">3.6. Find command feature</a></li>
+<li><a href="#data-encryption-proposed">3.7. Data encryption [proposed]</a></li>
 <li><a href="#logging">3.8. Logging</a></li>
 <li><a href="#Implementation-Configuration">3.9. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">4. Documentation</a>
 <ul class="sectlevel2">
-<li><a href="#editing-documentation">4.1. Editing Documentation</a></li>
-<li><a href="#publishing-documentation">4.2. Publishing Documentation</a></li>
-<li><a href="#converting-documentation-to-pdf-format">4.3. Converting Documentation to PDF format</a></li>
-<li><a href="#Docs-SiteWideDocSettings">4.4. Site-wide Documentation Settings</a></li>
-<li><a href="#Docs-PerFileDocSettings">4.5. Per-file Documentation Settings</a></li>
-<li><a href="#site-template">4.6. Site Template</a></li>
+<li><a href="#editing-documentation">4.1. Editing documentation</a></li>
+<li><a href="#publishing-documentation">4.2. Publishing documentation</a></li>
+<li><a href="#converting-documentation-to-pdf-format">4.3. Converting documentation to PDF format</a></li>
+<li><a href="#Docs-SiteWideDocSettings">4.4. Site-wide documentation settings</a></li>
+<li><a href="#Docs-PerFileDocSettings">4.5. Per-file documentation settings</a></li>
+<li><a href="#site-template">4.6. Site template</a></li>
 </ul>
 </li>
 <li><a href="#Testing">5. Testing</a>
 <ul class="sectlevel2">
-<li><a href="#running-tests">5.1. Running Tests</a></li>
+<li><a href="#running-tests">5.1. Running tests</a></li>
 <li><a href="#types-of-tests">5.2. Types of tests</a></li>
-<li><a href="#troubleshooting-testing">5.3. Troubleshooting Testing</a></li>
+<li><a href="#troubleshooting-testing">5.3. Troubleshooting testing</a></li>
 </ul>
 </li>
 <li><a href="#dev-ops">6. Dev Ops</a>
 <ul class="sectlevel2">
-<li><a href="#build-automation">6.1. Build Automation</a></li>
-<li><a href="#continuous-integration">6.2. Continuous Integration</a></li>
-<li><a href="#coverage-reporting">6.3. Coverage Reporting</a></li>
-<li><a href="#documentation-previews">6.4. Documentation Previews</a></li>
-<li><a href="#making-a-release">6.5. Making a Release</a></li>
-<li><a href="#managing-dependencies">6.6. Managing Dependencies</a></li>
+<li><a href="#build-automation">6.1. Build automation</a></li>
+<li><a href="#continuous-integration">6.2. Continuous integration</a></li>
+<li><a href="#coverage-reporting">6.3. Coverage reporting</a></li>
+<li><a href="#documentation-previews">6.4. Documentation previews</a></li>
+<li><a href="#making-a-release">6.5. Making a release</a></li>
+<li><a href="#managing-dependencies">6.6. Managing dependencies</a></li>
 </ul>
 </li>
 <li><a href="#GetStartedProgramming">Appendix A: Suggested Programming Tasks to Get Started</a>
@@ -81,7 +81,7 @@
 <li><a href="#product-survey">Appendix G: Product Survey</a></li>
 <li><a href="#instructions-for-manual-testing">Appendix H: Instructions for Manual Testing</a>
 <ul class="sectlevel2">
-<li><a href="#launch-and-shutdown">H.1. Launch and Shutdown</a></li>
+<li><a href="#launch-and-shutdown">H.1. Launch and shutdown</a></li>
 <li><a href="#deleting-a-person">H.2. Deleting a person</a></li>
 <li><a href="#saving-data">H.3. Saving data</a></li>
 </ul>
@@ -90,12 +90,15 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="setting-up"><a class="link" href="#setting-up">1. Setting up</a></h2>
+<h2 id="setting-up"><a class="link" href="#setting-up">1. Setting Up</a></h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="prerequisites"><a class="link" href="#prerequisites">1.1. Prerequisites</a></h3>
-<div class="olist arabic">
-<ol class="arabic">
+<div class="paragraph">
+<p>Listed below are the prerequites:</p>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p><strong>JDK <code>9</code></strong> or later</p>
 <div class="admonitionblock warning">
@@ -128,73 +131,79 @@ Do not disable them. If you have disabled them, go to <code>File</code> &gt; <co
 </table>
 </div>
 </li>
-</ol>
+</ul>
 </div>
 </div>
 <div class="sect2">
 <h3 id="setting-up-the-project-in-your-computer"><a class="link" href="#setting-up-the-project-in-your-computer">1.2. Setting up the project in your computer</a></h3>
+<div class="paragraph">
+<p>Listed below are the steps to set up the project:</p>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Fork this repo, and clone the fork to your computer</p>
+<p>Fork this repo, and clone the fork to your computer.</p>
 </li>
 <li>
-<p>Open IntelliJ (if you are not in the welcome screen, click <code>File</code> &gt; <code>Close Project</code> to close the existing project dialog first)</p>
+<p>Open IntelliJ. (If you are not in the welcome screen, click <code>File</code> &gt; <code>Close Project</code> to close the existing project dialog first.)</p>
 </li>
 <li>
-<p>Set up the correct JDK version for Gradle</p>
+<p>Set up the correct JDK version for Gradle.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Click <code>Configure</code> &gt; <code>Project Defaults</code> &gt; <code>Project Structure</code></p>
+<p>Click <code>Configure</code> &gt; <code>Project Defaults</code> &gt; <code>Project Structure</code>.</p>
 </li>
 <li>
-<p>Click <code>New&#8230;&#8203;</code> and find the directory of the JDK</p>
+<p>Click <code>New&#8230;&#8203;</code> and find the directory of the JDK.</p>
 </li>
 </ol>
 </div>
 </li>
 <li>
-<p>Click <code>Import Project</code></p>
+<p>Click <code>Import Project</code>.</p>
 </li>
 <li>
-<p>Locate the <code>build.gradle</code> file and select it. Click <code>OK</code></p>
+<p>Locate the <code>build.gradle</code> file and select it. Click <code>OK</code>.</p>
 </li>
 <li>
-<p>Click <code>Open as Project</code></p>
+<p>Click <code>Open as Project</code>.</p>
 </li>
 <li>
-<p>Click <code>OK</code> to accept the default settings</p>
+<p>Click <code>OK</code> to accept the default settings.</p>
 </li>
 <li>
 <p>Open a console and run the command <code>gradlew processResources</code> (Mac/Linux: <code>./gradlew processResources</code>). It should finish with the <code>BUILD SUCCESSFUL</code> message.<br>
 This will generate all resources required by the application and tests.</p>
 </li>
 <li>
-<p>Open <a href="https://github.com/CS2103-AY1819S1-W16-3/main/src/main/java/seedu/address/storage/XmlAdaptedPerson.java"><code>XmlAdaptedPerson.java</code></a> and <a href="https://github.com/CS2103-AY1819S1-W16-3/main/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow.java</code></a> and check for any code errors</p>
+<p>Open <a href="https://github.com/CS2103-AY1819S1-W16-3/main/src/main/java/seedu/address/storage/XmlAdaptedPerson.java"><code>XmlAdaptedPerson.java</code></a> and <a href="https://github.com/CS2103-AY1819S1-W16-3/main/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow.java</code></a> and check for any code errors.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Due to an ongoing <a href="https://youtrack.jetbrains.com/issue/IDEA-189060">issue</a> with some of the newer versions of IntelliJ, code errors may be detected even if the project can be built and run successfully</p>
+<p>Due to an ongoing <a href="https://youtrack.jetbrains.com/issue/IDEA-189060">issue</a> with some of the newer versions of IntelliJ, code errors may be detected even if the project can be built and run successfully.</p>
 </li>
 <li>
-<p>To resolve this, place your cursor over any of the code section highlighted in red. Press <span class="keyseq"><kbd>ALT</kbd>+<kbd>ENTER</kbd></span>, and select <code>Add '--add-modules=&#8230;&#8203;' to module compiler options</code> for each error</p>
+<p>To resolve this, place your cursor over any of the code section highlighted in red. Press <span class="keyseq"><kbd>ALT</kbd>+<kbd>ENTER</kbd></span>, and select <code>Add '--add-modules=&#8230;&#8203;' to module compiler options</code> for each error.</p>
 </li>
 </ol>
 </div>
 </li>
 <li>
-<p>Repeat this for the test folder as well (e.g. check <a href="https://github.com/CS2103-AY1819S1-W16-3/main/src/test/java/seedu/address/commons/util/XmlUtilTest.java"><code>XmlUtilTest.java</code></a> and <a href="https://github.com/CS2103-AY1819S1-W16-3/main/src/test/java/seedu/address/ui/HelpWindowTest.java"><code>HelpWindowTest.java</code></a> for code errors, and if so, resolve it the same way)</p>
+<p>Repeat this for the test folder as well. (E.g. check <a href="https://github.com/CS2103-AY1819S1-W16-3/main/src/test/java/seedu/address/commons/util/XmlUtilTest.java"><code>XmlUtilTest.java</code></a> and <a href="https://github.com/CS2103-AY1819S1-W16-3/main/src/test/java/seedu/address/ui/HelpWindowTest.java"><code>HelpWindowTest.java</code></a> for code errors, and if so, resolve it the same way.)</p>
 </li>
 </ol>
 </div>
 </div>
 <div class="sect2">
 <h3 id="verifying-the-setup"><a class="link" href="#verifying-the-setup">1.3. Verifying the setup</a></h3>
+<div class="paragraph">
+<p>Listed below are the steps to verify the setup:</p>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Run the <code>seedu.address.MainApp</code> and try a few commands</p>
+<p>Run the <code>seedu.address.MainApp</code> and try a few commands.</p>
 </li>
 <li>
 <p><a href="#Testing">Run the tests</a> to ensure they all pass.</p>
@@ -212,28 +221,37 @@ This will generate all resources required by the application and tests.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Go to <code>File</code> &gt; <code>Settings&#8230;&#8203;</code> (Windows/Linux), or <code>IntelliJ IDEA</code> &gt; <code>Preferences&#8230;&#8203;</code> (macOS)</p>
+<p>Go to <code>File</code> &gt; <code>Settings&#8230;&#8203;</code> (Windows/Linux), or <code>IntelliJ IDEA</code> &gt; <code>Preferences&#8230;&#8203;</code> (macOS).</p>
 </li>
 <li>
-<p>Select <code>Editor</code> &gt; <code>Code Style</code> &gt; <code>Java</code></p>
+<p>Select <code>Editor</code> &gt; <code>Code Style</code> &gt; <code>Java</code>.</p>
 </li>
 <li>
-<p>Click on the <code>Imports</code> tab to set the order</p>
+<p>Click on the <code>Imports</code> tab to set the order.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>For <code>Class count to use import with '*'</code> and <code>Names count to use static import with '*'</code>: Set to <code>999</code> to prevent IntelliJ from contracting the import statements</p>
+<p>For <code>Class count to use import with '*'</code> and <code>Names count to use static import with '*'</code>: Set to <code>999</code> to prevent IntelliJ from contracting the import statements.</p>
 </li>
 <li>
-<p>For <code>Import Layout</code>: Change the import order to <code>import static all other imports</code>, <code>import java.*</code>, <code>import javax.*</code>, <code>import org.*</code>, <code>import com.*</code>, <code>import all other imports</code>. Add a <code>&lt;blank line&gt;</code> between each <code>import</code></p>
+<p>For <code>Import Layout</code>: Change the import order to <code>import static all other imports</code>, <code>import java.*</code>, <code>import javax.*</code>, <code>import org.*</code>, <code>import com.*</code>, <code>import all other imports</code>. Add a <code>&lt;blank line&gt;</code> between each <code>import</code>.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Optionally, you can follow the <a href="UsingCheckstyle.html">UsingCheckstyle.adoc</a> document to configure Intellij to check style-compliance as you write code.
+</td>
+</tr>
+</table>
+</div>
 </li>
 </ul>
 </div>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p>Optionally, you can follow the <a href="UsingCheckstyle.html">UsingCheckstyle.adoc</a> document to configure Intellij to check style-compliance as you write code.</p>
 </div>
 </div>
 <div class="sect3">
@@ -285,7 +303,7 @@ Coverage reporting could be useful for a team repository that hosts the final ve
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Having both Travis and AppVeyor ensures your App works on both Unix-based platforms and Windows-based platforms (Travis is Unix-based and AppVeyor is Windows-based)
+Having both Travis and AppVeyor ensures your App works on both Unix-based platforms and Windows-based platforms. (Travis is Unix-based and AppVeyor is Windows-based.)
 </td>
 </tr>
 </table>
@@ -294,17 +312,17 @@ Having both Travis and AppVeyor ensures your App works on both Unix-based platfo
 <div class="sect3">
 <h4 id="getting-started-with-coding"><a class="link" href="#getting-started-with-coding">1.4.4. Getting started with coding</a></h4>
 <div class="paragraph">
-<p>When you are ready to start coding:</p>
+<p>Listed below are some things to try when you are ready to start coding:</p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
+<div class="ulist">
+<ul>
 <li>
 <p>Get some sense of the overall design by reading <a href="#Design-Architecture">Section 2.1, &#8220;Architecture&#8221;</a>.</p>
 </li>
 <li>
 <p>Take a look at <a href="#GetStartedProgramming">Appendix A, <em>Suggested Programming Tasks to Get Started</em></a>.</p>
 </li>
-</ol>
+</ul>
 </div>
 </div>
 </div>
@@ -315,6 +333,9 @@ Having both Travis and AppVeyor ensures your App works on both Unix-based platfo
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">2.1. Architecture</a></h3>
+<div class="paragraph">
+<p>The <strong><em>Architecture Diagram</em></strong> given below explains the high-level design of the App.</p>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="images/Architecture.png" alt="Architecture" width="600">
@@ -322,7 +343,7 @@ Having both Travis and AppVeyor ensures your App works on both Unix-based platfo
 <div class="title">Figure 1. Architecture Diagram</div>
 </div>
 <div class="paragraph">
-<p>The <strong><em>Architecture Diagram</em></strong> given above explains the high-level design of the App. Given below is a quick overview of each component.</p>
+<p>Given below is a quick overview of each component.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -355,7 +376,7 @@ The <code>.pptx</code> files used to create diagrams in this document can be fou
 <div class="ulist">
 <ul>
 <li>
-<p><code>EventsCenter</code> : This class (written using <a href="https://github.com/google/guava/wiki/EventBusExplained">Google&#8217;s Event Bus library</a>) is used by components to communicate with other components using events (i.e. a form of <em>Event Driven</em> design)</p>
+<p><code>EventsCenter</code> : This class (written using <a href="https://github.com/google/guava/wiki/EventBusExplained">Google&#8217;s Event Bus library</a>) is used by components to communicate with other components using events. (i.e. a form of <em>Event Driven</em> design)</p>
 </li>
 <li>
 <p><code>LogsCenter</code> : This class is used by many classes to write log messages to the App&#8217;s log file.</p>
@@ -411,7 +432,7 @@ The <code>.pptx</code> files used to create diagrams in this document can be fou
 <div class="content">
 <img src="images/SDforDeletePerson.png" alt="SDforDeletePerson" width="800">
 </div>
-<div class="title">Figure 3. Component interactions for <code>delete 1</code> command (part 1)</div>
+<div class="title">Figure 3. Component Interactions for <code>delete 1</code> Command (Part 1)</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -432,7 +453,7 @@ Note how the <code>Model</code> simply raises a <code>AddressBookChangedEvent</c
 <div class="content">
 <img src="images/SDforDeletePersonEventHandling.png" alt="SDforDeletePersonEventHandling" width="800">
 </div>
-<div class="title">Figure 4. Component interactions for <code>delete 1</code> command (part 2)</div>
+<div class="title">Figure 4. Component Interactions for <code>delete 1</code> Command (Part 2)</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -452,17 +473,20 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 </div>
 <div class="sect2">
 <h3 id="Design-Ui"><a class="link" href="#Design-Ui">2.2. UI component</a></h3>
+<div class="paragraph">
+<p>Given below is the structure of the UI component.</p>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="images/UiClassDiagram.png" alt="UiClassDiagram" width="800">
 </div>
-<div class="title">Figure 5. Structure of the UI Component</div>
+<div class="title">Figure 5. Structure of the <code>UI</code> Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S1-W16-3/main/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
 </div>
 <div class="paragraph">
-<p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>PersonListPanel</code>, <code>StatusBarFooter</code>, <code>BrowserPanel</code> etc. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
+<p>As shown in the figure above, the UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>PersonListPanel</code>, <code>StatusBarFooter</code>, <code>BrowserPanel</code> etc. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
 </div>
 <div class="paragraph">
 <p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/CS2103-AY1819S1-W16-3/main/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/CS2103-AY1819S1-W16-3/main/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
@@ -486,6 +510,9 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 </div>
 <div class="sect2">
 <h3 id="Design-Logic"><a class="link" href="#Design-Logic">2.3. Logic component</a></h3>
+<div class="paragraph">
+<p>Shown below is the structure of the <code>Logic</code> component.</p>
+</div>
 <div id="fig-LogicClassDiagram" class="imageblock">
 <div class="content">
 <img src="images/LogicClassDiagram.png" alt="LogicClassDiagram" width="800">
@@ -496,21 +523,12 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 <p><strong>API</strong> :
 <a href="https://github.com/CS2103-AY1819S1-W16-3/main/src/main/java/seedu/address/logic/Logic.java"><code>Logic.java</code></a></p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>Logic</code> uses the <code>AddressBookParser</code> class to parse the user command.</p>
-</li>
-<li>
-<p>This results in a <code>Command</code> object which is executed by the <code>LogicManager</code>.</p>
-</li>
-<li>
-<p>The command execution can affect the <code>Model</code> (e.g. adding a person) and/or raise events.</p>
-</li>
-<li>
-<p>The result of the command execution is encapsulated as a <code>CommandResult</code> object which is passed back to the <code>Ui</code>.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>As shown in the figure above, <code>Logic</code> uses the <code>AddressBookParser</code> class to parse the user command. This results in a <code>Command</code> object which is executed by the <code>LogicManager</code>.</p>
+</div>
+<div class="paragraph">
+<p>The command execution can affect the <code>Model</code> (e.g. adding a person) and/or raise events.
+The result of the command execution is encapsulated as a <code>CommandResult</code> object which is passed back to the <code>Ui</code>.</p>
 </div>
 <div class="paragraph">
 <p>Given below is the Sequence Diagram for interactions within the <code>Logic</code> component for the <code>execute("delete 1")</code> API call.</p>
@@ -524,6 +542,9 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 </div>
 <div class="sect2">
 <h3 id="Design-Model"><a class="link" href="#Design-Model">2.4. Model component</a></h3>
+<div class="paragraph">
+<p>Shown below is the structure of the <code>Model</code> component.</p>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ModelClassDiagram.png" alt="ModelClassDiagram" width="800">
@@ -534,7 +555,7 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 <p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S1-W16-3/main/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
 </div>
 <div class="paragraph">
-<p>The <code>Model</code>,</p>
+<p>As shown by the figure above, the <code>Model</code>,</p>
 </div>
 <div class="ulist">
 <ul>
@@ -569,6 +590,9 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 </div>
 <div class="sect2">
 <h3 id="Design-Storage"><a class="link" href="#Design-Storage">2.5. Storage component</a></h3>
+<div class="paragraph">
+<p>Shown below is the structure of the <code>Storage</code> component.</p>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="images/StorageClassDiagram.png" alt="StorageClassDiagram" width="800">
@@ -579,7 +603,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S1-W16-3/main/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
 </div>
 <div class="paragraph">
-<p>The <code>Storage</code> component,</p>
+<p>As shown by the figure above, the <code>Storage</code> component,</p>
 </div>
 <div class="ulist">
 <ul>
@@ -609,7 +633,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <div class="sect2">
 <h3 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">3.1. Undo/Redo feature</a></h3>
 <div class="sect3">
-<h4 id="current-implementation"><a class="link" href="#current-implementation">3.1.1. Current Implementation</a></h4>
+<h4 id="current-implementation"><a class="link" href="#current-implementation">3.1.1. Current implementation</a></h4>
 <div class="paragraph">
 <p>The undo/redo mechanism is facilitated by <code>VersionedAddressBook</code>.
 It extends <code>AddressBook</code> with an undo/redo history, stored internally as an <code>addressBookStateList</code> and <code>currentStatePointer</code>.
@@ -739,9 +763,11 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">3.1.2. Design Considerations</a></h4>
-<div class="sect4">
-<h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
+<h4 id="design-considerations"><a class="link" href="#design-considerations">3.1.2. Design considerations</a></h4>
+<div class="paragraph">
+<p>This section describes the pros and cons of the current and other alternate implementations of undo &amp; redo.
+===== Aspect: How undo &amp; redo executes</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -771,7 +797,6 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </li>
 </ul>
-</div>
 </div>
 <div class="sect4">
 <h5 id="aspect-data-structure-to-support-the-undo-redo-commands"><a class="link" href="#aspect-data-structure-to-support-the-undo-redo-commands">Aspect: Data structure to support the undo/redo commands</a></h5>
@@ -809,9 +834,9 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect2">
-<h3 id="schedule-command-feature"><a class="link" href="#schedule-command-feature">3.2. Schedule Command Feature</a></h3>
+<h3 id="schedule-command-feature"><a class="link" href="#schedule-command-feature">3.2. Schedule command feature</a></h3>
 <div class="sect3">
-<h4 id="current-implementation-2"><a class="link" href="#current-implementation-2">3.2.1. Current Implementation</a></h4>
+<h4 id="current-implementation-2"><a class="link" href="#current-implementation-2">3.2.1. Current implementation</a></h4>
 <div class="paragraph">
 <p>The scheduling appointment mechanism is facilitated by <code>ScheduleCommandParser</code>, <code>ScheduleCommand</code>, <code>Appointment</code> and <code>AppointmentManager</code>.
 <code>ScheduleCommand</code> extends from <code>Command</code> and <code>ScheduleCommandParser</code> implements <code>Parser</code>.
@@ -905,9 +930,9 @@ This might confuse the user.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="intuitive-command-prompt"><a class="link" href="#intuitive-command-prompt">3.3. Intuitive Command Prompt</a></h3>
+<h3 id="intuitive-command-prompt"><a class="link" href="#intuitive-command-prompt">3.3. Intuitive command prompt</a></h3>
 <div class="sect3">
-<h4 id="current-implementation-3"><a class="link" href="#current-implementation-3">3.3.1. Current Implementation</a></h4>
+<h4 id="current-implementation-3"><a class="link" href="#current-implementation-3">3.3.1. Current implementation</a></h4>
 <div class="paragraph">
 <p>The Intuitive Command Prompt feature is facilitated mainly by two classes: <code>IntuitivePromptManager</code>
 and <code>IntuitiveEntryCommand</code>.</p>
@@ -1115,7 +1140,7 @@ as accordingly.</p>
 <div class="sect2">
 <h3 id="display-doctor-s-current-availability-feature"><a class="link" href="#display-doctor-s-current-availability-feature">3.4. Display doctor&#8217;s current availability feature</a></h3>
 <div class="sect3">
-<h4 id="current-implementation-4"><a class="link" href="#current-implementation-4">3.4.1. Current Implementation</a></h4>
+<h4 id="current-implementation-4"><a class="link" href="#current-implementation-4">3.4.1. Current implementation</a></h4>
 <div class="paragraph">
 <p>The display of each doctor&#8217;s current availability is facilitated by <code>PersonCard</code>, <code>Doctor</code>, <code>AppointmentManager</code>.
 Given below is an example usage scenario and how the information is generated and propagated to be displayed in the
@@ -1156,7 +1181,10 @@ which then sets a badge to reflect the availability status of that doctor.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">3.4.2. Design Considerations</a></h4>
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">3.4.2. Design considerations</a></h4>
+<div class="paragraph">
+<p>This section describes the pros and cons of the current and other alternate implementations of the doctor&#8217;s availability feature.</p>
+</div>
 <div class="sect4">
 <h5 id="aspect-how-to-display-each-doctor-s-availability"><a class="link" href="#aspect-how-to-display-each-doctor-s-availability">Aspect: How to display each doctor&#8217;s availability</a></h5>
 <div class="ulist">
@@ -1230,9 +1258,9 @@ change in doctor&#8217;s appointment.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="update-command-feature"><a class="link" href="#update-command-feature">3.5. Update Command Feature</a></h3>
+<h3 id="update-command-feature"><a class="link" href="#update-command-feature">3.5. Update command feature</a></h3>
 <div class="sect3">
-<h4 id="current-implementation-5"><a class="link" href="#current-implementation-5">3.5.1. Current Implementation</a></h4>
+<h4 id="current-implementation-5"><a class="link" href="#current-implementation-5">3.5.1. Current implementation</a></h4>
 <div class="paragraph">
 <p>The updating medical record mechanism is facilitated by <code>UpdateCommandParser</code>, <code>UpdateCommand</code> and <code>MedicalRecord</code>.
 <code>UpdateCommand</code> extends from <code>Command</code> and <code>UpdateCommandParser</code> extends from <code>Parser</code>.
@@ -1249,7 +1277,7 @@ The key operation implemented is <code>UpdateCommand#execute</code>.</p>
 </div>
 <div class="paragraph">
 <p>Step 2. The user executes the command which calls the <code>UpdateCommandParser</code>.
-<code>UpdateCommandParser</code> will first parse the inputs and create a <code>MedicalRecord</code> with the given date, diagnosis, treatment and comment, and return an <code>UpdateCommand</code> with the new <code>MedicalRecord</code></p>
+<code>UpdateCommandParser</code> will first parse the inputs and create a <code>MedicalRecord</code> with the given date, diagnosis, treatment and comment, and return an <code>UpdateCommand</code> with the new <code>MedicalRecord</code>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1284,7 +1312,7 @@ If no comment is given the default comment "-" is used.
 <p>If it was invalid, an exception message will be thrown and the <code>MedicalRecord</code> will not be added into the patient&#8217;s medical record library.</p>
 </div>
 <div class="paragraph">
-<p>Step 4. If the checks are successful, all the attributes of all the attributes of the specified person will first be copied, including the existing medical record library of the specified <code>Patient</code></p>
+<p>Step 4. If the checks are successful, all the attributes of all the attributes of the specified person will first be copied, including the existing medical record library of the specified <code>Patient</code>.</p>
 </div>
 <div class="paragraph">
 <p>Step 5. The new <code>MedicalRecord</code> will be added into the copied medical record library. The medical record library is an <code>ArrayList</code> of <code>MedicalRecord</code>. The new <code>MedicalRecord</code> is added to the back of the list and the pointer to the latest <code>MedicalRecord</code> is updated.</p>
@@ -1310,35 +1338,47 @@ If no comment is given the default comment "-" is used.
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">3.5.2. Design Considerations</a></h4>
+<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">3.5.2. Design considerations</a></h4>
 <div class="paragraph">
-<p>An alternative considered is to use a comma-separated long string in the command prompt to schedule an appointment.
-In our current implementation, we split up the various parts of an appointment into their respective prefixes.</p>
-</div>
-<div class="paragraph">
-<p>For example:</p>
-</div>
-<div class="paragraph">
-<p><code>schedule 1 s/23.11.2018,1300,1400,Jack,Heart,John Doe,S1234567A</code></p>
+<p>This section describes the pros and cons of the current and other alternate implementations of updating medical records.
+===== Aspect: How to store a patient&#8217;s medical record library</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: The user has to type less when scheduling a command.
-The user is not required to type all the prefixes, he just has to type 1.</p>
+<p><strong>Alternative 1 (current choice):</strong> Use an ArrayList of <code>MedicalRecord</code> as the patient&#8217;s medical record library.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to access the most recent record by retrieving the last <code>MedicalRecord</code> in the ArrayList.</p>
 </li>
 <li>
-<p>Cons: The design would not be consistent with the other commands.
-This might confuse the user.</p>
+<p>Cons: Takes longer to retrieve the latest <code>MedicalRecord</code> before a specified date as each <code>MedicalRecord</code> has to be checked sequentially until the last <code>MedicalRecord</code> before the specified date is found.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Use a different data structure like a TreeMap of <code>MedicalRecord</code> as the value and date for the key as the patient&#8217;s medical record library.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Retrieving the latest <code>MedicalRecord</code> before a specified date is made convenient by  just using the floor function already defined in the TreeMap API.</p>
+</li>
+<li>
+<p>Cons: May be difficult to maintain the TreeSet for more complicated tasks like editing <code>MedicalRecord</code> since a new <code>MedicalRecord</code> has to be created and reinserted into the same location in the TreeSet.</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="find-command-feature"><a class="link" href="#find-command-feature">3.6. Find Command Feature</a></h3>
+<h3 id="find-command-feature"><a class="link" href="#find-command-feature">3.6. Find command feature</a></h3>
 <div class="sect3">
-<h4 id="current-implementation-6"><a class="link" href="#current-implementation-6">3.6.1. Current Implementation</a></h4>
+<h4 id="current-implementation-6"><a class="link" href="#current-implementation-6">3.6.1. Current implementation</a></h4>
 <div class="paragraph">
 <p>The find mechanism is facilitated by <code>FindCommand</code>, <code>FindCommandParser</code> and <code>PersonContainsKeywordPredicate</code>.
 <code>FindCommand</code> extends from <code>Command</code>, <code>FindCommandParser</code> implements <code>Parser</code> and <code>PersonContainsKeywordPredicate</code> implements <code>Predicate</code>.
@@ -1381,13 +1421,13 @@ If there is no input after the "find" keyword, <code>IntuitiveEntryCommand</code
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">3.6.2. Design Considerations</a></h4>
+<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">3.6.2. Design considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-to-input-search-fields"><a class="link" href="#aspect-how-to-input-search-fields">Aspect: How to input search fields</a></h5>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Allow users to perform global search using any keywords</p>
+<p><strong>Alternative 1 (current choice):</strong> Allow users to perform global search using any keywords.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1418,7 +1458,7 @@ If there is no input after the "find" keyword, <code>IntuitiveEntryCommand</code
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">3.7. [Proposed] Data Encryption</a></h3>
+<h3 id="data-encryption-proposed"><a class="link" href="#data-encryption-proposed">3.7. Data encryption [proposed]</a></h3>
 <div class="paragraph">
 <p><em>{Explain here how the data encryption feature will be implemented}</em></p>
 </div>
@@ -1488,20 +1528,20 @@ We chose asciidoc over Markdown because asciidoc, although a bit more complex th
 </table>
 </div>
 <div class="sect2">
-<h3 id="editing-documentation"><a class="link" href="#editing-documentation">4.1. Editing Documentation</a></h3>
+<h3 id="editing-documentation"><a class="link" href="#editing-documentation">4.1. Editing documentation</a></h3>
 <div class="paragraph">
 <p>See <a href="UsingGradle.html#rendering-asciidoc-files">UsingGradle.adoc</a> to learn how to render <code>.adoc</code> files locally to preview the end result of your edits.
 Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows you to preview the changes you have made to your <code>.adoc</code> files in real-time.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="publishing-documentation"><a class="link" href="#publishing-documentation">4.2. Publishing Documentation</a></h3>
+<h3 id="publishing-documentation"><a class="link" href="#publishing-documentation">4.2. Publishing documentation</a></h3>
 <div class="paragraph">
 <p>See <a href="UsingTravis.html#deploying-github-pages">UsingTravis.adoc</a> to learn how to deploy GitHub Pages using Travis.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="converting-documentation-to-pdf-format"><a class="link" href="#converting-documentation-to-pdf-format">4.3. Converting Documentation to PDF format</a></h3>
+<h3 id="converting-documentation-to-pdf-format"><a class="link" href="#converting-documentation-to-pdf-format">4.3. Converting documentation to PDF format</a></h3>
 <div class="paragraph">
 <p>We use <a href="https://www.google.com/chrome/browser/desktop/">Google Chrome</a> for converting documentation to PDF format, as Chrome&#8217;s PDF engine preserves hyperlinks used in webpages.</p>
 </div>
@@ -1532,7 +1572,7 @@ Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows y
 </div>
 </div>
 <div class="sect2">
-<h3 id="Docs-SiteWideDocSettings"><a class="link" href="#Docs-SiteWideDocSettings">4.4. Site-wide Documentation Settings</a></h3>
+<h3 id="Docs-SiteWideDocSettings"><a class="link" href="#Docs-SiteWideDocSettings">4.4. Site-wide documentation settings</a></h3>
 <div class="paragraph">
 <p>The <a href="https://github.com/CS2103-AY1819S1-W16-3/main/build.gradle"><code>build.gradle</code></a> file specifies some project-specific <a href="https://asciidoctor.org/docs/user-manual/#attributes">asciidoc attributes</a> which affects how all documentation files within this project are rendered.</p>
 </div>
@@ -1547,6 +1587,9 @@ Attributes left unset in the <code>build.gradle</code> file will use their <stro
 </td>
 </tr>
 </table>
+</div>
+<div class="paragraph">
+<p>Shown below is a list of site-wide attributes and a short description for each attribute.</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 1. List of site-wide attributes</caption>
@@ -1591,7 +1634,7 @@ This will render the SE-EDU navigation bar at the top of the page, and add some 
 </table>
 </div>
 <div class="sect2">
-<h3 id="Docs-PerFileDocSettings"><a class="link" href="#Docs-PerFileDocSettings">4.5. Per-file Documentation Settings</a></h3>
+<h3 id="Docs-PerFileDocSettings"><a class="link" href="#Docs-PerFileDocSettings">4.5. Per-file documentation settings</a></h3>
 <div class="paragraph">
 <p>Each <code>.adoc</code> file may also specify some file-specific <a href="https://asciidoctor.org/docs/user-manual/#attributes">asciidoc attributes</a> which affects how the file is rendered.</p>
 </div>
@@ -1609,6 +1652,9 @@ Attributes left unset in <code>.adoc</code> files will use their <strong>default
 </td>
 </tr>
 </table>
+</div>
+<div class="paragraph">
+<p>Shown below is a list of per-file attributes and a short description for each.</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 2. List of per-file attributes, excluding Asciidoctor&#8217;s built-in attributes</caption>
@@ -1648,7 +1694,7 @@ One of: <code>UserGuide</code>, <code>DeveloperGuide</code>, <code>LearningOutco
 </table>
 </div>
 <div class="sect2">
-<h3 id="site-template"><a class="link" href="#site-template">4.6. Site Template</a></h3>
+<h3 id="site-template"><a class="link" href="#site-template">4.6. Site template</a></h3>
 <div class="paragraph">
 <p>The files in <a href="https://github.com/CS2103-AY1819S1-W16-3/main/docs/stylesheets"><code>docs/stylesheets</code></a> are the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS stylesheets</a> of the site.
 You can modify them to change some properties of the site&#8217;s design.</p>
@@ -1680,7 +1726,7 @@ The SE-EDU team does not provide support for modified template files.</p>
 <h2 id="Testing"><a class="link" href="#Testing">5. Testing</a></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="running-tests"><a class="link" href="#running-tests">5.1. Running Tests</a></h3>
+<h3 id="running-tests"><a class="link" href="#running-tests">5.1. Running tests</a></h3>
 <div class="paragraph">
 <p>There are three ways to run tests.</p>
 </div>
@@ -1702,10 +1748,10 @@ The most reliable way to run tests is the 3rd one. The first two methods might f
 <div class="ulist">
 <ul>
 <li>
-<p>To run all tests, right-click on the <code>src/test/java</code> folder and choose <code>Run 'All Tests'</code></p>
+<p>To run all tests, right-click on the <code>src/test/java</code> folder and choose <code>Run 'All Tests'</code>.</p>
 </li>
 <li>
-<p>To run a subset of tests, you can right-click on a test package, test class, or a test and choose <code>Run 'ABC'</code></p>
+<p>To run a subset of tests, you can right-click on a test package, test class, or a test and choose <code>Run 'ABC'</code>.</p>
 </li>
 </ul>
 </div>
@@ -1715,7 +1761,7 @@ The most reliable way to run tests is the 3rd one. The first two methods might f
 <div class="ulist">
 <ul>
 <li>
-<p>Open a console and run the command <code>gradlew clean allTests</code> (Mac/Linux: <code>./gradlew clean allTests</code>)</p>
+<p>Open a console and run the command <code>gradlew clean allTests</code>. (Mac/Linux: <code>./gradlew clean allTests</code>)</p>
 </li>
 </ul>
 </div>
@@ -1738,7 +1784,7 @@ See <a href="UsingGradle.html">UsingGradle.adoc</a> for more info on how to run 
 <p>Thanks to the <a href="https://github.com/TestFX/TestFX">TestFX</a> library we use, our GUI tests can be run in the <em>headless</em> mode. In the headless mode, GUI tests do not show up on the screen. That means the developer can do other things on the Computer while the tests are running.</p>
 </div>
 <div class="paragraph">
-<p>To run tests in headless mode, open a console and run the command <code>gradlew clean headless allTests</code> (Mac/Linux: <code>./gradlew clean headless allTests</code>)</p>
+<p>To run tests in headless mode, open a console and run the command <code>gradlew clean headless allTests</code>. (Mac/Linux: <code>./gradlew clean headless allTests</code>)</p>
 </div>
 </div>
 <div class="sect2">
@@ -1784,7 +1830,7 @@ e.g. <code>seedu.address.logic.LogicManagerTest</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="troubleshooting-testing"><a class="link" href="#troubleshooting-testing">5.3. Troubleshooting Testing</a></h3>
+<h3 id="troubleshooting-testing"><a class="link" href="#troubleshooting-testing">5.3. Troubleshooting testing</a></h3>
 <div class="paragraph">
 <p><strong>Problem: <code>HelpWindowTest</code> fails with a <code>NullPointerException</code>.</strong></p>
 </div>
@@ -1805,31 +1851,31 @@ e.g. <code>seedu.address.logic.LogicManagerTest</code></p>
 <h2 id="dev-ops"><a class="link" href="#dev-ops">6. Dev Ops</a></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="build-automation"><a class="link" href="#build-automation">6.1. Build Automation</a></h3>
+<h3 id="build-automation"><a class="link" href="#build-automation">6.1. Build automation</a></h3>
 <div class="paragraph">
 <p>See <a href="UsingGradle.html">UsingGradle.adoc</a> to learn how to use Gradle for build automation.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="continuous-integration"><a class="link" href="#continuous-integration">6.2. Continuous Integration</a></h3>
+<h3 id="continuous-integration"><a class="link" href="#continuous-integration">6.2. Continuous integration</a></h3>
 <div class="paragraph">
 <p>We use <a href="https://travis-ci.org/">Travis CI</a> and <a href="https://www.appveyor.com/">AppVeyor</a> to perform <em>Continuous Integration</em> on our projects. See <a href="UsingTravis.html">UsingTravis.adoc</a> and <a href="UsingAppVeyor.html">UsingAppVeyor.adoc</a> for more details.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="coverage-reporting"><a class="link" href="#coverage-reporting">6.3. Coverage Reporting</a></h3>
+<h3 id="coverage-reporting"><a class="link" href="#coverage-reporting">6.3. Coverage reporting</a></h3>
 <div class="paragraph">
 <p>We use <a href="https://coveralls.io/">Coveralls</a> to track the code coverage of our projects. See <a href="UsingCoveralls.html">UsingCoveralls.adoc</a> for more details.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="documentation-previews"><a class="link" href="#documentation-previews">6.4. Documentation Previews</a></h3>
+<h3 id="documentation-previews"><a class="link" href="#documentation-previews">6.4. Documentation previews</a></h3>
 <div class="paragraph">
 <p>When a pull request has changes to asciidoc files, you can use <a href="https://www.netlify.com/">Netlify</a> to see a preview of how the HTML version of those asciidoc files will look like when the pull request is merged. See <a href="UsingNetlify.html">UsingNetlify.adoc</a> for more details.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="making-a-release"><a class="link" href="#making-a-release">6.5. Making a Release</a></h3>
+<h3 id="making-a-release"><a class="link" href="#making-a-release">6.5. Making a release</a></h3>
 <div class="paragraph">
 <p>Here are the steps to create a new release.</p>
 </div>
@@ -1851,11 +1897,11 @@ e.g. <code>seedu.address.logic.LogicManagerTest</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="managing-dependencies"><a class="link" href="#managing-dependencies">6.6. Managing Dependencies</a></h3>
+<h3 id="managing-dependencies"><a class="link" href="#managing-dependencies">6.6. Managing dependencies</a></h3>
 <div class="paragraph">
 <p>A project often depends on third-party libraries. For example, Address Book depends on the <a href="http://wiki.fasterxml.com/JacksonHome">Jackson library</a> for XML parsing. Managing these <em>dependencies</em> can be automated using Gradle. For example, Gradle can download the dependencies automatically, which is better than these alternatives.<br>
-a. Include those libraries in the repo (this bloats the repo size)<br>
-b. Require developers to download those libraries manually (this creates extra work for developers)</p>
+a. Include those libraries in the repo. (this bloats the repo size)<br>
+b. Require developers to download those libraries manually. (this creates extra work for developers)</p>
 </div>
 </div>
 </div>
@@ -2616,6 +2662,9 @@ for <code>RemarkCommandParser</code>.</p>
 <h2 id="user-stories"><a class="link" href="#user-stories">Appendix C: User Stories</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
+<p>Shown below are the user stories collected and used to conceptualize the features of OneLife.</p>
+</div>
+<div class="paragraph">
 <p>Priorities: High (must have) - <code>* * *</code>, Medium (nice to have) - <code>* *</code>, Low (unlikely to have) - <code>*</code></p>
 </div>
 <table class="tableblock frame-all grid-all" style="width: 59%;">
@@ -2771,21 +2820,21 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to view all medical appointments or appointments on a specific day</p>
+<p>User requests to view all medical appointments or appointments on a specific day.</p>
 </li>
 <li>
-<p>AddressBook shows a list of all appointments</p>
+<p>AddressBook shows a list of all appointments.</p>
 </li>
 <li>
-<p>User requests to appointment a patient at a specific date and time</p>
+<p>User requests to appointment a patient at a specific date and time.</p>
 </li>
 <li>
-<p>AddressBook updates appointment details in database</p>
+<p>AddressBook updates appointment details in database.</p>
 </li>
 <li>
-<p>AddressBook shows the appointments details to the user</p>
+<p>AddressBook shows the appointments details to the user.</p>
 <div class="paragraph">
-<p>Use case ends</p>
+<p>Use case ends.</p>
 </div>
 </li>
 </ol>
@@ -2796,26 +2845,26 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3a. Patient is not in database</p>
+<p>3a. Patient is not in database.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3a1. AddressBook warns user that patient is not in database</p>
+<p>3a1. AddressBook warns user that patient is not in database.</p>
 <div class="paragraph">
-<p>Use case resumes at step 1</p>
+<p>Use case resumes at step 1.</p>
 </div>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>4a. Appointment clashes with another appointment</p>
+<p>4a. Appointment clashes with another appointment.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>4a1. AddressBook warns user of appointment clash</p>
+<p>4a1. AddressBook warns user of appointment clash.</p>
 <div class="paragraph">
-<p>Use case resumes at step 1</p>
+<p>Use case resumes at step 1.</p>
 </div>
 </li>
 </ul>
@@ -2830,18 +2879,18 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User enters in command that takes in in arguments without any specified arguments (e.g. add, delete)</p>
+<p>User enters in command that takes in in arguments without any specified arguments. (e.g. add, delete)</p>
 </li>
 <li>
-<p>AddressBook shows instructions to guide user</p>
+<p>AddressBook shows instructions to guide user.</p>
 </li>
 <li>
-<p>User responds to instructions with respective answers/inputs</p>
+<p>User responds to instructions with respective answers/inputs.</p>
 </li>
 <li>
-<p>AddressBook performs command for user and echoes changes made to user</p>
+<p>AddressBook performs command for user and echoes changes made to user.</p>
 <div class="paragraph">
-<p>Use case ends</p>
+<p>Use case ends.</p>
 </div>
 </li>
 </ol>
@@ -2852,26 +2901,26 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1a. User enters unrecognised command</p>
+<p>1a. User enters unrecognised command.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1a1. AddressBook shows error message and shows list of available commands</p>
+<p>1a1. AddressBook shows error message and shows list of available commands.</p>
 <div class="paragraph">
-<p>Use case resumes at step 1</p>
+<p>Use case resumes at step 1.</p>
 </div>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>3a. User accidentally enters wrong data when prompted by instruction</p>
+<p>3a. User accidentally enters wrong data when prompted by instruction.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3a1. User follows instruction to return to previous instruction/undo (e.g. type /bk)</p>
+<p>3a1. User follows instruction to return to previous instruction/undo. (e.g. type /bk)</p>
 <div class="paragraph">
-<p>Use case resumes at step 3</p>
+<p>Use case resumes at step 3.</p>
 </div>
 </li>
 </ul>
@@ -2886,21 +2935,21 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to view medical history of a particular patient at a specific date</p>
+<p>User requests to view medical history of a particular patient at a specific date.</p>
 </li>
 <li>
-<p>AddressBook displays medical history of the patient</p>
+<p>AddressBook displays medical history of the patient.</p>
 </li>
 <li>
-<p>User requests to update medical history</p>
+<p>User requests to update medical history.</p>
 </li>
 <li>
-<p>AddressBook updates patient medical history in database using current date</p>
+<p>AddressBook updates patient medical history in database using current date.</p>
 </li>
 <li>
-<p>AddressBook displays success message</p>
+<p>AddressBook displays success message.</p>
 <div class="paragraph">
-<p>Use case ends</p>
+<p>Use case ends.</p>
 </div>
 </li>
 </ol>
@@ -2911,26 +2960,26 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1a. Patient is not in database</p>
+<p>1a. Patient is not in database.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1a1. AddressBook warns user that patient is not in database</p>
+<p>1a1. AddressBook warns user that patient is not in database.</p>
 <div class="paragraph">
-<p>Use case resumes at step 1</p>
+<p>Use case resumes at step 1.</p>
 </div>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>1b. No specified date</p>
+<p>1b. No specified date.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1b1. AddressBook displays most recent medical history</p>
+<p>1b1. AddressBook displays most recent medical history.</p>
 <div class="paragraph">
-<p>Use case resumes at step 3</p>
+<p>Use case resumes at step 3.</p>
 </div>
 </li>
 </ul>
@@ -2945,18 +2994,18 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User adds new doctor to the database</p>
+<p>User adds new doctor to the database.</p>
 </li>
 <li>
-<p>Addressbook shows success message</p>
+<p>Addressbook shows success message.</p>
 </li>
 <li>
-<p>User requests to display all doctors</p>
+<p>User requests to display all doctors.</p>
 </li>
 <li>
 <p>Addressbook displays all doctors’ information and indicates their current availability.</p>
 <div class="paragraph">
-<p>Use case ends</p>
+<p>Use case ends.</p>
 </div>
 </li>
 </ol>
@@ -2967,20 +3016,20 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1a. User does not specify the doctor’s medical speciality</p>
+<p>1a. User does not specify the doctor’s medical speciality.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
 <p>1a1. Addressbook prompts user of insufficient information.</p>
 <div class="paragraph">
-<p>Use case resumes at step 1</p>
+<p>Use case resumes at step 1.</p>
 </div>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>1b. Similar name already exists in the same medical department</p>
+<p>1b. Similar name already exists in the same medical department.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
@@ -3004,9 +3053,9 @@ for <code>RemarkCommandParser</code>.</p>
 <p>User requests to view the appointment of a particular doctor.</p>
 </li>
 <li>
-<p>Addressbook displays appointment of the specified doctor (in ascending chronological order)</p>
+<p>Addressbook displays appointment of the specified doctor. (In ascending chronological order)</p>
 <div class="paragraph">
-<p>Use case ends</p>
+<p>Use case ends.</p>
 </div>
 </li>
 </ol>
@@ -3017,33 +3066,33 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1a. User inputs wrong/invalid doctor’s name or medical department</p>
+<p>1a. User inputs wrong/invalid doctor’s name or medical department.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
 <p>1a1. Addressbook informs user that there is no doctor with the name and/or medical department specified by the user.</p>
 <div class="paragraph">
-<p>Use case ends</p>
+<p>Use case ends.</p>
 </div>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>1b. User does not specify doctor’s name</p>
+<p>1b. User does not specify doctor’s name.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
 <p>1b1. Addressbook informs use that no doctor was specified.</p>
 <div class="paragraph">
-<p>Use case ends</p>
+<p>Use case ends.</p>
 </div>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>1c. User enters a doctor whose name appears in more than 1 medical department</p>
+<p>1c. User enters a doctor whose name appears in more than 1 medical department.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
@@ -3052,7 +3101,7 @@ for <code>RemarkCommandParser</code>.</p>
 <li>
 <p>1c2. Addressbook requests user to re-enter input and indicate the doctor’s medical department as well.</p>
 <div class="paragraph">
-<p>Use case resumes from Step 1</p>
+<p>Use case resumes from Step 1.</p>
 </div>
 </li>
 </ul>
@@ -3067,12 +3116,12 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to find patients by tag</p>
+<p>User requests to find patients by tag.</p>
 </li>
 <li>
-<p>Addressbook lists all users with that tag</p>
+<p>Addressbook lists all users with that tag.</p>
 <div class="paragraph">
-<p>Use case ends</p>
+<p>Use case ends.</p>
 </div>
 </li>
 </ol>
@@ -3089,7 +3138,7 @@ for <code>RemarkCommandParser</code>.</p>
 <li>
 <p>1a1. Addressbook returns an empty list of patients.</p>
 <div class="paragraph">
-<p>Use case resumes at step 1</p>
+<p>Use case resumes at step 1.</p>
 </div>
 </li>
 </ul>
@@ -3102,8 +3151,8 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="sect1">
 <h2 id="non-functional-requirements"><a class="link" href="#non-functional-requirements">Appendix E: Non Functional Requirements</a></h2>
 <div class="sectionbody">
-<div class="olist arabic">
-<ol class="arabic">
+<div class="ulist">
+<ul>
 <li>
 <p>Should work on any <a href="#mainstream-os">mainstream OS</a> as long as it has Java <code>9</code> or higher installed.</p>
 </li>
@@ -3113,7 +3162,7 @@ for <code>RemarkCommandParser</code>.</p>
 <li>
 <p>A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.</p>
 </li>
-</ol>
+</ul>
 </div>
 </div>
 </div>
@@ -3186,7 +3235,7 @@ These instructions only provide a starting point for testers to work on; testers
 </table>
 </div>
 <div class="sect2">
-<h3 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">H.1. Launch and Shutdown</a></h3>
+<h3 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">H.1. Launch and shutdown</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -3194,10 +3243,10 @@ These instructions only provide a starting point for testers to work on; testers
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Download the jar file and copy into an empty folder</p>
+<p>Download the jar file and copy into an empty folder.</p>
 </li>
 <li>
-<p>Double-click the jar file<br>
+<p>Double-click the jar file.<br>
 Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.</p>
 </li>
 </ol>
@@ -3276,4 +3325,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-17 14:15:32 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-17 23:41:14 UTC</div></div></div></body></html>
