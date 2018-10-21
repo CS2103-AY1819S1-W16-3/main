@@ -851,7 +851,7 @@ The key operation implemented is <code>ScheduleCommand#execute</code>.</p>
 <p>Step 1. The user wants to schedule an appointment. User proceeds to fill in the details behind the respective prefixes.</p>
 </div>
 <div class="paragraph">
-<p>For example: <code>schedule 1 d/23.11.2018 st/1300 et/1400 dn/Jack md/Heart pn/John Doe ic/S1234567A</code></p>
+<p>For example: <code>schedule 1 d/23.11.2018 st/1300 et/1400 dn/Jack di/S1234567B pn/John Doe pi/S1234567A</code></p>
 </div>
 <div class="paragraph">
 <p>Step 2. The user executes the <code>ScheduleCommand</code> which calls the <code>ScheduleCommandParser</code>.
@@ -873,6 +873,9 @@ The various checks are displayed below.</p>
 <p>Whether the index of input person is valid.</p>
 </li>
 <li>
+<p>Whether the nric of the doctor is valid.</p>
+</li>
+<li>
 <p>Whether the nric of the patient is valid.</p>
 </li>
 <li>
@@ -884,10 +887,10 @@ The various checks are displayed below.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Step 4. A successful check will give 2 objects, <code>personToEdit</code> and <code>Appointment</code> object.
+<p>Step 4. A successful check gives 2 objects, <code>personToEdit</code> and <code>Appointment</code> object.
 Program creates another <code>Person</code> object called <code>editedPerson</code> that is equal to <code>personToEdit</code>.
 <code>ScheduleCommand</code> then adds <code>Appointment</code> to the <code>appointmentList</code> of <code>editedPerson</code>.
-Lastly, we replace <code>personToEdit</code> with <code>editedPerson</code> in our model.</p>
+Lastly, <code>ScheduleCommand</code> replaces <code>personToEdit</code> with <code>editedPerson</code> in our model.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -895,7 +898,7 @@ Lastly, we replace <code>personToEdit</code> with <code>editedPerson</code> in o
 </div>
 </div>
 <div class="paragraph">
-<p>Step 5. <code>appointmentList</code> will be updated in storage under <code>XmlAdaptedPerson</code>.</p>
+<p>Step 5. <code>XmlAdaptedPerson</code> updates storage of <code>appointmentList</code>.</p>
 </div>
 <div class="paragraph">
 <p>The following sequence diagram shows how the schedule appointment operation works:</p>
@@ -918,7 +921,7 @@ In our current implementation, we split up the various parts of an appointment i
 <p>For example:</p>
 </div>
 <div class="paragraph">
-<p><code>schedule 1 s/23.11.2018,1300,1400,Jack,Heart,John Doe,S1234567A</code></p>
+<p><code>schedule 1 s/23.11.2018,1300,1400,Jack,S1234567B,John Doe,S1234567A</code></p>
 </div>
 <div class="ulist">
 <ul>
@@ -3333,4 +3336,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-21 10:41:53 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-21 11:16:28 UTC</div></div></div></body></html>

@@ -527,7 +527,7 @@ Displays the list of appointments of the person in the person card list.</p>
 <h3 id="scheduling-medical-appointments-code-schedule-code"><a class="link" href="#scheduling-medical-appointments-code-schedule-code">3.13. Scheduling medical appointments : <code>schedule</code></a></h3>
 <div class="paragraph">
 <p>Schedules a patient/doctor for a medical appointment at a specific date and time.<br>
-Format: <code>schedule INDEX d/DATE st/START_TIME et/END_TIME dn/DOCTOR_NAME md/DOCTOR_MEDICAL_DEPARTMENT pn/PATIENT_NAME ic/PATIENT_NRIC</code></p>
+Format: <code>schedule INDEX d/DATE st/START_TIME et/END_TIME dn/DOCTOR_NAME di/DOCTOR_NRIC pn/PATIENT_NAME pi/PATIENT_NRIC</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -543,7 +543,7 @@ Format: <code>schedule INDEX d/DATE st/START_TIME et/END_TIME dn/DOCTOR_NAME md/
 <p>Doctor name is the doctor&#8217;s full name e.g. <code>John Doe</code></p>
 </li>
 <li>
-<p>Doctor department is the doctor&#8217;s medical department e.g. <code>Heart</code></p>
+<p>Doctor nric is the doctor&#8217;s nric e.g. <code>S1234567B</code></p>
 </li>
 <li>
 <p>Patient name is the patient&#8217;s full name e.g. <code>Kim Tan</code></p>
@@ -561,8 +561,8 @@ Format: <code>schedule INDEX d/DATE st/START_TIME et/END_TIME dn/DOCTOR_NAME md/
 <div class="ulist">
 <ul>
 <li>
-<p><code>schedule 1 d/23.11.2018 st/1300 et/1400 dn/Jack md/Heart pn/John Doe ic/S1234567A</code><br>
-Schedules <code>John Doe</code> for an appointment with doctor <code>Jack</code> from the <code>Heart</code> department on the 23nd of November 2018 from
+<p><code>schedule 1 d/23.11.2018 st/1300 et/1400 dn/Jack di/S1234567B pn/John Doe pi/S1234567A</code><br>
+Schedules <code>John Doe</code> for an appointment with doctor <code>Jack</code> on the 23nd of November 2018 from
  1pm to 2pm.</p>
 </li>
 </ul>
@@ -766,7 +766,7 @@ e.g.<code>select 2</code></p>
 <p><strong>Display Medical Appointments</strong> : <code>display INDEX</code></p>
 </li>
 <li>
-<p><strong>Schedule Medical Appointments</strong> : <code>schedule INDEX d/DATE st/START_TIME et/END_TIME dn/DOCTOR_NAME md/DOCTOR_MEDICAL_DEPARTMENT pn/PATIENT_NAME ic/PATIENT_NRIC</code><br>
+<p><strong>Schedule Medical Appointments</strong> : <code>schedule INDEX d/DATE st/START_TIME et/END_TIME dn/DOCTOR_NAME pi/DOCTOR_NRIC pn/PATIENT_NAME pi/PATIENT_NRIC</code><br>
 e.g. <code>schedule 1 d/23.11.2018 st/1300 et/1400 dn/Jack md/Heart pn/John Doe ic/S1234567A</code></p>
 </li>
 <li>
@@ -779,4 +779,4 @@ e.g. `update 2 d/22.11.2018 dg/flu tr/tamiflu</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-21 10:41:53 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-21 11:16:28 UTC</div></div></div></body></html>
