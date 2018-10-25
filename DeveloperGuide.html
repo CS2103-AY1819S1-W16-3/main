@@ -1321,10 +1321,10 @@ If no comment is given the default comment "-" is used.
 <p>If it was invalid, an exception message will be thrown and the <code>MedicalRecord</code> will not be added into the patient&#8217;s medical record library.</p>
 </div>
 <div class="paragraph">
-<p>Step 4. If the checks are successful, all the attributes of all the attributes of the specified person will first be copied, including the existing medical record library of the specified <code>Patient</code>.</p>
+<p>Step 4. If the checks are successful, all the attributes of the specified person will first be copied, including the existing medical record library of the specified <code>Patient</code>.</p>
 </div>
 <div class="paragraph">
-<p>Step 5. The new <code>MedicalRecord</code> will be added into the copied medical record library. The medical record library is an <code>ArrayList</code> of <code>MedicalRecord</code>. The new <code>MedicalRecord</code> is added to the back of the list and the pointer to the latest <code>MedicalRecord</code> is updated.</p>
+<p>Step 5. The new <code>MedicalRecord</code> will be added into the copied medical record library which is an <code>ArrayList</code> of <code>MedicalRecord</code>. The new <code>MedicalRecord</code> is added to the front of the list and since the pointer for the latest medical record is always pointing to the first element, the latest medical record will be automatically updated.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1360,7 +1360,7 @@ If no comment is given the default comment "-" is used.
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Easy to access the most recent record by retrieving the last <code>MedicalRecord</code> in the ArrayList.</p>
+<p>Pros: Easy to access the most recent record by retrieving the first <code>MedicalRecord</code> in the ArrayList.</p>
 </li>
 <li>
 <p>Cons: Takes longer to retrieve the latest <code>MedicalRecord</code> before a specified date as each <code>MedicalRecord</code> has to be checked sequentially until the last <code>MedicalRecord</code> before the specified date is found.</p>
@@ -3336,4 +3336,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-25 05:29:33 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-25 11:06:03 UTC</div></div></div></body></html>
