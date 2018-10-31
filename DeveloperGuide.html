@@ -1436,7 +1436,7 @@ The key operation implemented is <code>FindCommand#execute</code>.</p>
 <p>Given below is an example usage scenario and how the find command mechanism behaves at each step.</p>
 </div>
 <div class="paragraph">
-<p>Step 1. The user wants to find all <code>Person</code> with <code>Name</code> Alex by executing <code>find Alex</code>.</p>
+<p>Step 1. The user wants to find all <code>Person</code> with <code>Name</code> Alex by executing <code>find n/Alex</code>.</p>
 </div>
 <div class="paragraph">
 <p>Step 2. <code>FindCommandParser</code> will parse the input and verify that is it valid before returning a <code>PersonContainsKeywordsPredicate</code>, which is passed into <code>FindCommand</code>.</p>
@@ -1475,27 +1475,27 @@ If there is no input after the "find" keyword, <code>IntuitiveEntryCommand</code
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Allow users to perform global search using any keywords.</p>
+<p><strong>Alternative 1 (current choice):</strong> Allow users to perform searches by specifying certain keywords of interest. (For example: <code>Name</code> : <code>n/</code>, <code>Phone</code>: <code>p/</code>)</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Allows for a powerful search function by allowing the user to search through all <code>Person</code> attributes.</p>
+<p>Pros: Allows for a powerful and precise search function by providing the user the option to specify exactly which <code>Person</code> attributes are of interest.</p>
 </li>
 <li>
-<p>Cons: Users will not be able to filter the unwanted results.</p>
+<p>Cons: It may be difficult for newer users to remember the shortcuts that represent the attributes of interest.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong> Allow the use of tags to specify certain fields if needed.</p>
+<p><strong>Alternative 2:</strong> Generalise the search function by searching through all fields and providing the most relevant information through predictive search.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Allows for a more precise search.</p>
+<p>Pros: An extremely powerful search function that is both simple to use and accurate.</p>
 </li>
 <li>
-<p>Cons: Increased inconvenience of having to tag search fields.</p>
+<p>Cons: It is incredibly difficult to implement such an algorithm without the use of machine-learning algorithms or an internet connection.</p>
 </li>
 </ul>
 </div>
@@ -3373,4 +3373,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-31 15:16:37 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-31 17:00:22 UTC</div></div></div></body></html>
