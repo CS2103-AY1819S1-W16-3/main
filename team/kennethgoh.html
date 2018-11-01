@@ -1,0 +1,414 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Kenneth Goh Jun Teck - Project Portfolio</title><link rel="stylesheet" href="../stylesheets/gh-pages.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="../images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level3">AB-3</a></li><li class="nav-item"><a class="nav-link active" href="../index.html">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">AddressBook-Level4</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="../LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level4"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Kenneth Goh Jun Teck - Project Portfolio</h1></div><div id="content"><div class="sect1">
+<h2 id="project-one-life"><a class="link" href="#project-one-life">1. PROJECT: One Life</a></h2>
+<div class="sectionbody">
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="overview"><a class="link" href="#overview">2. Overview</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>One Life is a desktop hospital management application used for efficient storing and retrieving of data related to
+the doctors and patients (e.g. personal particulars, medical records, appointments, etc). It makes use of a Command
+Line Interface (CLI), and it uses a Graphical User Interface (GUI) created via JavaFX. The program is written in Java,
+and has about 10 kLoC.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">3. Summary of contributions</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Major enhancement</strong>: added <strong>the ability to display each doctor&#8217;s profile and their current availability status.</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: This allows the user to view the details of each doctor (e.g. phone number, medical specialization,
+etc), as well as the current availability status of each doctor.</p>
+</li>
+<li>
+<p>Justification: This feature improves the product significantly because a user can easily retrieve the data of each
+doctor, and more importantly the current availability status of each doctor. Since this is a hospital management
+application that will be used by nurses or medical administrative staff, in cases of a medical emergency or when a
+doctor is required, the user can easily know which doctors are available at the moment to help/address the medical
+situation.</p>
+</li>
+<li>
+<p>Highlights: This enhancement improves this application&#8217;s ability to serve as a hospital management application as
+it provides real time update of the availability status of each doctor. The implementation too was challenging as
+ it required addition of new event handlers to facilitate propagation of information stored in the backend, to the
+ frontend i.e. GUI where the information is processed and displayed to the user.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Minor enhancement</strong>: changed the existing <code>add</code> and <code>list</code> commands such that it facilitates adding and viewing of
+doctors and patients separately (refer to <em>4.Contributions to the User Guide</em> for more information).</p>
+</li>
+<li>
+<p><strong>Code contributed</strong>: [<a href="https://github.com">Functional code</a>] [<a href="https://github.com">Test code</a>] <em>{give links to collated code files}</em></p>
+</li>
+<li>
+<p><strong>Other contributions</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Project management:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Managed releases <code>v1.1</code> - <code>v1.4</code> (4 releases) on GitHub</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Enhancements to existing features:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Updated the GUI layout (Pull requests <a href="https://github.com/CS2103-AY1819S1-W16-3/main/pull/54">#54</a>,
+<a href="https://github.com/CS2103-AY1819S1-W16-3/main/pull/116">#116</a>,
+<a href="https://github.com/CS2103-AY1819S1-W16-3/main/pull/124">#124</a>)</p>
+</li>
+<li>
+<p>Wrote additional tests for existing features to increase coverage (Pull requests
+<a href="https://github.com/CS2103-AY1819S1-W16-3/main/pull/116">#116</a>,
+<a href="https://github.com/CS2103-AY1819S1-W16-3/main/pull/129">#129</a>)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Documentation:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Did cosmetic tweaks to existing contents of the User Guide: <a href="https://github.com">#14</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Community:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Reviewed Pull Requests (PRs) of other team members (with non-trivial review comments):
+<a href="https://github.com/CS2103-AY1819S1-W16-3/main/pull/53">#53</a>, <a href="https://github.com/CS2103-AY1819S1-W16-3/main/pull/71">#71</a>,
+<a href="https://github.com/CS2103-AY1819S1-W16-3/main/pull/119">#119</a></p>
+</li>
+<li>
+<p>Reported bugs and suggestions for other members in the team (Pull Requests:
+<a href="https://github.com/CS2103-AY1819S1-W16-3/main/pull/119">#119</a>)</p>
+</li>
+<li>
+<p>Updated team member&#8217;s code to remove errors/bugs detected when running tests against the program (Pull requests
+<a href="https://github.com/CS2103-AY1819S1-W16-3/main/pull/34">#34</a>,
+<a href="https://github.com/CS2103-AY1819S1-W16-3/main/pull/76">#76</a>)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-user-guide"><a class="link" href="#contributions-to-the-user-guide">4. Contributions to the User Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users.</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="adding-a-person-code-add-code"><a class="link" href="#adding-a-person-code-add-code">4.1. Adding a person: <code>add</code></a></h3>
+<div class="paragraph">
+<p>Adds a patient or doctor to the database.<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Adding a patient</strong><br>
+Format: <code>add r/patient n/NAME ic/NRIC p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Adding a doctor</strong><br>
+Format: <code>add r/doctor n/NAME ic/NRIC p/PHONE_NUMBER e/EMAIL a/ADDRESS md/MEDICAL_DEPARTMENT [t/TAG]&#8230;&#8203;</code></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+A person can have any number of tags (including 0)
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add r/patient n/John Doe Xiao Huang ic/S1234567A p/98765432 e/johnd@example.com a/John street, block 123, #01-01
+t/Hokkien</code><br>
+(Adds a new patient, refer to Figure 1 and 2 below for illustrations)</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/addBefore.png" alt="addBefore" width="600">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/addAfter.png" alt="addAfter" width="600">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add r/doctor n/Betsy Crowe ic/S8234567F e/betsycrowe@example.com a/Newgate Estates p/1234567 md/dentistry</code><br>
+(Adds a new doctor, refer to Figure 3 and 4 below for illustrations)</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/addDocBefore.png" alt="addDocBefore" width="600">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/addDocAfter.png" alt="addDocAfter" width="600">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+When adding a new doctor you have to to specify his/her medical department.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="listing-all-relevant-personnel-code-list-code"><a class="link" href="#listing-all-relevant-personnel-code-list-code">4.2. Listing all relevant personnel : <code>list</code></a></h3>
+<div class="paragraph">
+<p>Shows a list of all of the people in the database.<br>
+Format: <code>list [r/ROLE]</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list</code><br>
+Lists all doctors and patients in the database. (Refer to Figure 5 for illustration)</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/listAll.png" alt="listAll" width="600">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list r/doctor</code><br>
+Lists all the doctors in the database. (Refer to Figure 6 for illustration)</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/listDoc.png" alt="listDoc" width="600">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list r/patient</code><br>
+Lists all patients in the database. (Refer to Figure 7 for illustration)</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/listPatient.png" alt="listPatient" width="600">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">5. Contributions to the Developer Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project.</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="display-doctor-s-current-availability-feature"><a class="link" href="#display-doctor-s-current-availability-feature">5.1. Display doctor&#8217;s current availability feature</a></h3>
+<div class="sect3">
+<h4 id="current-implementation"><a class="link" href="#current-implementation">5.1.1. Current implementation</a></h4>
+<div class="paragraph">
+<p>The display of each doctor&#8217;s current availability is facilitated by <code>PersonProfilePage</code>, <code>Doctor</code>, <code>AppointmentManager</code>.
+Given below is an example usage scenario and how the information is generated and propagated to be displayed in the
+<code>PersonProfilePage</code> at the final stage.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user launches the application for the first time. The <code>MainWindow</code> will be initialized.</p>
+</div>
+<div class="paragraph">
+<p>Step 2. The user then selects one of the doctors to view his/her profile via the <code>PersonProfilePage</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 3. This then loads the <code>PersonProfilePage</code> that displays all of the person&#8217;s particulars, be it a doctor or
+patient. In the event that this <code>PersonProfilePage</code> belongs to a doctor, it calls the method
+<code>Doctor#currentAvailStatus</code> to retrieve information on the doctor&#8217;s current availability.</p>
+</div>
+<div class="paragraph">
+<p>Step 4. Next, upon calling the method <code>Doctor#currentAvailStatus</code>, a helper method in <code>AppointmentManager</code>, called
+<code>AppointmentManager#isAnyAppointmentOngoing</code> executes.</p>
+</div>
+<div class="paragraph">
+<p>Step 5. <code>AppointmentManager</code> retrieves the current locale date and time from our <code>Date</code> and <code>Time</code> class and compare the
+current time with all the scheduled appointments that the doctor has, and determines if the doctor is currently
+available.</p>
+</div>
+<div class="paragraph">
+<p>Step 6. The status information generated in <code>AppointmentManager</code> is propagated back up to the
+<code>PersonProfilePage</code> which then sets a badge (available/busy) to reflect the availability status of that doctor.</p>
+</div>
+<div class="paragraph">
+<p>Step 7. As long as the user remains on the same <code>PersonProfilePage</code>, this method continues to run in the background,
+providing real time update of the doctor&#8217;s availability at that point in time.</p>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user launches the application:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DisplayDoctorAvailabilitySequenceDiagram.png" alt="DisplayDoctorAvailabilitySequenceDiagram" width="800">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">5.1.2. Design considerations</a></h4>
+<div class="paragraph">
+<p>This section describes the pros and cons of the current and other alternate implementations of the doctor&#8217;s availability feature.</p>
+</div>
+<div class="sect4">
+<h5 id="aspect-how-to-display-each-doctor-s-availability"><a class="link" href="#aspect-how-to-display-each-doctor-s-availability">Aspect: How to display each doctor&#8217;s availability</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> A badge in each doctor&#8217;s <code>PersonProfilePage</code> display that shows his/her current
+availability.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Convenient for the user to refer to since the badge is always on the display.</p>
+</li>
+<li>
+<p>Cons: Limited to only checking and viewing the availability status of one doctor at a time, thus will not be able
+to get a consolidated list/view of all doctors who are available or busy at the moment.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> A separate command that the user can call upon to look up the current availability of all doctors.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Able to call this method repeatedly/when needed and will be provided with the latest information.</p>
+</li>
+<li>
+<p>Cons: Need to have a separate command dedicated to this feature which may not be necessary and not as convenient as
+compared to having a badge that is on the display at all times. Also this adds on to the list of commands that the
+user has to get familiar with.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-how-to-update-the-status-of-each-doctor-s-availability"><a class="link" href="#aspect-how-to-update-the-status-of-each-doctor-s-availability">Aspect: How to update the status of each doctor&#8217;s availability</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> A function that will refresh the badge every few seconds.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Provides accurate information and real time update on the doctor&#8217;s availability.</p>
+</li>
+<li>
+<p>Cons: Affects the performance of the application due to this function continuously running in the background.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Updates the status/badge only on launch of application and only when there is a
+change in information stored in the database.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Implementation is easy.</p>
+</li>
+<li>
+<p>Cons: Information is outdated as it does not truly reflect the doctor&#8217;s current availability.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="project-powerpointlabs"><a class="link" href="#project-powerpointlabs">6. PROJECT: PowerPointLabs</a></h2>
+<div class="sectionbody">
+<hr>
+<div class="paragraph">
+<p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-01 01:47:21 UTC</div></div></div></body></html>
