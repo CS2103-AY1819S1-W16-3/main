@@ -351,20 +351,53 @@ will be displayed. e.g. <code>find n/Gary a/Kang</code> will display <code>Gary 
 </div>
 </div>
 </div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Search keywords must be entered behind a <code>Prefix</code> whenever a <code>Prefix</code> is used in the input. A command like <code>find n/[BLANK]</code> is not a valid input.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>Examples:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>find Goh</code><br>
-Displays <code>Gary Goh Yipeng</code> and <code>Kenneth Goh Jun Teck</code>.</p>
+<p><code>find t/friends</code><br>
+Displays all <code>Person</code> with <code>Tag</code>: <code>friends</code>.</p>
 </li>
 <li>
-<p><code>find n/Tan a/Kang</code><br>
-Displays <code>Nelvin Tan</code> and all <code>Person</code> whose <code>Address</code> is <code>Choa Chu Kang</code>.</p>
+<p><code>find t/friends r/doctor</code><br>
+Displays all <code>Person</code> whom have a <code>Tag</code> labelled <code>friends</code> and whose <code>Role</code> is <code>Doctor</code>.</p>
+</li>
+<li>
+<p>The images below illustrate the above-mentioned examples.</p>
 </li>
 </ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/FindCommandStep1.png" alt="FindCommandStep1" width="600">
+</div>
+<div class="title">Figure 1. Find command example</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/FindCommandStep2.png" alt="FindCommandStep2" width="600">
+</div>
+<div class="title">Figure 2. More specific find command example</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/FindCommandError.png" alt="FindCommandError" width="600">
+</div>
+<div class="title">Figure 3. Error in input when trying to initialise find command</div>
 </div>
 </div>
 <div class="sect2">
@@ -596,13 +629,13 @@ Selects the 2nd person in the database and display the appointments.</p>
 <div class="content">
 <img src="images/ListCommand.png" alt="ListCommand" width="600">
 </div>
-<div class="title">Figure 1. Display list diagram</div>
+<div class="title">Figure 4. Display list diagram</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/DisplayAppointment.png" alt="DisplayAppointment" width="600">
 </div>
-<div class="title">Figure 2. Display appointment diagram</div>
+<div class="title">Figure 5. Display appointment diagram</div>
 </div>
 <div class="ulist">
 <ul>
@@ -665,7 +698,7 @@ Schedules <code>John Doe</code> for an appointment with doctor <code>Jack</code>
 <div class="content">
 <img src="images/ScheduleSuccess.png" alt="ScheduleSuccess" width="600">
 </div>
-<div class="title">Figure 3. Successful schedule diagram</div>
+<div class="title">Figure 6. Successful schedule diagram</div>
 </div>
 <div class="ulist">
 <ul>
@@ -678,7 +711,7 @@ Schedules <code>John Doe</code> for an appointment with doctor <code>Jack</code>
 <div class="content">
 <img src="images/ScheduleFailure.png" alt="ScheduleFailure" width="600">
 </div>
-<div class="title">Figure 4. Unsuccessful schedule diagram</div>
+<div class="title">Figure 7. Unsuccessful schedule diagram</div>
 </div>
 </div>
 <div class="sect2">
@@ -716,7 +749,7 @@ Displays the medical records of the first person on the displayed list as shown 
 <div class="content">
 <img src="images/DisplayMedicalRecords.png" alt="DisplayMedicalRecords" width="600">
 </div>
-<div class="title">Figure 5. Displaying medical records</div>
+<div class="title">Figure 8. Displaying medical records</div>
 </div>
 </div>
 <div class="sect2">
@@ -769,7 +802,7 @@ Updates the medical records of the patient at index 1 with the given date, diagn
 <div class="content">
 <img src="images/UpdateCommandWithoutCommentSuccess.png" alt="UpdateCommandWithoutCommentSuccess" width="600">
 </div>
-<div class="title">Figure 6. Updating records without comments</div>
+<div class="title">Figure 9. Updating records without comments</div>
 </div>
 <div class="ulist">
 <ul>
@@ -783,7 +816,7 @@ Updates the medical records of the patient at index 1 with the given date, diagn
 <div class="content">
 <img src="images/UpdateCommandWithCommentSuccess.png" alt="UpdateCommandWithCommentSuccess" width="600">
 </div>
-<div class="title">Figure 7. Updating records with comments</div>
+<div class="title">Figure 10. Updating records with comments</div>
 </div>
 </div>
 <div class="sect2">
@@ -856,13 +889,13 @@ Press <code>ESC</code> to cancel the currently executing command.
 <div class="content">
 <img src="images/IntuitiveCommandPromptStartUserScreenshot.png" alt="IntuitiveCommandPromptStartUserScreenshot" width="600">
 </div>
-<div class="title">Figure 8. Triggering the intuitive command prompt</div>
+<div class="title">Figure 11. Triggering the intuitive command prompt</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/IntuitiveNextInputUserScreenshot.png" alt="IntuitiveNextInputUserScreenshot" width="600">
 </div>
-<div class="title">Figure 9. Entering an input</div>
+<div class="title">Figure 12. Entering an input</div>
 </div>
 </div>
 <div class="sect2">
@@ -947,4 +980,4 @@ e.g. `update 2 d/22.11.2018 dg/flu tr/tamiflu</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-01 13:05:57 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-01 13:32:01 UTC</div></div></div></body></html>
