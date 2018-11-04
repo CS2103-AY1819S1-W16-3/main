@@ -153,26 +153,72 @@ input - no prefixes are required.</p>
 </td>
 <td class="content">
 Type <code>/bk</code> to re-enter previous field.<br>
-Type <code>//</code> if the field is to be left blank.<br>
+Type <code>//</code> if the field is to be left blank (only available for optional fields).<br>
 Press <code>ESC</code> to cancel the currently executing command.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Example of the intuitive add command prompting:</p>
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add</code><br>
+Starts an intuitive <code>add</code> command.
+This triggers the intuitive command prompt, and One Life will begin to guide you through the command with instructions, as shown in the figure below:</p>
+</li>
+</ul>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/IntuitiveCommandPromptStartUserScreenshot.png" alt="IntuitiveCommandPromptStartUserScreenshot" width="600">
+<img src="../images/StartIntuitiveCommand.png" alt="StartIntuitiveCommand" width="600">
 </div>
-<div class="title">Figure 1. Triggering the intuitive command prompt</div>
+<div class="title">Figure 1. Starting the intuitive <code>add</code> command</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>patient</code><br>
+Specifies that a patient is to be added to the intuitive command prompt. The intuitive command prompt then asks for the next input,
+in this case the patient&#8217;s name, as shown in the figure below:</p>
+</li>
+</ul>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/IntuitiveNextInputUserScreenshot.png" alt="IntuitiveNextInputUserScreenshot" width="600">
+<img src="../images/NextIntuitiveInput.png" alt="NextIntuitiveInput" width="600">
 </div>
 <div class="title">Figure 2. Entering an input</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>/bk</code><br>
+Goes back to the previous field. A new input can be reentered for this field, as shown in the figure below:</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/BackIntuitive.png" alt="BackIntuitive" width="600">
+</div>
+<div class="title">Figure 3. Going back to the previous field</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>ESC</code><br>
+Cancels the intuitive command. This clears the command box and exits the intuitive command, allowing for normal operation again, as shown in the figure below:</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ExitIntuitive.png" alt="ExitIntuitive" width="600">
+</div>
+<div class="title">Figure 4. Cancelling an intuitive command</div>
 </div>
 </div>
 </div>
@@ -290,13 +336,13 @@ to the <code>LogicManager</code> to be displayed to the user.</p>
 <div class="content">
 <img src="../images/IntuitiveCommandWordSequenceDiagram.png" alt="IntuitiveCommandWordSequenceDiagram" width="800">
 </div>
-<div class="title">Figure 3. High level sequence diagram detailing interactions between <code>Logic</code> and <code>Model</code></div>
+<div class="title">Figure 5. High level sequence diagram detailing interactions between <code>Logic</code> and <code>Model</code></div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/ArgumentManagerStartSequenceDiagram.png" alt="ArgumentManagerStartSequenceDiagram" width="800">
 </div>
-<div class="title">Figure 4. Internal sequence diagram showing how <code>IntuitivePromptManager</code> interacts with <code>argumentManager</code></div>
+<div class="title">Figure 6. Internal sequence diagram showing how <code>IntuitivePromptManager</code> interacts with <code>argumentManager</code></div>
 </div>
 </div>
 <div class="sect4">
@@ -322,7 +368,7 @@ is incremented accordingly:</p>
 <div class="content">
 <img src="../images/IntuitiveInternalDiagram.png" alt="IntuitiveInternalDiagram" width="800">
 </div>
-<div class="title">Figure 5. How the <code>arguments</code> list in <code>IntuitivePromptManager</code> records arguments with <code>currentArgIndex</code></div>
+<div class="title">Figure 7. How the <code>arguments</code> list in <code>IntuitivePromptManager</code> records arguments with <code>currentArgIndex</code></div>
 </div>
 <div class="paragraph">
 <p>Step 5-6. These steps are the same as that of the above section (Start of Intuitive Command)</p>
@@ -334,7 +380,7 @@ is incremented accordingly:</p>
 <p>Once all fields have been filled by the user, the system will exit intuitive mode as follows:</p>
 </div>
 <div class="paragraph">
-<p>Step 1-3. These steps are the same as those of the above section (Middle of Intuitive Command). Take note that this is the last field that the user has to fill.</p>
+<p>Step 1-3. These steps are the same as those of the above section (Start of Intuitive Command). Take note that this is the last field that the user has to fill.</p>
 </div>
 <div class="paragraph">
 <p>Step 4. <code>Model</code> calls the <code>IntuitivePromptManager</code> to store the user&#8217;s input as an argument. The input is
@@ -363,7 +409,7 @@ the same as if the user entered the non-intuitive version of the command.</p>
 <div class="content">
 <img src="../images/IntuitiveEndSequenceDiagram.png" alt="IntuitiveEndSequenceDiagram" width="800">
 </div>
-<div class="title">Figure 6. High level sequence diagram showing how arguments are retrieved at the end of the intuitive command</div>
+<div class="title">Figure 8. High level sequence diagram showing how arguments are retrieved at the end of the intuitive command</div>
 </div>
 </div>
 <div class="sect4">
@@ -398,13 +444,13 @@ as accordingly.</p>
 <div class="content">
 <img src="../images/IntuitiveCommandPromptBackSequenceDiagram.png" alt="IntuitiveCommandPromptBackSequenceDiagram" width="800">
 </div>
-<div class="title">Figure 7. High level sequence diagram showing going back ability</div>
+<div class="title">Figure 9. High level sequence diagram showing going back ability</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/ArgumentManagerBackSequenceDiagram.png" alt="ArgumentManagerBackSequenceDiagram" width="800">
 </div>
-<div class="title">Figure 8. Internal sequence digram showing going back ability</div>
+<div class="title">Figure 10. Internal sequence digram showing going back ability</div>
 </div>
 </div>
 </div>
@@ -444,4 +490,4 @@ as accordingly.</p>
 <p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-04 11:48:25 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-04 13:20:19 UTC</div></div></div></body></html>
