@@ -60,6 +60,16 @@ It is written in Java, and has about 10 kLoC.</p>
 </div>
 </li>
 <li>
+<p>Enhancements to existing features:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Fixed bugs arising from modification of the GUI. (Pull request <a href="https://github.com/CS2103-AY1819S1-W16-3/main/pull/183">#183</a>)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
 <p>Documentation:</p>
 <div class="ulist">
 <ul>
@@ -77,8 +87,11 @@ It is written in Java, and has about 10 kLoC.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Reviewed pull requests (with non-trivial review comments):
+<p>Reviewed pull requests (with non-trivial review comments).
 (Pull request <a href="https://github.com/CS2103-AY1819S1-W16-3/main/pull/128">#128</a>)</p>
+</li>
+<li>
+<p>Reviewed and addressed raised issues. (Issue <a href="https://github.com/CS2103-AY1819S1-W16-3/main/issues/170">#170</a>, <a href="https://github.com/CS2103-AY1819S1-W16-3/main/issues/174">#174</a>)</p>
 </li>
 </ul>
 </div>
@@ -106,8 +119,7 @@ It is written in Java, and has about 10 kLoC.</p>
 <div class="sect2">
 <h3 id="locating-person-by-any-attribute-code-find-code"><a class="link" href="#locating-person-by-any-attribute-code-find-code">3.1. Locating person by any attribute: <code>find</code></a></h3>
 <div class="paragraph">
-<p>Finds people with the keywords specified by the user within specific fields
-(i.e. <code>Name</code>, <code>Phone</code>, <code>Address</code>, <code>Tag</code> etc).<br>
+<p>There are two types of Find Commands: Global Find and Specific Find, which can be used in conjunction with one another.<br>
 Format: <code>find [PREFIX] KEYWORDS [NEXT_PREFIX] [MORE_KEYWORDS]</code></p>
 </div>
 <div class="admonitionblock note">
@@ -117,35 +129,103 @@ Format: <code>find [PREFIX] KEYWORDS [NEXT_PREFIX] [MORE_KEYWORDS]</code></p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If no <code>Prefix</code> is given, the search will be performed on all attributes. This means that the user can perform both
-a global search and a specific search by entering keywords directly after <code>find</code> but before the first <code>Prefix</code>.
+In order for a <code>Person</code> to show up on a <code>find</code>, the <code>Person</code> must match all attributes in the input.<br>
+(i.e. <code>find n/alex r/doctor</code> will show all <code>Doctor</code> named <code>Alex</code>. If another <code>Alex</code> is not a <code>Doctor</code>, he will not be shown.)
 </td>
 </tr>
 </table>
 </div>
-<div class="sidebarblock">
-<div class="content">
+<div class="sect3">
+<h4 id="global-find"><a class="link" href="#global-find">3.1.1. Global Find</a></h4>
+<div class="paragraph">
+<p>Global Find is a search on all attributes of all <code>Person</code> in the database.<br></p>
+</div>
+<div class="paragraph">
+<p>It is performed when:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>The search is case-insensitive. e.g. <code>nelvin</code> will match <code>Nelvin</code>.</p>
+<p>no <code>Prefix</code> is included in the input.</p>
 </li>
 <li>
-<p>When performing a global search, keywords are seperated by whitespace and any <code>Person</code> whose attributes contain any
-keyword will be returned. e.g. <code>find kang ken</code> will display <code>Kang Tze</code>, <code>Kenneth</code> and all <code>Person</code> with <code>Address</code> <code>Choa Chu Kang</code>.</p>
-</li>
-<li>
-<p>When performing specific search, <code>Person</code> must contain the searched keywords exactly in order to be displayed.
-e.g <code>find n/Gary Goh</code> will display <code>Gary Goh Yipeng</code> but not <code>Kenneth Goh Jun Teck</code>.</p>
-</li>
-<li>
-<p>When performing the <code>find</code> command with more than one search field, all <code>Person</code> matching at least one search field
-will be displayed. e.g. <code>find n/Gary a/Kang</code> will display <code>Gary Goh Yipeng</code> and all <code>Person</code> whose <code>Address</code> is
-<code>Choa Chu Kang</code>.</p>
+<p>keywords are included before the first valid <code>Prefix</code>.</p>
 </li>
 </ul>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+When performing Global Find with more than one separate keyword, users can simply separate them using a space. The Find Command will interpret the input as separate words to be searched globally.
+</td>
+</tr>
+</table>
 </div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>find kang</code><br>
+Displays all <code>Person</code> with <code>kang</code> in any of their attributes.</p>
+</li>
+<li>
+<p><code>find kang r/doctor</code><br>
+Displays all <code>Person</code> with <code>kang</code> in any of their attributes and whom is a <code>Doctor</code>.</p>
+</li>
+<li>
+<p><code>find alex doctor</code><br>
+Displays all <code>Person</code> with <code>alex</code> or <code>doctor</code> in any of their attributes.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The images below illustrate the utilisation of Global Find:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/FindCommandUserGuideGlobal1.png" alt="FindCommandUserGuideGlobal1" width="600">
+</div>
+<div class="title">Figure 1. Global Find Command</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/FindCommandUserGuideGlobal2.png" alt="FindCommandUserGuideGlobal2" width="600">
+</div>
+<div class="title">Figure 2. Global Find Command with Specified Find Command</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/FindCommandUserGuideGlobal3.png" alt="FindCommandUserGuideGlobal3" width="600">
+</div>
+<div class="title">Figure 3. Global Find Command with Multiple Keywords</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="specific-find"><a class="link" href="#specific-find">3.1.2. Specific Find</a></h4>
+<div class="paragraph">
+<p>Specific Find is a search on attributes specified by the user. (i.e. <code>Name</code>, <code>Phone</code> etc).</p>
+</div>
+<div class="paragraph">
+<p>It is performed when a <code>Prefix</code> is specified in the input field.<br>
+Below is a list of all searchable attributes and their corresponding <code>Prefix</code>:</p>
+</div>
+<div class="paragraph">
+<p>| Attribute          | Prefix |
+|--------------------|--------|
+| Name               | n/     |
+| NRIC               | ic/    |
+| Phone              | p/     |
+| Address            | a/     |
+| Role               | r/     |
+| Tag                | t/     |
+| Medical Department | md/    |
+| Medical Record     | mr/    |</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -166,34 +246,142 @@ Search keywords must be entered behind a <code>Prefix</code> whenever a <code>Pr
 <ul>
 <li>
 <p><code>find t/friends</code><br>
-Displays all <code>Person</code> with <code>Tag</code>: <code>friends</code>.</p>
+Displays all <code>Person</code> with the <code>Tag</code> labelled <code>friends</code>.</p>
 </li>
 <li>
 <p><code>find t/friends r/doctor</code><br>
-Displays all <code>Person</code> whom have a <code>Tag</code> labelled <code>friends</code> and whose <code>Role</code> is <code>Doctor</code>.</p>
+Displays all <code>Person</code> with the <code>Tag</code> labelled <code>friends</code> and whose <code>Role</code> is <code>Doctor</code>.</p>
 </li>
 <li>
-<p>The images below illustrate the above-mentioned examples.</p>
+<p>The images below illustrate the utilisation of Specific Find.</p>
 </li>
 </ul>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/FindCommandStep1.png" alt="FindCommandStep1" width="600">
+<img src="../images/FindCommandUserGuideSpecific1.png" alt="FindCommandUserGuideSpecific1" width="600">
 </div>
-<div class="title">Figure 1. Find command example</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/FindCommandStep2.png" alt="FindCommandStep2" width="600">
-</div>
-<div class="title">Figure 2. More specific find command example</div>
+<div class="title">Figure 4. Specific Find Command</div>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/FindCommandError.png" alt="FindCommandError" width="600">
+<img src="../images/FindCommandUserGuideSpecific2.png" alt="FindCommandUserGuideSpecific2" width="600">
 </div>
-<div class="title">Figure 3. Error in input when trying to initialise find command</div>
+<div class="title">Figure 5. Specific Find Command with Additional Prefixes</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/FindCommandUserGuideError.png" alt="FindCommandUserGuideError" width="600">
+</div>
+<div class="title">Figure 6. Invalid Input for Specific Find Command</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Find is case-insensitive. e.g. <code>nelvin</code> will match <code>Nelvin</code>.</p>
+</li>
+<li>
+<p>In Global Find, <code>Person</code> containing any of the given keywords in any of his/her attributes will be displayed.
+e.g. <code>find doctor nelvin</code> will cause all <code>Doctor</code> and <code>Nelvin Tan</code> to be displayed.</p>
+</li>
+<li>
+<p>In Specific Find, the specified attribute of the <code>Person</code> must contain the searched keyword to be displayed.
+e.g. <code>find n/Gary Goh</code> will display <code>Gary Goh</code> but not <code>Kenneth Goh</code></p>
+</li>
+<li>
+<p>In the event that the user wants to specify more than one keyword to be seperately searched in a specified attribute,
+for example if the user wants to find all <code>Person</code> with <code>Name</code> <code>Kang Tze</code> or <code>Triston</code>, he must seperate the names using two
+<code>Name</code> <code>Prefix</code>. e.g. <code>find n/Kang Tze n/Triston</code> displays <code>Ng Kang Tze</code> and <code>Triston Pang</code>.</p>
+</li>
+<li>
+<p>An illustration of a more complicated <code>find</code> command is <code>find friends n/Kang Tze n/Triston r/doctor</code>, which displays
+all <code>Person</code> with <code>friends</code> in their attributes, has <code>name</code> containing either <code>Kang Tze</code> or <code>Triston</code>, and whom is a <code>Doctor</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="intuitive-command-prompt-icp-support"><a class="link" href="#intuitive-command-prompt-icp-support">3.1.3. Intuitive Command Prompt (ICP) Support</a></h4>
+<div class="paragraph">
+<p>ICP mode provides a more natural way of entering commands into OneLife. More information can be found under 3.18: Intuitive command prompting.</p>
+</div>
+<div class="paragraph">
+<p>The Find Command is supported by ICP in the following way:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>when the command word <code>find</code> is given without any other input, ICP mode is triggered.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>After entering into ICP Mode, the user will be prompted to select the attributes to be searched by entering the indexes
+corresponding to the attributes.<br>
+Below is a list of all searchable attributes and their corresponding indexes.</p>
+</div>
+<div class="paragraph">
+<p>| Attribute                           | Prefix |
+|-------------------------------------|--------|
+| Global                              | 1      |
+| Name                                | 2      |
+| NRIC                                | 3      |
+| Phone                               | 4      |
+| Address                             | 5      |
+| Role                                | 6      |
+| Tag                                 | 7      |
+| Medical Department (coming in v1.4) | 8      |
+| Medical Record (coming in v1.4)     | 9      |</p>
+</div>
+<div class="paragraph">
+<p>Lastly, the user will keywords to be searched under the attributes, in increasing numerical order.</p>
+</div>
+<div class="paragraph">
+<p>The images below illustrate the utilisation of Find Command to execute the command <code>find doctor n/bernice</code> which means
+<code>find</code> all <code>Person</code> with <code>doctor</code> in their attributes and whose name contains <code>bernice</code>, under ICP mode:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/FindCommandUserGuideIcp1.png" alt="FindCommandUserGuideIcp1" width="600">
+</div>
+<div class="title">Figure 7. ICP Mode for Find Command Step 1</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/FindCommandUserGuideIcp2.png" alt="FindCommandUserGuideIcp2" width="600">
+</div>
+<div class="title">Figure 8. ICP Mode for Find Command Step 2</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/FindCommandUserGuideIcp3.png" alt="FindCommandUserGuideIcp3" width="600">
+</div>
+<div class="title">Figure 9. ICP Mode for Find Command Step 3</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/FindCommandUserGuideIcp4.png" alt="FindCommandUserGuideIcp4" width="600">
+</div>
+<div class="title">Figure 10. ICP Mode for Find Command Step 4</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Under ICP Mode, for Specific Find, keywords separated by a comma are considered to be under multiple identical <code>Prefix</code>.
+For example, entering <code>find n/alex n/bernice</code> under Normal Mode is identical to entering <code>alex, bernice</code> when prompted
+for <code>Name</code> keywords under ICP Mode.
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 </div>
@@ -254,7 +442,7 @@ If there is no input after the "find" keyword, <code>IntuitiveEntryCommand</code
 <div class="content">
 <img src="../images/FindSequenceDiagram.png" alt="FindSequenceDiagram" width="800">
 </div>
-<div class="title">Figure 4. FindCommand Sequence Diagram</div>
+<div class="title">Figure 11. FindCommand Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -295,4 +483,4 @@ If there is no input after the "find" keyword, <code>IntuitiveEntryCommand</code
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-04 13:20:19 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-04 16:39:11 UTC</div></div></div></body></html>
