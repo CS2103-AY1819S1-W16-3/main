@@ -5,19 +5,23 @@
 <div class="sectionbody">
 <hr>
 <div class="sect2">
-<h3 id="overview"><a class="link" href="#overview">1.1. Overview</a></h3>
+<h3 id="introduction"><a class="link" href="#introduction">1.1. Introduction</a></h3>
 <div class="paragraph">
-<p>One Life is a desktop medical management application used for storing and displaying data related to patients and doctors.
-The user interacts with it using a Command Line Interface (CLI), and it has a Graphical User Interface (GUI) created with JavaFX.
-It is written in Java, and has about 10 kLoC.</p>
+<p>This project portfolio details my key contributions to the project One Life and serves to document the key features I implemented.</p>
+</div>
+<div class="paragraph">
+<p>One Life is a desktop application designed by me and other students from the National University of Singapore (NUS) as part of a requirement for our software engineering module under the given constraints that the user must interact with it using a Command Line Interface(CLI).</p>
+</div>
+<div class="paragraph">
+<p>One life is used for storing, updating, and displaying data related to patients and doctors. The user interacts with it using a CLI, and it has a Graphical User Interface (GUI) created with JavaFX. It is written in Java, and has about 10 kLoC.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">1.2. Summary of contributions</a></h3>
+<h3 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">1.2. Summary of Contributions</a></h3>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Major enhancement</strong>: added <strong>the ability to update and display medical records</strong></p>
+<p><strong>Major enhancement</strong>: added <strong>the ability to update and display medical records.</strong></p>
 <div class="ulist">
 <ul>
 <li>
@@ -150,7 +154,7 @@ Format: <code>select INDEX</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Index is the position of the person selected from the person card list.</p>
+<p>The index is the position of the person selected from the person card list.</p>
 </li>
 <li>
 <p>The index <strong>must be a positive integer</strong> <code>1, 2, 3, &#8230;&#8203;</code></p>
@@ -166,7 +170,7 @@ Format: <code>select INDEX</code></p>
 <ul>
 <li>
 <p><code>select 1</code><br>
-Displays the medical records of the first person on the displayed list as shown by the figure below.</p>
+Displays the medical records of the first person on the displayed list as shown in the figure below.</p>
 </li>
 </ul>
 </div>
@@ -180,7 +184,7 @@ Displays the medical records of the first person on the displayed list as shown 
 <div class="sect2">
 <h3 id="updating-medical-records-of-patients-code-update-code"><a class="link" href="#updating-medical-records-of-patients-code-update-code">2.2. Updating medical records of patients : <code>update</code></a></h3>
 <div class="paragraph">
-<p>Adds a new medical record for the patient as the most updated record using the current date as date of record.<br>
+<p>Adds a new medical record for the patient as the most updated record using the specified date as date of record.<br>
 Format: <code>update INDEX d/DATE dg/DIAGNOSIS tr/TREATMENT [c/COMMENTS]</code></p>
 </div>
 <div class="sidebarblock">
@@ -188,7 +192,10 @@ Format: <code>update INDEX d/DATE dg/DIAGNOSIS tr/TREATMENT [c/COMMENTS]</code><
 <div class="ulist">
 <ul>
 <li>
-<p>Date is formatted as DD.MM.YYYY and is dot separated e.g.  <code>7.11.1996</code> is the 7th of November 1996.</p>
+<p>The date is formatted as DD.MM.YYYY and is dot separated e.g.  <code>11.1.2019</code> is the 11th of January 2019.</p>
+</li>
+<li>
+<p>The date cannot be in the past.</p>
 </li>
 <li>
 <p>The index <strong>must be a positive integer</strong> <code>1, 2, 3, &#8230;&#8203;</code></p>
@@ -219,7 +226,7 @@ If no comments are specified, "-" will be displayed on the medical record.
 <ul>
 <li>
 <p><code>update 1 d/31.10.2018 dg/flu tr/tamiflu</code><br>
-Updates the medical records of the patient at index 1 with the given date, diagnosis and treatment without any comments as shown by the figure below.</p>
+Updates the medical records of the patient at index 1 with the given date, diagnosis and treatment without any comments as shown in the figure below.</p>
 </li>
 </ul>
 </div>
@@ -233,7 +240,7 @@ Updates the medical records of the patient at index 1 with the given date, diagn
 <ul>
 <li>
 <p><code>update 1 d/31.10.2018 dg/flu tr/tamiflu c/To be taken thrice a day after meals.</code><br>
-Updates the medical records of the patient at index 1 with the given date, diagnosis, treatment and comments as shown by the figure below.</p>
+Updates the medical records of the patient at index 1 with the given date, diagnosis, treatment and comments as shown in the figure below.</p>
 </li>
 </ul>
 </div>
@@ -337,6 +344,7 @@ If no comment is given the default comment "-" is used.
 <div class="content">
 <img src="../images/UpdateSequenceDiagram.png" alt="UpdateSequenceDiagram" width="800">
 </div>
+<div class="title">Figure 4. Sequence diagram for an update command</div>
 </div>
 </div>
 <div class="sect3">
@@ -353,10 +361,10 @@ If no comment is given the default comment "-" is used.
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Easy to access the most recent record by retrieving the first <code>MedicalRecord</code> in the ArrayList.</p>
+<p>Pros: Accessing the most recent record by retrieving the first <code>MedicalRecord</code> in the ArrayList is easy.</p>
 </li>
 <li>
-<p>Cons: Takes longer to retrieve the latest <code>MedicalRecord</code> before a specified date as each <code>MedicalRecord</code> has to be checked sequentially until the last <code>MedicalRecord</code> before the specified date is found.</p>
+<p>Cons: Retrieving the latest <code>MedicalRecord</code> before a specified date takes longer as each <code>MedicalRecord</code> has to be checked sequentially until the last <code>MedicalRecord</code> before the specified date is found.</p>
 </li>
 </ul>
 </div>
@@ -369,7 +377,7 @@ If no comment is given the default comment "-" is used.
 <p>Pros: Retrieving the latest <code>MedicalRecord</code> before a specified date is made convenient by  just using the floor function already defined in the TreeMap API.</p>
 </li>
 <li>
-<p>Cons: May be difficult to maintain the TreeSet for more complicated tasks like editing <code>MedicalRecord</code> since a new <code>MedicalRecord</code> has to be created and reinserted into the same location in the TreeSet.</p>
+<p>Cons: Maintaining the TreeSet for more complicated tasks like editing <code>MedicalRecord</code> may be difficult since a new <code>MedicalRecord</code> has to be created and reinserted into the same location in the TreeSet.</p>
 </li>
 </ul>
 </div>
@@ -380,13 +388,4 @@ If no comment is given the default comment "-" is used.
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="project-powerpointlabs"><a class="link" href="#project-powerpointlabs">4. PROJECT: PowerPointLabs</a></h2>
-<div class="sectionbody">
-<hr>
-<div class="paragraph">
-<p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
-</div>
-</div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-04 05:06:12 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-04 05:19:59 UTC</div></div></div></body></html>
