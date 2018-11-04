@@ -337,7 +337,7 @@ In order for a <code>Person</code> to show up on a <code>find</code>, the <code>
 <div class="ulist">
 <ul>
 <li>
-<p>no <code>Prefix</code> is included in the input.</p>
+<p>no <code>Prefix</code> is included in the input, or when</p>
 </li>
 <li>
 <p>keywords are included before the first valid <code>Prefix</code>.</p>
@@ -351,7 +351,7 @@ In order for a <code>Person</code> to show up on a <code>find</code>, the <code>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-When performing Global Find with more than one separate keyword, users can simply separate them using a space. The Find Command will interpret the input as separate words to be searched globally.
+When performing Global Find with more than one separate keyword, users can simply separate them using a <code>[SPACE]</code>. The Find Command will interpret the input as separate words to be searched globally.
 </td>
 </tr>
 </table>
@@ -406,18 +406,50 @@ Displays all <code>Person</code> with <code>alex</code> or <code>doctor</code> i
 <p>It is performed when a <code>Prefix</code> is specified in the input field.<br>
 Below is a list of all searchable attributes and their corresponding <code>Prefix</code>:</p>
 </div>
-<div class="paragraph">
-<p>| Attribute          | Prefix |
-|--------------------|--------|
-| Name               | n/     |
-| NRIC               | ic/    |
-| Phone              | p/     |
-| Address            | a/     |
-| Role               | r/     |
-| Tag                | t/     |
-| Medical Department | md/    |
-| Medical Record     | mr/    |</p>
-</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Attribute</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Prefix</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>n/</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NRIC</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ic/</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Phone</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>p/</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Address</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>a/</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Role</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>r/</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tag</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>t/</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Medical Department</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>md/</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Medical Record</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>mr/</code></p></td>
+</tr>
+</tbody>
+</table>
 <div class="admonitionblock warning">
 <table>
 <tr>
@@ -483,7 +515,7 @@ e.g. <code>find n/Gary Goh</code> will display <code>Gary Goh</code> but not <co
 </li>
 <li>
 <p>In the event that the user wants to specify more than one keyword to be seperately searched in a specified attribute,
-for example if the user wants to find all <code>Person</code> with <code>Name</code> <code>Kang Tze</code> or <code>Triston</code>, he must seperate the names using two
+for example if the user wants to find all <code>Person</code> with <code>Name</code> <code>Kang Tze</code> or <code>Triston</code>, he must separate the names using two
 <code>Name</code> <code>Prefix</code>. e.g. <code>find n/Kang Tze n/Triston</code> displays <code>Ng Kang Tze</code> and <code>Triston Pang</code>.</p>
 </li>
 <li>
@@ -506,33 +538,68 @@ all <code>Person</code> with <code>friends</code> in their attributes, has <code
 <div class="ulist">
 <ul>
 <li>
-<p>when the command word <code>find</code> is given without any other input, ICP mode is triggered.</p>
+<p>When the command word <code>find</code> is given without any other input, ICP mode is triggered.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>After entering into ICP Mode, the user will be prompted to select the attributes to be searched by entering the indexes
+<p>After entering ICP Mode, the user will be prompted to select the attributes to be searched by entering the indexes
 corresponding to the attributes.<br>
 Below is a list of all searchable attributes and their corresponding indexes.</p>
 </div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Attribute</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Index</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Global</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>2</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NRIC</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>3</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Phone</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>4</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Address</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>5</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Role</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>6</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tag</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>7</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Medical Department (coming in v1.4)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>8</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Medical Record (coming in v1.4)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>9</code></p></td>
+</tr>
+</tbody>
+</table>
 <div class="paragraph">
-<p>| Attribute                           | Prefix |
-|-------------------------------------|--------|
-| Global                              | 1      |
-| Name                                | 2      |
-| NRIC                                | 3      |
-| Phone                               | 4      |
-| Address                             | 5      |
-| Role                                | 6      |
-| Tag                                 | 7      |
-| Medical Department (coming in v1.4) | 8      |
-| Medical Record (coming in v1.4)     | 9      |</p>
+<p>Lastly, the user will enter the corresponding keywords to be searched under each attribute, in increasing order of their indexes.</p>
 </div>
 <div class="paragraph">
-<p>Lastly, the user will keywords to be searched under the attributes, in increasing numerical order.</p>
-</div>
-<div class="paragraph">
-<p>The images below illustrate the utilisation of Find Command to execute the command <code>find doctor n/bernice</code> which means
+<p>The images below illustrate the utilisation of Find Command to execute the command <code>find doctor n/bernice</code>, which means
 <code>find</code> all <code>Person</code> with <code>doctor</code> in their attributes and whose name contains <code>bernice</code>, under ICP mode:</p>
 </div>
 <div class="imageblock">
@@ -1219,4 +1286,4 @@ e.g. `update 2 d/22.11.2018 dg/flu tr/tamiflu</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-04 16:39:11 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-04 18:20:32 UTC</div></div></div></body></html>
