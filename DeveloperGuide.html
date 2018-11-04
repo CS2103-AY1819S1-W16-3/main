@@ -1081,7 +1081,7 @@ proceeds to return this String instruction to the executing <code>IntuitiveEntry
 to the <code>LogicManager</code> to be displayed to the user.</p>
 </div>
 <div class="paragraph">
-<p>The following sequence diagram describes the above process:</p>
+<p>The following two sequence diagrams (Figures 10 &amp; 11) describes the above process:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1107,13 +1107,13 @@ user for an input for the next field:</p>
 The user enters <code>patient</code> to indicate that the person added is a patient.</p>
 </div>
 <div class="paragraph">
-<p>Step 2-3. Remains the same as before with <code>patient</code> as the user&#8217;s input.</p>
+<p>Step 2-3. These steps are similar to Steps 2-3 of the above section (Start of Intuitive Command), with the exception that the input is now <code>patient</code></p>
 </div>
 <div class="paragraph">
 <p>Step 4. <code>Model</code> calls the <code>IntuitivePromptManager</code> to store the user&#8217;s input as an argument. Since the intuitive
 command is already executing, the user&#8217;s input is stored as an argument in the <code>arguments</code> list.
 The <code>currentArgIndex</code>, which allows the <code>IntuitivePromptManager</code> to determine the what field it should prompt for next
-is incremented accordingly.</p>
+is incremented accordingly:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1122,7 +1122,7 @@ is incremented accordingly.</p>
 <div class="title">Figure 13. How the <code>arguments</code> list in <code>IntuitivePromptManager</code> records arguments with <code>currentArgIndex</code></div>
 </div>
 <div class="paragraph">
-<p>Step 5-6. Remains the same as above.</p>
+<p>Step 5-6. These steps are the same as that of the above section (Start of Intuitive Command)</p>
 </div>
 </div>
 <div class="sect4">
@@ -1131,7 +1131,7 @@ is incremented accordingly.</p>
 <p>Once all fields have been filled by the user, the system will exit intuitive mode as follows:</p>
 </div>
 <div class="paragraph">
-<p>Step 1-3. Remains the same as above. Take note that this is the last field that the user has to fill.</p>
+<p>Step 1-3. These steps are the same as those of the above section (Middle of Intuitive Command). Take note that this is the last field that the user has to fill.</p>
 </div>
 <div class="paragraph">
 <p>Step 4. <code>Model</code> calls the <code>IntuitivePromptManager</code> to store the user&#8217;s input as an argument. The input is
@@ -1187,6 +1187,9 @@ as accordingly.</p>
 <div class="paragraph">
 <p>Step 5. <code>Model</code> retrieves the instruction of the field indicated by the <code>currentArgIndex</code> of the
 <code>IntuitivePromptManager</code>. Execution continues normally as described in the above sections.</p>
+</div>
+<div class="paragraph">
+<p>The following two sequence diagrams (Figures 14 &amp; 15) describe the above process:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -3424,4 +3427,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-04 09:25:34 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-04 11:48:25 UTC</div></div></div></body></html>
