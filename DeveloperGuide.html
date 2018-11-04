@@ -890,6 +890,7 @@ Lastly, <code>ScheduleCommand</code> replaces <code>personToEdit</code> with <co
 <div class="content">
 <img src="images/ScheduleSequenceDiagram.png" alt="ScheduleSequenceDiagram" width="800">
 </div>
+<div class="title">Figure 10. Sequence diagram for scheduling appointments</div>
 </div>
 </div>
 <div class="sect3">
@@ -907,10 +908,10 @@ For example: <code>schedule 1 d/23.11.2018 st/1300 et/1400 dn/Jack di/S1234567B 
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Design is consistent with the other commands in the application.</p>
+<p>Pros: The design is consistent with the other commands in the application.</p>
 </li>
 <li>
-<p>Cons: Requires the user to type more when scheduling an appointment.</p>
+<p>Cons: It requires the user to type more when scheduling an appointment.</p>
 </li>
 </ul>
 </div>
@@ -944,11 +945,11 @@ A new appointment is added to the back of the ArrayList.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Simple to check for appointment clashes.
+<p>Pros: It is simple to check for appointment clashes.
 To check for appointment clashes, just loop through the ArrayList and check the new appointment against every other appointment.</p>
 </li>
 <li>
-<p>Cons: Might not be the most efficient way.</p>
+<p>Cons: It might not be the most efficient way.</p>
 </li>
 </ul>
 </div>
@@ -959,13 +960,13 @@ Maintain a sorted list of appointments based on the date and time of appointment
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Might be more efficient when checking for appointment clashes.
+<p>Pros: It might be more efficient when checking for appointment clashes.
 We do not need to check our new appointment against all the appointments in the ArrayList.
 For example we can check from the last (latest) appointment down the list until a point where the next appointment comes before this appointment.
 At that point we can stop checking as we know that there will be no more clashes.</p>
 </li>
 <li>
-<p>Cons: Efficiency gain when checking for clashes might be lost due to efficiency lost due to sorting being required.</p>
+<p>Cons: The efficiency gain when checking for clashes might be lost due to efficiency lost due to sorting being required.</p>
 </li>
 </ul>
 </div>
@@ -1075,13 +1076,13 @@ to the <code>LogicManager</code> to be displayed to the user.</p>
 <div class="content">
 <img src="images/IntuitiveCommandWordSequenceDiagram.png" alt="IntuitiveCommandWordSequenceDiagram" width="800">
 </div>
-<div class="title">Figure 10. High level sequence diagram detailing interactions between <code>Logic</code> and <code>Model</code></div>
+<div class="title">Figure 11. High level sequence diagram detailing interactions between <code>Logic</code> and <code>Model</code></div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ArgumentManagerStartSequenceDiagram.png" alt="ArgumentManagerStartSequenceDiagram" width="800">
 </div>
-<div class="title">Figure 11. Internal sequence diagram showing how <code>IntuitivePromptManager</code> interacts with <code>argumentManager</code></div>
+<div class="title">Figure 12. Internal sequence diagram showing how <code>IntuitivePromptManager</code> interacts with <code>argumentManager</code></div>
 </div>
 </div>
 <div class="sect4">
@@ -1107,7 +1108,7 @@ is incremented accordingly.</p>
 <div class="content">
 <img src="images/IntuitiveInternalDiagram.png" alt="IntuitiveInternalDiagram" width="800">
 </div>
-<div class="title">Figure 12. How the <code>arguments</code> list in <code>IntuitivePromptManager</code> records arguments with <code>currentArgIndex</code></div>
+<div class="title">Figure 13. How the <code>arguments</code> list in <code>IntuitivePromptManager</code> records arguments with <code>currentArgIndex</code></div>
 </div>
 <div class="paragraph">
 <p>Step 5-6. Remains the same as above.</p>
@@ -1148,7 +1149,7 @@ the same as if the user entered the non-intuitive version of the command.</p>
 <div class="content">
 <img src="images/IntuitiveEndSequenceDiagram.png" alt="IntuitiveEndSequenceDiagram" width="800">
 </div>
-<div class="title">Figure 13. High level sequence diagram showing how arguments are retrieved at the end of the intuitive command</div>
+<div class="title">Figure 14. High level sequence diagram showing how arguments are retrieved at the end of the intuitive command</div>
 </div>
 </div>
 <div class="sect4">
@@ -1180,13 +1181,13 @@ as accordingly.</p>
 <div class="content">
 <img src="images/IntuitiveCommandPromptBackSequenceDiagram.png" alt="IntuitiveCommandPromptBackSequenceDiagram" width="800">
 </div>
-<div class="title">Figure 14. High level sequence diagram showing going back ability</div>
+<div class="title">Figure 15. High level sequence diagram showing going back ability</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ArgumentManagerBackSequenceDiagram.png" alt="ArgumentManagerBackSequenceDiagram" width="800">
 </div>
-<div class="title">Figure 15. Internal sequence digram showing going back ability</div>
+<div class="title">Figure 16. Internal sequence digram showing going back ability</div>
 </div>
 </div>
 </div>
@@ -1503,7 +1504,7 @@ If there is no input after the "find" keyword, <code>IntuitiveEntryCommand</code
 <div class="content">
 <img src="images/FindSequenceDiagram.png" alt="FindSequenceDiagram" width="800">
 </div>
-<div class="title">Figure 16. FindCommand Sequence Diagram</div>
+<div class="title">Figure 17. FindCommand Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -1654,7 +1655,7 @@ Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows y
 <div class="content">
 <img src="images/chrome_save_as_pdf.png" alt="chrome save as pdf" width="300">
 </div>
-<div class="title">Figure 17. Saving documentation as PDF files in Chrome</div>
+<div class="title">Figure 18. Saving documentation as PDF files in Chrome</div>
 </div>
 </div>
 <div class="sect2">
@@ -3411,4 +3412,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-02 09:11:43 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-04 05:06:12 UTC</div></div></div></body></html>

@@ -7,14 +7,39 @@
 <div class="sect2">
 <h3 id="overview"><a class="link" href="#overview">1.1. Overview</a></h3>
 <div class="paragraph">
-<p>One Life is a desktop medical management application used for storing and displaying data related to patients and doctors.
-One Life aims to improve the efficiency for administrative processes in medical institutes.
-The user interacts with it using a Command Line Interface (CLI), and it has a Graphical User Interface (GUI) created with JavaFX.
+<p>This project portfolio details my key contributions to Project One Life.</p>
+</div>
+<div class="paragraph">
+<p>One Life is a desktop medical management application designed by me and my groups mates for a software engineering module in National University of Singapore (NUS).
+It aims to improve the efficiency of administrative processes in medical institutes.
+The project was created under the constraint of the fact that the user only interacts with the application through a Command Line Interface (CLI).
 It is written in Java, and has about 10 kLoC.</p>
+</div>
+<div class="paragraph">
+<p>The main features of the project are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The ability to display and schedule medical appointments.</p>
+</li>
+<li>
+<p>The ability to display and update medical records.</p>
+</li>
+<li>
+<p>The ability to display doctor and patient details.</p>
+</li>
+<li>
+<p>The ability to find persons by specifying related keywords.</p>
+</li>
+<li>
+<p>The ability to enter commands using intuitive command prompts instead of CLI for new users.</p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">1.2. Summary of contributions</a></h3>
+<h3 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">1.2. Summary of Contributions</a></h3>
 <div class="ulist">
 <ul>
 <li>
@@ -22,7 +47,7 @@ It is written in Java, and has about 10 kLoC.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>What it does: allows the user to schedule appointments at a specified time.</p>
+<p>What it does: Allows the user to schedule appointments at a specified time.</p>
 </li>
 <li>
 <p>Justification: This feature improves the product significantly because a user is able to display current appointments and schedule appointments.
@@ -137,13 +162,13 @@ Format: <code>select INDEX</code></p>
 <p>Selects the person and loads the appointment list of the person at the specified <code>INDEX</code>.</p>
 </li>
 <li>
-<p>Index is the position of the person selected from the person card list.</p>
+<p>The index is the position of the person selected from the person card list.</p>
 </li>
 <li>
 <p>The index <strong>must be a positive integer</strong> <code>1, 2, 3, &#8230;&#8203;</code></p>
 </li>
 <li>
-<p>Appointment List will be displayed on the top right of the screen as shown in figure below.</p>
+<p>The appointment list will be displayed on the top right of the screen as shown in figure below.</p>
 </li>
 </ul>
 </div>
@@ -155,17 +180,15 @@ Format: <code>select INDEX</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>list</code> (result shown in Figure 1)<br>
-<code>select 2</code> (result shown in Figure 2)<br>
-Selects the 2nd person in the database and display the appointments.</p>
-</li>
-</ul>
-</div>
+<p><code>list</code> displays the list of persons as shown in Figure 1.</p>
 <div class="imageblock">
 <div class="content">
 <img src="../images/ListCommand.png" alt="ListCommand" width="600">
 </div>
 <div class="title">Figure 1. Display list diagram</div>
+</div>
+<div class="paragraph">
+<p><code>select 2</code> selects the 2nd person in the database and display the appointments of that person as shown in Figure 2.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -173,8 +196,7 @@ Selects the 2nd person in the database and display the appointments.</p>
 </div>
 <div class="title">Figure 2. Display appointment diagram</div>
 </div>
-<div class="ulist">
-<ul>
+</li>
 <li>
 <p><code>find Betsy</code><br>
 <code>select 1</code><br>
@@ -224,11 +246,8 @@ Format: <code>schedule INDEX d/DATE st/START_TIME et/END_TIME dn/DOCTOR_NAME di/
 <p><code>schedule 1 d/23.11.2018 st/1300 et/1400 dn/Jack di/S1234567B pn/John Doe pi/S1234567A</code><br>
 Schedules <code>John Doe</code> for an appointment with doctor <code>Jack</code> on the 23nd of November 2018 from
  1pm to 2pm.</p>
-</li>
-<li>
-<p>An example of a successful schedule is shown below.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>An example of a successful schedule is shown below in Figure 3.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -236,18 +255,17 @@ Schedules <code>John Doe</code> for an appointment with doctor <code>Jack</code>
 </div>
 <div class="title">Figure 3. Successful schedule diagram</div>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>An example of an unsuccessful schedule is shown below.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>An example of an unsuccessful schedule is shown below in Figure 4.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/ScheduleFailure.png" alt="ScheduleFailure" width="600">
 </div>
 <div class="title">Figure 4. Unsuccessful schedule diagram</div>
+</div>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -320,6 +338,7 @@ Lastly, <code>ScheduleCommand</code> replaces <code>personToEdit</code> with <co
 <div class="content">
 <img src="../images/ScheduleSequenceDiagram.png" alt="ScheduleSequenceDiagram" width="800">
 </div>
+<div class="title">Figure 5. Sequence diagram for scheduling appointments</div>
 </div>
 </div>
 <div class="sect3">
@@ -337,10 +356,10 @@ For example: <code>schedule 1 d/23.11.2018 st/1300 et/1400 dn/Jack di/S1234567B 
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Design is consistent with the other commands in the application.</p>
+<p>Pros: The design is consistent with the other commands in the application.</p>
 </li>
 <li>
-<p>Cons: Requires the user to type more when scheduling an appointment.</p>
+<p>Cons: It requires the user to type more when scheduling an appointment.</p>
 </li>
 </ul>
 </div>
@@ -374,11 +393,11 @@ A new appointment is added to the back of the ArrayList.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Simple to check for appointment clashes.
+<p>Pros: It is simple to check for appointment clashes.
 To check for appointment clashes, just loop through the ArrayList and check the new appointment against every other appointment.</p>
 </li>
 <li>
-<p>Cons: Might not be the most efficient way.</p>
+<p>Cons: It might not be the most efficient way.</p>
 </li>
 </ul>
 </div>
@@ -389,13 +408,13 @@ Maintain a sorted list of appointments based on the date and time of appointment
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Might be more efficient when checking for appointment clashes.
+<p>Pros: It might be more efficient when checking for appointment clashes.
 We do not need to check our new appointment against all the appointments in the ArrayList.
 For example we can check from the last (latest) appointment down the list until a point where the next appointment comes before this appointment.
 At that point we can stop checking as we know that there will be no more clashes.</p>
 </li>
 <li>
-<p>Cons: Efficiency gain when checking for clashes might be lost due to efficiency lost due to sorting being required.</p>
+<p>Cons: The efficiency gain when checking for clashes might be lost due to efficiency lost due to sorting being required.</p>
 </li>
 </ul>
 </div>
@@ -406,13 +425,4 @@ At that point we can stop checking as we know that there will be no more clashes
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="project-powerpointlabs"><a class="link" href="#project-powerpointlabs">4. PROJECT: PowerPointLabs</a></h2>
-<div class="sectionbody">
-<hr>
-<div class="paragraph">
-<p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
-</div>
-</div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-02 09:11:43 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-04 05:06:12 UTC</div></div></div></body></html>
