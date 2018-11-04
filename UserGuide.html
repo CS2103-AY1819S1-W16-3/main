@@ -619,7 +619,7 @@ Format: <code>select INDEX</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>list</code> displays the list of persons as shown in Figure 1.</p>
+<p><code>list</code> displays the list of persons as shown in the figure below.</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/ListCommand.png" alt="ListCommand" width="600">
@@ -627,7 +627,7 @@ Format: <code>select INDEX</code></p>
 <div class="title">Figure 4. Display list diagram</div>
 </div>
 <div class="paragraph">
-<p><code>select 2</code> selects the 2nd person in the database and display the appointments of that person as shown in Figure 2.</p>
+<p><code>select 2</code> selects the 2nd person in the database and display the appointments of that person as shown in the figure below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -676,6 +676,19 @@ Format: <code>schedule INDEX d/DATE st/START_TIME et/END_TIME dn/DOCTOR_NAME di/
 </div>
 </div>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Overlapping of timing with existing appointments is considered a clash.
+E.g. 1300-1301 and 1301-1302 is a clash due to 1301.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>Examples:</p>
 </div>
@@ -686,7 +699,7 @@ Format: <code>schedule INDEX d/DATE st/START_TIME et/END_TIME dn/DOCTOR_NAME di/
 Schedules <code>John Doe</code> for an appointment with doctor <code>Jack</code> on the 23nd of November 2018 from
  1pm to 2pm.</p>
 <div class="paragraph">
-<p>An example of a successful schedule is shown below in Figure 3.</p>
+<p>An example of a successful schedule is shown in the figure below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -695,13 +708,22 @@ Schedules <code>John Doe</code> for an appointment with doctor <code>Jack</code>
 <div class="title">Figure 6. Successful schedule diagram</div>
 </div>
 <div class="paragraph">
-<p>An example of an unsuccessful schedule is shown below in Figure 4.</p>
+<p>After an appointment is successfully scheduled, the appointment list as shown below will be updated.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AppointmentListChange.png" alt="AppointmentListChange" width="600">
+</div>
+<div class="title">Figure 7. Change in appointment list</div>
+</div>
+<div class="paragraph">
+<p>An example of an unsuccessful schedule is shown in the figure below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ScheduleFailure.png" alt="ScheduleFailure" width="600">
 </div>
-<div class="title">Figure 7. Unsuccessful schedule diagram</div>
+<div class="title">Figure 8. Unsuccessful schedule diagram</div>
 </div>
 </li>
 </ul>
@@ -742,7 +764,7 @@ Displays the medical records of the first person on the displayed list as shown 
 <div class="content">
 <img src="images/DisplayMedicalRecords.png" alt="DisplayMedicalRecords" width="600">
 </div>
-<div class="title">Figure 8. Displaying medical records</div>
+<div class="title">Figure 9. Displaying medical records</div>
 </div>
 </div>
 <div class="sect2">
@@ -798,7 +820,7 @@ Updates the medical records of the patient at index 1 with the given date, diagn
 <div class="content">
 <img src="images/UpdateCommandWithoutCommentSuccess.png" alt="UpdateCommandWithoutCommentSuccess" width="600">
 </div>
-<div class="title">Figure 9. Updating records without comments</div>
+<div class="title">Figure 10. Updating records without comments</div>
 </div>
 <div class="ulist">
 <ul>
@@ -812,7 +834,7 @@ Updates the medical records of the patient at index 1 with the given date, diagn
 <div class="content">
 <img src="images/UpdateCommandWithCommentSuccess.png" alt="UpdateCommandWithCommentSuccess" width="600">
 </div>
-<div class="title">Figure 10. Updating records with comments</div>
+<div class="title">Figure 11. Updating records with comments</div>
 </div>
 </div>
 <div class="sect2">
@@ -885,13 +907,13 @@ Press <code>ESC</code> to cancel the currently executing command.
 <div class="content">
 <img src="images/IntuitiveCommandPromptStartUserScreenshot.png" alt="IntuitiveCommandPromptStartUserScreenshot" width="600">
 </div>
-<div class="title">Figure 11. Triggering the intuitive command prompt</div>
+<div class="title">Figure 12. Triggering the intuitive command prompt</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/IntuitiveNextInputUserScreenshot.png" alt="IntuitiveNextInputUserScreenshot" width="600">
 </div>
-<div class="title">Figure 12. Entering an input</div>
+<div class="title">Figure 13. Entering an input</div>
 </div>
 </div>
 <div class="sect2">
@@ -976,4 +998,4 @@ e.g. `update 2 d/22.11.2018 dg/flu tr/tamiflu</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-04 07:27:28 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-04 07:28:39 UTC</div></div></div></body></html>

@@ -62,7 +62,7 @@ The implementation too was challenging as it required a brand new command to be 
 </div>
 </li>
 <li>
-<p><strong>Code contributed</strong>: [<a href="https://github.com/CS2103-AY1819S1-W16-3/main/commits?author=nelvintan">Functional code</a>] [<a href="https://github.com">Test code</a>] <em>{give links to collated code files}</em></p>
+<p><strong>Code contributed</strong>: [<a href="https://github.com/CS2103-AY1819S1-W16-3/main/commits?author=nelvintan">Functional code</a>] [<a href="https://github.com">Test code</a>]</p>
 </li>
 <li>
 <p><strong>Other contributions</strong>:</p>
@@ -89,9 +89,6 @@ The implementation too was challenging as it required a brand new command to be 
 <div class="ulist">
 <ul>
 <li>
-<p>Updated the GUI color scheme (Pull requests <a href="https://github.com">#33</a>, <a href="https://github.com">#34</a>)</p>
-</li>
-<li>
 <p>Wrote additional tests for existing features to increase coverage%
 (Pull requests <a href="https://github.com/CS2103-AY1819S1-W16-3/main/pull/11/commits/7203d4a630e46fdf724c76170e3589de7704687d">#36</a>,
 <a href="https://github.com/CS2103-AY1819S1-W16-3/main/pull/68/commits/ad0a044af6a04de2a7c5d456c4bc5753c60aacd4">#38</a>)</p>
@@ -116,13 +113,10 @@ The implementation too was challenging as it required a brand new command to be 
 <ul>
 <li>
 <p>PRs reviewed (with non-trivial review comments):
-<a href="https://github.com/CS2103-AY1819S1-W16-3/main/pull/124#pullrequestreview-169082170">#12</a>,
-<a href="https://github.com">#32</a>,
-<a href="https://github.com">#19</a>,
-<a href="https://github.com">#42</a></p>
+<a href="https://github.com/CS2103-AY1819S1-W16-3/main/pull/124#pullrequestreview-169082170">#12</a>,</p>
 </li>
 <li>
-<p>Reported bugs and suggestions for other teams in the class (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>)</p>
+<p>Reported bugs and suggestions for other teams in the class (examples:  <a href="https://github.com/CS2103-AY1819S1-W16-3/main/pull/124#pullrequestreview-169082170">1</a>, <a href="https://github.com/CS2103-AY1819S1-W16-3/main/pull/124#pullrequestreview-169082170">2</a>)</p>
 </li>
 </ul>
 </div>
@@ -180,7 +174,7 @@ Format: <code>select INDEX</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>list</code> displays the list of persons as shown in Figure 1.</p>
+<p><code>list</code> displays the list of persons as shown in the figure below.</p>
 <div class="imageblock">
 <div class="content">
 <img src="../images/ListCommand.png" alt="ListCommand" width="600">
@@ -188,7 +182,7 @@ Format: <code>select INDEX</code></p>
 <div class="title">Figure 1. Display list diagram</div>
 </div>
 <div class="paragraph">
-<p><code>select 2</code> selects the 2nd person in the database and display the appointments of that person as shown in Figure 2.</p>
+<p><code>select 2</code> selects the 2nd person in the database and display the appointments of that person as shown in the figure below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -237,6 +231,19 @@ Format: <code>schedule INDEX d/DATE st/START_TIME et/END_TIME dn/DOCTOR_NAME di/
 </div>
 </div>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Overlapping of timing with existing appointments is considered a clash.
+E.g. 1300-1301 and 1301-1302 is a clash due to 1301.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>Examples:</p>
 </div>
@@ -247,7 +254,7 @@ Format: <code>schedule INDEX d/DATE st/START_TIME et/END_TIME dn/DOCTOR_NAME di/
 Schedules <code>John Doe</code> for an appointment with doctor <code>Jack</code> on the 23nd of November 2018 from
  1pm to 2pm.</p>
 <div class="paragraph">
-<p>An example of a successful schedule is shown below in Figure 3.</p>
+<p>An example of a successful schedule is shown in the figure below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -256,13 +263,22 @@ Schedules <code>John Doe</code> for an appointment with doctor <code>Jack</code>
 <div class="title">Figure 3. Successful schedule diagram</div>
 </div>
 <div class="paragraph">
-<p>An example of an unsuccessful schedule is shown below in Figure 4.</p>
+<p>After an appointment is successfully scheduled, the appointment list as shown below will be updated.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/AppointmentListChange.png" alt="AppointmentListChange" width="600">
+</div>
+<div class="title">Figure 4. Change in appointment list</div>
+</div>
+<div class="paragraph">
+<p>An example of an unsuccessful schedule is shown in the figure below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/ScheduleFailure.png" alt="ScheduleFailure" width="600">
 </div>
-<div class="title">Figure 4. Unsuccessful schedule diagram</div>
+<div class="title">Figure 5. Unsuccessful schedule diagram</div>
 </div>
 </li>
 </ul>
@@ -338,7 +354,7 @@ Lastly, <code>ScheduleCommand</code> replaces <code>personToEdit</code> with <co
 <div class="content">
 <img src="../images/ScheduleSequenceDiagram.png" alt="ScheduleSequenceDiagram" width="800">
 </div>
-<div class="title">Figure 5. Sequence diagram for scheduling appointments</div>
+<div class="title">Figure 6. Sequence diagram for scheduling appointments</div>
 </div>
 </div>
 <div class="sect3">
@@ -394,7 +410,18 @@ A new appointment is added to the back of the ArrayList.</p>
 <ul>
 <li>
 <p>Pros: It is simple to check for appointment clashes.
-To check for appointment clashes, just loop through the ArrayList and check the new appointment against every other appointment.</p>
+To check for appointment clashes, just loop through the ArrayList and check the new appointment against every other appointment.
+The simplicity is shown in code below.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="directive">static</span> <span class="type">boolean</span> isClash(Appointment appointment, Appointment otherAppointment) {
+    <span class="keyword">if</span> (appointment.isClash(otherAppointment)) {
+        <span class="keyword">return</span> <span class="predefined-constant">true</span>;
+    }
+    <span class="keyword">return</span> <span class="predefined-constant">false</span>;
+}</code></pre>
+</div>
+</div>
 </li>
 <li>
 <p>Cons: It might not be the most efficient way.</p>
@@ -425,4 +452,4 @@ At that point we can stop checking as we know that there will be no more clashes
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-04 07:27:28 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-04 07:28:39 UTC</div></div></div></body></html>
