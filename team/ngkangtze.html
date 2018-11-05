@@ -485,10 +485,51 @@ The key operation implemented is <code>FindCommand#execute</code>.</p>
 <p>Given below is an example usage scenario and how the find command mechanism behaves at each step.</p>
 </div>
 <div class="paragraph">
-<p>Step 1. The user wants to find all <code>Person</code> with <code>Name</code> Alex by executing <code>find n/Alex</code>.</p>
+<p>Step 1. The user wants to find all <code>Person</code> who have a <code>friends</code> <code>Tag</code>, with <code>Name</code> either <code>Alex</code> or <code>Bernice</code> by
+executing <code>find n/Alex n/Bernice t/friends</code>.</p>
 </div>
 <div class="paragraph">
-<p>Step 2. <code>FindCommandParser</code> will parse the input and verify that is it valid before returning a <code>PersonContainsKeywordsPredicate</code>, which is passed into <code>FindCommand</code>.</p>
+<p>Step 2. <code>FindCommandParser</code> will parse the input and verify that is it valid before creating a
+<code>PersonContainsKeywordsPredicate</code>, which is passed into <code>FindCommand</code>. Then, <code>FindCommand</code> is returned.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>PersonContainsKeywordPredicate</code> takes in a <code>HashMap</code> of <code>Prefix</code> mapped to an <code>ArrayList</code> of search parameters.
+The image below illustrates how the mapping is done for the user input <code>find n/Alex n/Bernice t/friends</code>.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/FindCommandDeveloperGuideHashMap.png" alt="FindCommandDeveloperGuideHashMap" width="600">
+</div>
+<div class="title">Figure 11. PersonContainsKeywordPredicate HashMap</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>PersonContainsKeywordPredicate</code> tests if a <code>Person</code> should appear when searched by iterating through each of the keys
+in the <code>HashMap</code> and returning <code>true</code> if all of the <code>Person</code> 's attributes match at least 1 of the entries in each key&#8217;s
+<code>ArrayList</code>. The image below illustrates the list of <code>Person</code> that return <code>true</code> for <code>PersonContainsKeywordPredicate#test</code>
+after the user input <code>find n/Alex n/Bernice t/friends</code>.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/FindCommandDeveloperGuidePredicate.png" alt="FindCommandDeveloperGuidePredicate" width="600">
+</div>
+<div class="title">Figure 12. PersonContainsKeywordPredicate Test Result</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>As can be seen in the image above, <code>Person</code> at index 0 and index 2 are have at least 1 entry in <code>Name</code> and <code>Tag</code> that
+match the required search parameters. Therefore, they will be shown in the result list. Even though <code>Person</code> at index 1
+has a match in the <code>Name</code> attribute, he does not have a <code>friends</code> <code>Tag</code> and is therefore not shown.</p>
+</li>
+</ul>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -506,16 +547,17 @@ If there is no input after the "find" keyword, <code>IntuitiveEntryCommand</code
 <p>Step 3. <code>FindCommand</code> will then be executed.</p>
 </div>
 <div class="paragraph">
-<p>Step 4. <code>Model#updateFilteredPersonList()</code> will be called, which will update <code>Model</code> to show all <code>Person</code> that contains the searched parameter.</p>
+<p>Step 4. <code>Model#updateFilteredPersonList()</code> will be called, which uses <code>PersonContainsKeywordPredicate</code> to  update
+<code>Model</code> to show all <code>Person</code> that contains the searched parameters.</p>
 </div>
 <div class="paragraph">
 <p>The following activity diagram summarises what happens when a user launches the application:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/FindSequenceDiagram.png" alt="FindSequenceDiagram" width="800">
+<img src="../images/FindCommandDeveloperGuideSequenceDiagram.png" alt="FindCommandDeveloperGuideSequenceDiagram" width="800">
 </div>
-<div class="title">Figure 11. FindCommand Sequence Diagram</div>
+<div class="title">Figure 13. Find Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -556,4 +598,4 @@ If there is no input after the "find" keyword, <code>IntuitiveEntryCommand</code
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-05 12:33:22 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-05 23:43:38 UTC</div></div></div></body></html>
