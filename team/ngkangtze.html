@@ -125,7 +125,8 @@ It is written in Java, and has about 10 kLoC.</p>
 <div class="sect2">
 <h3 id="locating-person-by-any-attribute-code-find-code"><a class="link" href="#locating-person-by-any-attribute-code-find-code">3.1. Locating person by any attribute: <code>find</code></a></h3>
 <div class="paragraph">
-<p>There are two types of Find Commands: Global Find and Specific Find, which can be used in conjunction with one another.<br>
+<p>There are two types of Find Commands: Global Find and Specific Find, which can be used in conjunction with one
+another.<br>
 Format: <code>find [PREFIX] KEYWORDS [NEXT_PREFIX] [MORE_KEYWORDS]</code></p>
 </div>
 <div class="admonitionblock note">
@@ -136,7 +137,8 @@ Format: <code>find [PREFIX] KEYWORDS [NEXT_PREFIX] [MORE_KEYWORDS]</code></p>
 </td>
 <td class="content">
 In order for a <code>Person</code> to show up on <code>find</code>, the <code>Person</code> must match all attributes in the input.<br>
-(i.e. <code>find n/alex r/doctor</code> will show all <code>Doctor</code> named <code>Alex</code>. If another <code>Alex</code> is not a <code>Doctor</code>, he will not be shown.)
+(i.e. <code>find n/alex r/doctor</code> will show all <code>Doctor</code> named <code>Alex</code>. If another <code>Alex</code> is not a <code>Doctor</code>, he will not be
+shown.)
 </td>
 </tr>
 </table>
@@ -166,7 +168,8 @@ In order for a <code>Person</code> to show up on <code>find</code>, the <code>Pe
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-When performing Global Find with more than one separate keyword, users can simply separate them using a <code>[SPACE]</code>. The Find Command will interpret the input as separate words to be searched globally.
+When performing Global Find with more than one separate keyword, users can simply separate them using a <code>[SPACE]</code>.
+The Find Command will interpret the input as separate words to be searched globally.
 </td>
 </tr>
 </table>
@@ -182,7 +185,8 @@ Displays all <code>Person</code> with <code>kang</code> in any of their attribut
 </li>
 <li>
 <p><code>find kang r/doctor</code><br>
-Displays all <code>Person</code> with <code>kang</code> in any of their attributes and whom is a <code>Doctor</code>.</p>
+Displays all <code>Person</code> with <code>kang</code> in any of their attributes and whom is a <code>Doctor</code>. This is an example of Global Find
+used in conjunction with Specific Find.</p>
 </li>
 <li>
 <p><code>find alex doctor</code><br>
@@ -203,7 +207,7 @@ Displays all <code>Person</code> with <code>alex</code> or <code>doctor</code> i
 <div class="content">
 <img src="../images/FindCommandUserGuideGlobal2.png" alt="FindCommandUserGuideGlobal2" width="600">
 </div>
-<div class="title">Figure 2. Global Find Command with Specified Find Command</div>
+<div class="title">Figure 2. Global Find Command with Specific Find Command</div>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -272,7 +276,8 @@ Below is a list of all searchable attributes and their corresponding <code>Prefi
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-Search keywords must be entered behind a <code>Prefix</code> whenever a <code>Prefix</code> is used in the input. A command like <code>find n/[BLANK]</code> is not a valid input.
+Search keywords must be entered behind a <code>Prefix</code> whenever a <code>Prefix</code> is used in the input. A command like
+<code>find n/[BLANK]</code> is not a valid input.
 </td>
 </tr>
 </table>
@@ -330,12 +335,13 @@ e.g. <code>find n/Gary Goh</code> will display <code>Gary Goh</code> but not <co
 </li>
 <li>
 <p>In the event that the user wants to specify more than one keyword to be seperately searched in a specified attribute,
-for example if the user wants to find all <code>Person</code> with <code>Name</code> <code>Kang Tze</code> or <code>Triston</code>, he must separate the names using two
-<code>Name</code> <code>Prefix</code>. e.g. <code>find n/Kang Tze n/Triston</code> displays <code>Ng Kang Tze</code> and <code>Triston Pang</code>.</p>
+for example if the user wants to find all <code>Person</code> with <code>Name</code> <code>Kang Tze</code> or <code>Triston</code>, he must separate the names
+using two <code>Name</code> <code>Prefix</code>. e.g. <code>find n/Kang Tze n/Triston</code> displays <code>Ng Kang Tze</code> and <code>Triston Pang</code>.</p>
 </li>
 <li>
 <p>An illustration of a more complicated <code>find</code> command is <code>find friends n/Kang Tze n/Triston r/doctor</code>, which displays
-all <code>Person</code> with <code>friends</code> in their attributes, has <code>name</code> containing either <code>Kang Tze</code> or <code>Triston</code>, and whom is a <code>Doctor</code>.</p>
+all <code>Person</code> with <code>friends</code> in their attributes, has <code>name</code> containing either <code>Kang Tze</code> or <code>Triston</code>, and whom is a
+<code>Doctor</code>.</p>
 </li>
 </ul>
 </div>
@@ -345,7 +351,8 @@ all <code>Person</code> with <code>friends</code> in their attributes, has <code
 <div class="sect3">
 <h4 id="intuitive-command-prompt-icp-support"><a class="link" href="#intuitive-command-prompt-icp-support">3.1.3. Intuitive Command Prompt (ICP) Support</a></h4>
 <div class="paragraph">
-<p>ICP mode provides a more natural way of entering commands into OneLife. More information can be found under 3.18: Intuitive command prompting.</p>
+<p>ICP mode provides a more natural way of entering commands into OneLife. More information can be found under 3.18:
+Intuitive command prompting.</p>
 </div>
 <div class="paragraph">
 <p>The Find Command is supported by ICP in the following way:</p>
@@ -411,11 +418,13 @@ Below is a list of all searchable attributes and their corresponding indexes.</p
 </tbody>
 </table>
 <div class="paragraph">
-<p>Lastly, the user will enter the corresponding keywords to be searched under each attribute, in increasing order of their indexes.</p>
+<p>Lastly, the user will enter the corresponding keywords to be searched under each attribute, in increasing order of
+their indexes.</p>
 </div>
 <div class="paragraph">
-<p>The images below illustrate the utilisation of Find Command to execute the command <code>find doctor n/bernice</code>, which means
-<code>find</code> all <code>Person</code> with <code>doctor</code> in their attributes and whose name contains <code>bernice</code>, under ICP mode:</p>
+<p>The images below illustrate the utilisation of Find Command to execute the command <code>find doctor n/bernice</code> under ICP
+mode: (Under Normal Mode, this command means <code>find</code> all <code>Person</code> with <code>doctor</code> in their attributes and whose name
+contains <code>bernice</code>.)</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -478,7 +487,8 @@ for <code>Name</code> keywords under ICP Mode.
 <h4 id="current-implementation"><a class="link" href="#current-implementation">4.1.1. Current implementation</a></h4>
 <div class="paragraph">
 <p>The find mechanism is facilitated by <code>FindCommand</code>, <code>FindCommandParser</code> and <code>PersonContainsKeywordPredicate</code>.
-<code>FindCommand</code> extends from <code>Command</code>, <code>FindCommandParser</code> implements <code>Parser</code> and <code>PersonContainsKeywordPredicate</code> implements <code>Predicate</code>.
+<code>FindCommand</code> extends from <code>Command</code>, <code>FindCommandParser</code> implements <code>Parser</code> and <code>PersonContainsKeywordPredicate</code>
+implements <code>Predicate</code>.
 The key operation implemented is <code>FindCommand#execute</code>.</p>
 </div>
 <div class="paragraph">
@@ -511,7 +521,8 @@ The image below illustrates how the mapping is done for the user input <code>fin
 <li>
 <p><code>PersonContainsKeywordPredicate</code> tests if a <code>Person</code> should appear when searched by iterating through each of the keys
 in the <code>HashMap</code> and returning <code>true</code> if all of the <code>Person</code> 's attributes match at least 1 of the entries in each key&#8217;s
-<code>ArrayList</code>. The image below illustrates the list of <code>Person</code> that return <code>true</code> for <code>PersonContainsKeywordPredicate#test</code>
+<code>ArrayList</code>. The image below illustrates the list of <code>Person</code> that return <code>true</code> for
+<code>PersonContainsKeywordPredicate#test</code>
 after the user input <code>find n/Alex n/Bernice t/friends</code>.</p>
 </li>
 </ul>
@@ -538,7 +549,8 @@ has a match in the <code>Name</code> attribute, he does not have a <code>friends
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If there is no input after the "find" keyword, <code>IntuitiveEntryCommand</code> will be triggered, which will prompt the user to input search parameters.
+If there is no input after the "find" keyword, <code>IntuitiveEntryCommand</code> will be triggered, which will prompt the user to
+input search parameters.
 </td>
 </tr>
 </table>
@@ -567,11 +579,13 @@ If there is no input after the "find" keyword, <code>IntuitiveEntryCommand</code
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Allow users to perform searches by specifying certain keywords of interest. (For example: <code>Name</code> : <code>n/</code>, <code>Phone</code>: <code>p/</code>)</p>
+<p><strong>Alternative 1 (current choice):</strong> Allow users to perform searches by specifying certain keywords of interest.
+(For example: <code>Name</code> : <code>n/</code>, <code>Phone</code>: <code>p/</code>)</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: It results in a powerful and precise search function by providing the user the option to specify exactly which <code>Person</code> attributes are of interest.</p>
+<p>Pros: It results in a powerful and precise search function by providing the user the option to specify exactly which
+<code>Person</code> attributes are of interest.</p>
 </li>
 <li>
 <p>Cons: It may be difficult for newer users to remember the shortcuts that represent the attributes of interest.</p>
@@ -580,14 +594,59 @@ If there is no input after the "find" keyword, <code>IntuitiveEntryCommand</code
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong> Generalise the search function by searching through all fields and providing the most relevant information through predictive search.</p>
+<p><strong>Alternative 2:</strong> Generalise the search function by searching through all fields and providing the most relevant
+information through predictive search.</p>
 <div class="ulist">
 <ul>
 <li>
 <p>Pros: It provides an even more powerful search function that is both simple to use and accurate.</p>
 </li>
 <li>
-<p>Cons: It is incredibly difficult to implement such an search function without the use of machine-learning algorithms or an internet connection.</p>
+<p>Cons: It is incredibly difficult to implement such an search function without the use of machine-learning algorithms
+or an internet connection.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-how-to-implement-the-search-and-versus-or"><a class="link" href="#aspect-how-to-implement-the-search-and-versus-or">Aspect: How to implement the search (And versus Or)</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Implement <strong>And Search</strong> between different attributes but <strong>Or Search</strong> for keywords
+within the same attribute.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: It allows users the option of either making their search more general by including different options for the
+same attribute (i.e. allow multiple names to be searched at once) and also more precise by adding more attributes to be
+searched (i.e. allow users to search for <code>friends</code> named <code>Alex</code> versus only people named <code>Alex</code>).</p>
+</li>
+<li>
+<p>Cons: It may be confusing for newer users as the search function is not consistently And or Or. Users are also unable
+to carry out a search that will show all persons with two differing attributes (i.e. a search that shows only persons
+named <code>Alex</code> who are tagged as <code>friends</code>, as well as persons named <code>Bernice</code> who are tagged as <code>family</code> is impossible
+with the current search structure. <code>Alex</code> tagged as <code>family</code> and <code>Bernice</code> tagged as <code>friends</code> will also appear).</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Implement the current search but allow multiple search entries to be evaluated at the same time
+so that it is possible to show results of different searches compiled on the same list.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: It provides all the benefits of the current search function while extending its capabilities to allow unrelated
+people to be searched together in one go.</p>
+</li>
+<li>
+<p>Cons: It may become even more confusing to newer users to use the search function. It is also difficult to implement
+such a search function without having multiple lines for input entry. As of now, the application only supports a single
+line of user input at a time.</p>
 </li>
 </ul>
 </div>
@@ -598,4 +657,4 @@ If there is no input after the "find" keyword, <code>IntuitiveEntryCommand</code
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-05 23:43:38 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-06 07:42:33 UTC</div></div></div></body></html>
