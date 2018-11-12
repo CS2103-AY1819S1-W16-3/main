@@ -71,6 +71,7 @@ managing patient and doctor information</strong>. More importantly, One Life is 
 <div class="content">
 <img src="images/UserGuide_Ui.png" alt="UserGuide Ui" width="790">
 </div>
+<div class="title">Figure 1. One Life User Interface</div>
 </div>
 </li>
 <li>
@@ -83,7 +84,7 @@ Some example commands you can try:</p>
 <p><strong><code>list</code></strong> : lists all contacts.</p>
 </li>
 <li>
-<p><strong><code>add</code></strong><code>r/patient n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01 ic/S9601234A</code> : adds a patient named <code>John Doe</code> to the database.</p>
+<p><strong><code>add</code></strong><code>r/patient n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01 ic/S9601234A</code> : adds a <code>Patient</code> named <code>John Doe</code> to the database.</p>
 </li>
 <li>
 <p><strong><code>delete</code></strong><code>3</code> : deletes the 3rd contact shown in the current list.</p>
@@ -137,14 +138,14 @@ Format: <code>help</code></p>
 <div class="sect2">
 <h3 id="adding-a-person-code-add-code"><a class="link" href="#adding-a-person-code-add-code">3.2. Adding a person: <code>add</code></a></h3>
 <div class="paragraph">
-<p>Adds a patient or doctor to the database.<br></p>
+<p>Adds a <code>Patient</code> or <code>Doctor</code> to the database.<br></p>
 </div>
 <div class="paragraph">
-<p><strong>Adding a patient</strong><br>
+<p><strong>Adding a <code>Patient</code></strong><br>
 Format: <code>add r/patient n/NAME ic/NRIC p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;</code></p>
 </div>
 <div class="paragraph">
-<p><strong>Adding a doctor</strong><br>
+<p><strong>Adding a <code>Doctor</code></strong><br>
 Format: <code>add r/doctor n/NAME ic/NRIC p/PHONE_NUMBER e/EMAIL a/ADDRESS md/MEDICAL_DEPARTMENT [t/TAG]&#8230;&#8203;</code></p>
 </div>
 <div class="admonitionblock tip">
@@ -154,7 +155,7 @@ Format: <code>add r/doctor n/NAME ic/NRIC p/PHONE_NUMBER e/EMAIL a/ADDRESS md/ME
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-A person can have any number of tags (including 0)
+A <code>Person</code> can have any number of <code>Tag</code> (including 0).
 </td>
 </tr>
 </table>
@@ -165,7 +166,7 @@ A person can have any number of tags (including 0)
 <div class="ulist">
 <ul>
 <li>
-<p><code>add r/patient n/John Doe Xiao Huang ic/S1234567A p/98765432 e/johnd@example.com a/John street, block 123, #01-01
+<p><code>add r/patient n/John Doe Xiao Huang ic/S1234567D p/98765432 e/johnd@example.com a/John street, block 123, #01-01
 t/Hokkien</code><br>
 (Adds a new patient, refer to Figure 1 and 2 below for illustrations)</p>
 </li>
@@ -173,31 +174,35 @@ t/Hokkien</code><br>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/addbefore.png" alt="addbefore" width="600">
+<img src="images/AddCommandPatientBefore.png" alt="AddCommandPatientBefore" width="600">
 </div>
+<div class="title">Figure 2. Before adding a new patient using Add Command</div>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/addAfter.png" alt="addAfter" width="600">
+<img src="images/AddCommandPatientAfter.png" alt="AddCommandPatientAfter" width="600">
 </div>
+<div class="title">Figure 3. After adding a new patient using Add Command</div>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>add r/doctor n/Betsy Crowe ic/S8234567F e/betsycrowe@example.com a/Newgate Estates p/1234567 md/dentistry</code><br>
-(Adds a new doctor, refer to Figure 3 and 4 below for illustrations)</p>
+<p><code>add r/doctor n/Betsy Crowe ic/S8234567A e/betsycrowe@example.com a/Newgate Estates p/1234567 md/dentistry</code><br>
+(Adds a new <code>Doctor</code>, refer to Figure 3 and 4 below for illustrations)</p>
 </li>
 </ul>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/addDocBefore.png" alt="addDocBefore" width="600">
+<img src="images/AddCommandDoctorBefore.png" alt="AddCommandDoctorBefore" width="600">
 </div>
+<div class="title">Figure 4. Before adding a new doctor using Add Command</div>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/addDocAfter.png" alt="addDocAfter" width="600">
+<img src="images/AddCommandDoctorAfter.png" alt="AddCommandDoctorAfter" width="600">
 </div>
+<div class="title">Figure 5. After adding a new doctor using Add Command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -206,7 +211,7 @@ t/Hokkien</code><br>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-When adding a new doctor you have to to specify his/her medical department.
+When adding a new <code>Doctor</code> you have to to specify his/her <code>MedicalDepartment</code>.
 </td>
 </tr>
 </table>
@@ -386,19 +391,19 @@ Displays all <code>Person</code> with <code>alex</code> or <code>doctor</code> i
 <div class="content">
 <img src="images/FindCommandUserGuideGlobal1.png" alt="FindCommandUserGuideGlobal1" width="600">
 </div>
-<div class="title">Figure 1. Global Find Command</div>
+<div class="title">Figure 6. Global Find Command</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/FindCommandUserGuideGlobal2.png" alt="FindCommandUserGuideGlobal2" width="600">
 </div>
-<div class="title">Figure 2. Global Find Command with Specific Find Command</div>
+<div class="title">Figure 7. Global Find Command with Specific Find Command</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/FindCommandUserGuideGlobal3.png" alt="FindCommandUserGuideGlobal3" width="600">
 </div>
-<div class="title">Figure 3. Global Find Command with Multiple Keywords</div>
+<div class="title">Figure 8. Global Find Command with Multiple Keywords</div>
 </div>
 </div>
 <div class="sect3">
@@ -494,19 +499,19 @@ Displays all <code>Person</code> with the <code>Tag</code> labelled <code>friend
 <div class="content">
 <img src="images/FindCommandUserGuideSpecific1.png" alt="FindCommandUserGuideSpecific1" width="600">
 </div>
-<div class="title">Figure 4. Specific Find Command</div>
+<div class="title">Figure 9. Specific Find Command</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/FindCommandUserGuideSpecific2.png" alt="FindCommandUserGuideSpecific2" width="600">
 </div>
-<div class="title">Figure 5. Specific Find Command with Additional Prefixes</div>
+<div class="title">Figure 10. Specific Find Command with Additional Prefixes</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/FindCommandUserGuideError.png" alt="FindCommandUserGuideError" width="600">
 </div>
-<div class="title">Figure 6. Examples of Invalid Input for Specific Find Command</div>
+<div class="title">Figure 11. Examples of Invalid Input for Specific Find Command</div>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -624,25 +629,25 @@ contains <code>bernice</code>.)</p>
 <div class="content">
 <img src="images/FindCommandUserGuideIcp1.png" alt="FindCommandUserGuideIcp1" width="600">
 </div>
-<div class="title">Figure 7. ICP Mode for Find Command Step 1</div>
+<div class="title">Figure 12. ICP Mode for Find Command Step 1</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/FindCommandUserGuideIcp2.png" alt="FindCommandUserGuideIcp2" width="600">
 </div>
-<div class="title">Figure 8. ICP Mode for Find Command Step 2</div>
+<div class="title">Figure 13. ICP Mode for Find Command Step 2</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/FindCommandUserGuideIcp3.png" alt="FindCommandUserGuideIcp3" width="600">
 </div>
-<div class="title">Figure 9. ICP Mode for Find Command Step 3</div>
+<div class="title">Figure 14. ICP Mode for Find Command Step 3</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/FindCommandUserGuideIcp4.png" alt="FindCommandUserGuideIcp4" width="600">
 </div>
-<div class="title">Figure 10. ICP Mode for Find Command Step 4</div>
+<div class="title">Figure 15. ICP Mode for Find Command Step 4</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -884,7 +889,7 @@ Format: <code>select INDEX</code></p>
 <div class="content">
 <img src="images/ListCommand.png" alt="ListCommand" width="600">
 </div>
-<div class="title">Figure 11. Display list diagram</div>
+<div class="title">Figure 16. Display list diagram</div>
 </div>
 <div class="paragraph">
 <p><code>select 2</code> selects the 2nd person in the database and display the appointments of that person as shown in the figure below.</p>
@@ -893,7 +898,7 @@ Format: <code>select INDEX</code></p>
 <div class="content">
 <img src="images/DisplayAppointment.png" alt="DisplayAppointment" width="600">
 </div>
-<div class="title">Figure 12. Display appointment diagram</div>
+<div class="title">Figure 17. Display appointment diagram</div>
 </div>
 </li>
 <li>
@@ -965,7 +970,7 @@ Schedules <code>John Doe</code> for an appointment with doctor <code>Jack</code>
 <div class="content">
 <img src="images/ScheduleSuccess.png" alt="ScheduleSuccess" width="600">
 </div>
-<div class="title">Figure 13. Successful schedule diagram</div>
+<div class="title">Figure 18. Successful schedule diagram</div>
 </div>
 <div class="paragraph">
 <p>After an appointment is successfully scheduled, the appointment list as shown below will be updated.</p>
@@ -974,7 +979,7 @@ Schedules <code>John Doe</code> for an appointment with doctor <code>Jack</code>
 <div class="content">
 <img src="images/AppointmentListChange.png" alt="AppointmentListChange" width="600">
 </div>
-<div class="title">Figure 14. Change in appointment list</div>
+<div class="title">Figure 19. Change in appointment list</div>
 </div>
 <div class="paragraph">
 <p>An example of an unsuccessful schedule is shown in the figure below.</p>
@@ -983,7 +988,7 @@ Schedules <code>John Doe</code> for an appointment with doctor <code>Jack</code>
 <div class="content">
 <img src="images/ScheduleFailure.png" alt="ScheduleFailure" width="600">
 </div>
-<div class="title">Figure 15. Unsuccessful schedule diagram</div>
+<div class="title">Figure 20. Unsuccessful schedule diagram</div>
 </div>
 </li>
 </ul>
@@ -1024,7 +1029,7 @@ Displays the medical records of the first person on the displayed list as shown 
 <div class="content">
 <img src="images/DisplayMedicalRecords.png" alt="DisplayMedicalRecords" width="600">
 </div>
-<div class="title">Figure 16. Displaying medical records</div>
+<div class="title">Figure 21. Displaying medical records</div>
 </div>
 </div>
 <div class="sect2">
@@ -1080,7 +1085,7 @@ Updates the medical records of the patient at index 1 with the given date, diagn
 <div class="content">
 <img src="images/UpdateCommandWithoutCommentsSuccess.png" alt="UpdateCommandWithoutCommentsSuccess" width="600">
 </div>
-<div class="title">Figure 17. Updating records without comments</div>
+<div class="title">Figure 22. Updating records without comments</div>
 </div>
 <div class="ulist">
 <ul>
@@ -1094,7 +1099,7 @@ Updates the medical records of the patient at index 1 with the given date, diagn
 <div class="content">
 <img src="images/UpdateCommandWithCommentsSuccess.png" alt="UpdateCommandWithCommentsSuccess" width="600">
 </div>
-<div class="title">Figure 18. Updating records with comments</div>
+<div class="title">Figure 23. Updating records with comments</div>
 </div>
 </div>
 <div class="sect2">
@@ -1179,7 +1184,7 @@ This triggers the intuitive command prompt, and One Life will begin to guide you
 <div class="content">
 <img src="images/StartIntuitiveCommand.png" alt="StartIntuitiveCommand" width="600">
 </div>
-<div class="title">Figure 19. Starting the intuitive <code>add</code> command</div>
+<div class="title">Figure 24. Starting the intuitive <code>add</code> command</div>
 </div>
 <div class="ulist">
 <ul>
@@ -1194,7 +1199,7 @@ in this case the patient&#8217;s name, as shown in the figure below:</p>
 <div class="content">
 <img src="images/NextIntuitiveInput.png" alt="NextIntuitiveInput" width="600">
 </div>
-<div class="title">Figure 20. Entering an input</div>
+<div class="title">Figure 25. Entering an input</div>
 </div>
 <div class="ulist">
 <ul>
@@ -1208,7 +1213,7 @@ Goes back to the previous field. A new input can be reentered for this field, as
 <div class="content">
 <img src="images/BackIntuitive.png" alt="BackIntuitive" width="600">
 </div>
-<div class="title">Figure 21. Going back to the previous field</div>
+<div class="title">Figure 26. Going back to the previous field</div>
 </div>
 <div class="ulist">
 <ul>
@@ -1222,7 +1227,7 @@ Cancels the intuitive command. This clears the command box and exits the intuiti
 <div class="content">
 <img src="images/ExitIntuitive.png" alt="ExitIntuitive" width="600">
 </div>
-<div class="title">Figure 22. Cancelling an intuitive command</div>
+<div class="title">Figure 27. Cancelling an intuitive command</div>
 </div>
 </div>
 <div class="sect2">
@@ -1307,4 +1312,4 @@ e.g. `update 2 d/22.11.2018 dg/flu tr/tamiflu</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 07:39:30 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 08:00:32 UTC</div></div></div></body></html>
