@@ -365,7 +365,7 @@ The user enters <code>patient</code> to indicate that the person added is a pati
 <p>Step 4. <code>Model</code> calls the <code>IntuitivePromptManager</code> to store the user&#8217;s input as an argument. Since the intuitive
 command is already executing, the user&#8217;s input is stored as an argument in the <code>arguments</code> list.
 The <code>currentArgIndex</code>, which allows the <code>IntuitivePromptManager</code> to determine the what field it should prompt for next
-is incremented accordingly:</p>
+is incremented accordingly by the <code>ArgumentManager</code>:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -433,8 +433,19 @@ and is achieved when the user types <code>/bk</code>. The following usage scenar
 </div>
 <div class="paragraph">
 <p>Step 4. <code>Model#removeIntuitiveEntry()</code> calls <code>IntuitivePromptManager#removeArgument()</code>, and the
-<code>IntuitivePromptManager</code> removes the input filled into the latest field, and decrements the <code>currentArgIndex</code>
-as accordingly.</p>
+<code>IntuitivePromptManager</code> removes the input filled into the latest field. <code>currentArgIndex</code> is decremented
+as accordingly by the <code>ArgumentManager</code> as shown in the code snippet below:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>public void removeArgument() {
+    if (currentArgIndex &lt;= ArgumentManager.MIN_ARGUMENT_INDEX) {
+        return;
+    }
+
+    currentArgIndex = argumentManager.removeArgumentForCommand(arguments, currentArgIndex);
+}</code></pre>
+</div>
 </div>
 <div class="paragraph">
 <p>Step 5. <code>Model</code> retrieves the instruction of the field indicated by the <code>currentArgIndex</code> of the
@@ -487,4 +498,4 @@ as accordingly.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 08:00:32 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 08:17:13 UTC</div></div></div></body></html>
