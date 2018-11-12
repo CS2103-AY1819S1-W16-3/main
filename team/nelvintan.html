@@ -12,7 +12,7 @@
 <div class="paragraph">
 <p>One Life is a desktop medical management application designed by me and my groups mates for a software engineering module in National University of Singapore (NUS).
 It aims to improve the efficiency of administrative processes in medical institutes.
-The project was created under the constraint of the fact that the user only interacts with the application through a Command Line Interface (CLI).
+The project was created under the constraint that the user only interacts with the application through a Command Line Interface (CLI).
 It is written in Java, and has about 10 kLoC.</p>
 </div>
 <div class="paragraph">
@@ -47,7 +47,7 @@ It is written in Java, and has about 10 kLoC.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>What it does: This enhancement allows the user to schedule appointments at a specified time.</p>
+<p>What it does: This enhancement allows the user to schedule appointments at a specified time and date.</p>
 </li>
 <li>
 <p>Justification: This feature improves the product significantly because a user is able to display current appointments and schedule appointments.
@@ -169,7 +169,7 @@ Format: <code>select INDEX</code></p>
 <p>The index <strong>must be a positive integer</strong> <code>1, 2, 3, &#8230;&#8203;</code></p>
 </li>
 <li>
-<p>The appointment list will be displayed on the top right of the screen as shown in figure below.</p>
+<p>The appointment list will be displayed on the top right of the screen.</p>
 </li>
 </ul>
 </div>
@@ -189,7 +189,8 @@ Format: <code>select INDEX</code></p>
 <div class="title">Figure 1. Display list diagram</div>
 </div>
 <div class="paragraph">
-<p><code>select 2</code> selects the 2nd person in the database and display the appointments of that person as shown in the figure below.</p>
+<p><code>select 2</code> selects the 2nd person in the database and display the appointments of that person
+on the top right of the screen as shown in the figure below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -201,7 +202,8 @@ Format: <code>select INDEX</code></p>
 <li>
 <p><code>find Betsy</code><br>
 <code>select 1</code><br>
-Selects the 1st patient in the results of the <code>find</code> command and display the appointments. Similar to the example above.</p>
+Selects the 1st patient in the results of the <code>find</code> command and display the appointments.
+This is similar to the example above.</p>
 </li>
 </ul>
 </div>
@@ -333,7 +335,7 @@ The key operation implemented is <code>ScheduleCommand#execute</code>.</p>
 <code>ScheduleCommand</code> then conducts various checks sequentially to ensure that the appointment scheduled is valid.
 If it is invalid, an exception message will be thrown.
 The <code>Appointment</code> will not be scheduled.
-The order of checks conducted are displayed in the image below.</p>
+The order of checks conducted is displayed in the image below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -353,7 +355,7 @@ This is shown in the diagram below.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>The above procedure in step 4 is then repeated for the other person (e.g. other person is a doctor if specified person is a patient) affected in the scheduling process.</p>
+<p>The above procedure in step 4 is then repeated for the other person (e.g. the other person is a doctor if the specified person is a patient) involved in the scheduling process.</p>
 </div>
 <div class="paragraph">
 <p>Step 5. <code>XmlAdaptedPerson</code> updates storage of <code>appointmentList</code>.</p>
@@ -463,4 +465,4 @@ At that point we can stop checking as we know that there will be no more clashes
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 11:58:40 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 12:14:33 UTC</div></div></div></body></html>
