@@ -4,54 +4,98 @@
 <h2 id="project-one-life"><a class="link" href="#project-one-life">1. PROJECT: One Life</a></h2>
 <div class="sectionbody">
 <hr>
-</div>
-</div>
-<div class="sect1">
-<h2 id="overview"><a class="link" href="#overview">2. Overview</a></h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="overview"><a class="link" href="#overview">1.1. Overview</a></h3>
 <div class="paragraph">
-<p>One Life is a desktop hospital management application used for efficient storing and retrieving of data related to
-the doctors and patients (e.g. personal particulars, medical records, appointments, etc). It makes use of a Command
-Line Interface (CLI), and it uses a Graphical User Interface (GUI) created via JavaFX. The program is written in Java,
-and has about 10 kLoC.</p>
+<p>This project portfolio details my key contributions to Project One Life.</p>
 </div>
+<div class="paragraph">
+<p>One Life is a desktop medical management application designed as part a project for a software engineering module
+that I took in National University of Singapore (NUS). Originally an addressbook application with simple functions
+such as adding, editing, deleting and searching for contacts, my team and I have expanded and almost doubled its
+functionality, morphing it into an application that can support and improves the efficiency of performing administrative
+task in the medical sector (i.e. hospitals or medical centres).</p>
 </div>
+<div class="paragraph">
+<p>Some of the features that we have added includes, but are not limited to:</p>
 </div>
-<div class="sect1">
-<h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">3. Summary of contributions</a></h2>
-<div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Major enhancement</strong>: added <strong>the ability to display each doctor&#8217;s profile and their current availability status.</strong></p>
+<p>Able to schedule appointments between patients and doctors</p>
+</li>
+<li>
+<p>Able to update medical records of patients</p>
+</li>
+<li>
+<p>Able to be retrieve the availability status of all doctors at any point in time, base on their schedule</p>
+</li>
+<li>
+<p>Able to enter commands using the Intuitive Command Prompt feature that is more user-friendly as compared to the
+default Command Line Interface (CLI)</p>
+</li>
+<li>
+<p>Able to effectively search for a group of/specific person in view of the many different attributes a patient or a
+doctor has (e.g. medical department, medical records, appointments, nric, etc)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">1.2. Summary of Contributions</a></h3>
 <div class="ulist">
 <ul>
 <li>
-<p>What it does: This allows the user to view the details of each doctor (e.g. phone number, medical specialization,
-etc), as well as the current availability status of each doctor.</p>
+<p><strong>Major enhancement</strong>: added <strong>the ability to be retrieve all doctor&#8217;s availability status.</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: This allows the user to view the the availability status of each doctor at the moment.
+Alternatively, the user can choose to retrieve a list of doctors who are free/available at a given date and time,
+base on their schedule.</p>
 </li>
 <li>
 <p>Justification: This feature improves the product significantly because a user can easily retrieve the data of each
 doctor, and more importantly the current availability status of each doctor. Since this is a hospital management
 application that will be used by nurses or medical administrative staff, in cases of a medical emergency or when a
 doctor is required, the user can easily know which doctors are available at the moment to help/address the medical
-situation.</p>
+situation. Alternatively, this feature also allows the user to know which doctors are available to be activated for
+stand-by or other medical needs, at a specific date and time.</p>
 </li>
 <li>
 <p>Highlights: This enhancement improves this application&#8217;s ability to serve as a hospital management application as
 it provides real time update of the availability status of each doctor. The implementation too was challenging as
- it required addition of new event handlers to facilitate propagation of information stored in the backend, to the
- frontend i.e. GUI where the information is processed and displayed to the user.</p>
+it required addition of new event handlers to facilitate propagation of information stored in the backend, to the
+frontend i.e. Graphical User Interface(GUI) where the information is processed and displayed to the user.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Minor enhancement</strong>: changed the existing <code>add</code> and <code>list</code> commands such that it facilitates adding and viewing of
-doctors and patients separately (refer to <em>4.Contributions to the User Guide</em> for more information).</p>
+<p><strong>Minor enhancement</strong>:<br></p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Changed the existing <code>add</code> command such that it facilitates adding of doctors and patients
+separately.</p>
 </li>
 <li>
-<p><strong>Code contributed</strong>: [<a href="https://github.com">Functional code</a>] [<a href="https://github.com">Test code</a>] <em>{give links to collated code files}</em></p>
+<p>Added a <code>switch</code> command to facilitate switching between the doctor&#8217;s and patient&#8217;s database.</p>
+</li>
+<li>
+<p>Added a profile page to the GUI that displays all the information belonging to the selected
+patient/doctor.</p>
+</li>
+<li>
+<p>Updated the existing <code>clear</code> command and added a new <code>clearall</code> command in view of having different database for
+different people (i.e. patients and doctors).</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><strong>Code contributed</strong>: [<a href="https://github.com/CS2103-AY1819S1-W16-3/main/commits?author=guestuser0123">Functional code</a>]
+[<a href="https://nus-cs2103-ay1819s1.github.io/cs2103-dashboard/#=undefined&amp;search=guestuser0123&amp;sort=displayName&amp;since=2018-09-12&amp;until=2018-11-06&amp;timeframe=day&amp;reverse=false&amp;repoSort=true">Reposense</a>]</p>
 </li>
 <li>
 <p><strong>Other contributions</strong>:</p>
@@ -74,7 +118,8 @@ doctors and patients separately (refer to <em>4.Contributions to the User Guide<
 <li>
 <p>Updated the GUI layout (Pull requests <a href="https://github.com/CS2103-AY1819S1-W16-3/main/pull/54">#54</a>,
 <a href="https://github.com/CS2103-AY1819S1-W16-3/main/pull/116">#116</a>,
-<a href="https://github.com/CS2103-AY1819S1-W16-3/main/pull/124">#124</a>)</p>
+<a href="https://github.com/CS2103-AY1819S1-W16-3/main/pull/124">#124</a>,
+<a href="https://github.com/CS2103-AY1819S1-W16-3/main/pull/204">#204</a>)</p>
 </li>
 <li>
 <p>Wrote additional tests for existing features to increase coverage (Pull requests
@@ -89,7 +134,8 @@ doctors and patients separately (refer to <em>4.Contributions to the User Guide<
 <div class="ulist">
 <ul>
 <li>
-<p>Did cosmetic tweaks to existing contents of the User Guide: <a href="https://github.com">#14</a></p>
+<p>Did cosmetic tweaks to existing contents of the User Guide: <a href="https://github.com">#14</a>
+<a href="https://github.com/CS2103-AY1819S1-W16-3/main/pull/221">#221</a></p>
 </li>
 </ul>
 </div>
@@ -108,7 +154,7 @@ doctors and patients separately (refer to <em>4.Contributions to the User Guide<
 <a href="https://github.com/CS2103-AY1819S1-W16-3/main/pull/119">#119</a>)</p>
 </li>
 <li>
-<p>Updated team member&#8217;s code to remove errors/bugs detected when running tests against the program (Pull requests
+<p>Updated team member&#8217;s code to remove errors/bugs detected when running test codes against the program (Pull requests
 <a href="https://github.com/CS2103-AY1819S1-W16-3/main/pull/34">#34</a>,
 <a href="https://github.com/CS2103-AY1819S1-W16-3/main/pull/76">#76</a>)</p>
 </li>
@@ -121,10 +167,8 @@ doctors and patients separately (refer to <em>4.Contributions to the User Guide<
 </ul>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="contributions-to-the-user-guide"><a class="link" href="#contributions-to-the-user-guide">4. Contributions to the User Guide</a></h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="contributions-to-the-user-guide"><a class="link" href="#contributions-to-the-user-guide">1.3. Contributions to the User Guide</a></h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 100%;">
@@ -135,27 +179,170 @@ doctors and patients separately (refer to <em>4.Contributions to the User Guide<
 </tr>
 </tbody>
 </table>
+</div>
 <div class="sect2">
-<h3 id="adding-a-person-code-add-code"><a class="link" href="#adding-a-person-code-add-code">4.1. Adding a person: <code>add</code></a></h3>
+<h3 id="retrieving-a-list-of-available-doctors-code-avail-code"><a class="link" href="#retrieving-a-list-of-available-doctors-code-avail-code">1.4. Retrieving a list of available doctors : <code>avail</code></a></h3>
 <div class="paragraph">
-<p>Adds a <code>Patient</code> or <code>Doctor</code> to the database.<br></p>
+<p>Retrieves a list of all the doctors available at that moment or base on the date and time period indicated by the
+user.<br></p>
 </div>
 <div class="paragraph">
-<p><strong>Adding a <code>Patient</code></strong><br>
-Format: <code>add r/patient n/NAME ic/NRIC p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;</code></p>
+<p>Format: <code>avail [d/DATE] [st/START TIME] [et/END TIME]</code></p>
 </div>
-<div class="paragraph">
-<p><strong>Adding a <code>Doctor</code></strong><br>
-Format: <code>add r/doctor n/NAME ic/NRIC p/PHONE_NUMBER e/EMAIL a/ADDRESS md/MEDICAL_DEPARTMENT [t/TAG]&#8230;&#8203;</code></p>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Date is formatted as DD.MM.YYYY and is dot separated. e.g.  <code>7.11.1996</code> is the 7th of November 1996</p>
+</li>
+<li>
+<p>Both start and end time uses the 24-hour clock time. e.g. <code>1300</code> is 1pm</p>
+</li>
+<li>
+<p>End Time should be the same if not a later time than the start time</p>
+</li>
+<li>
+<p>Date and Time (start and end time) are optional parameters</p>
+</li>
+</ul>
 </div>
-<div class="admonitionblock tip">
+</div>
+</div>
+<div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-A <code>Person</code> can have any number of <code>Tag</code> (including 0).
+If no date is specified by the user, the system would use the current date by default. Similarly, if neither start
+ nor end time is specified by the user, the system would use the current time as an input for both start and end time.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+There is a 1 minute buffer time allocated for doctors after the end of their appointments. This means that
+ if a doctor has an appointment from 1100 to 1200, the doctor will be considered unavailable even at the time 1201.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Inputs for both start and end time should either be both present or both absent. There should not be
+an end time without there being a start time specified, and vice versa.<br>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="paragraph">
+<p><code>avail</code><br>
+List all doctors available at the moment (i.e. the date and time when the command is executed), as shown in the figure
+below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/avail.png" alt="avail" width="600">
+</div>
+<div class="title">Figure 1. Display available doctors at current datetime</div>
+</div>
+<div class="paragraph">
+<p><code>avail d/24.11.2018</code>
+List all doctors available on the 24th November 2018, at the time when this command is executed, as seen in the
+figure below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/avail2.png" alt="avail2" width="600">
+</div>
+<div class="title">Figure 2. Display available doctors on 24th November</div>
+</div>
+<div class="paragraph">
+<p><code>avail d/24.11.2018 st/1200 et/1300</code>
+Lists all doctors available from 12pm to 1pm, on the 24th November 2018, shown in the diagram below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/avail3.png" alt="avail3" width="600">
+</div>
+<div class="title">Figure 3. Display available doctors base on the given date and time</div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+This command will not work should the user be viewing the patient&#8217;s database, since this command applies only for
+doctors. In this case, executing this command will throw a message to prompt the user to switch the current
+active database to either the doctor&#8217;s database or the combined database containing both patients' and doctors' data.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="switching-between-different-database-code-switch-code"><a class="link" href="#switching-between-different-database-code-switch-code">1.5. Switching between different database : <code>switch</code></a></h3>
+<div class="paragraph">
+<p>Switches between the three different database available i.e. 1. doctor, 2. patient, 3. doctor and patient.<br>
+Format: <code>switch r/ROLE</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The active database displayed is switched to that of the specified ROLE.</p>
+</li>
+<li>
+<p>ROLE is the role of the person (patient or doctor).</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+ROLE is <strong>case-insensitive</strong> and it accepts only <strong>three</strong> different parameters as follows:<br>
+1. Doctor<br>
+2. Patient<br>
+3. All<br>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Adding a person belonging to a different database is allowed but you would not be able to view it.<br>
+E.g. Adding
+a new patient while viewing the doctor&#8217;s database.
 </td>
 </tr>
 </table>
@@ -166,69 +353,48 @@ A <code>Person</code> can have any number of <code>Tag</code> (including 0).
 <div class="ulist">
 <ul>
 <li>
-<p><code>add r/patient n/John Doe Xiao Huang ic/S1234567D p/98765432 e/johnd@example.com a/John street, block 123, #01-01
-t/Hokkien</code><br>
-(Adds a new patient, refer to Figure 1 and 2 below for illustrations)</p>
+<p><code>switch r/Doctor</code><br>
+Switches over to display the doctor&#8217;s database as shown in the figure below:</p>
 </li>
 </ul>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/AddCommandPatientBefore.png" alt="AddCommandPatientBefore" width="600">
+<img src="../images/switchDoc.png" alt="switchDoc" width="600">
 </div>
-<div class="title">Figure 1. Before adding a new patient using add command</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/AddCommandPatientAfter.png" alt="AddCommandPatientAfter" width="600">
-</div>
-<div class="title">Figure 2. After adding a new patient using add command</div>
+<div class="title">Figure 4. Upon switching to doctor&#8217;s database</div>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>add r/doctor n/Betsy Crowe ic/S8234567A e/betsycrowe@example.com a/Newgate Estates p/1234567 md/dentistry</code><br>
-(Adds a new <code>Doctor</code>, refer to Figure 3 and 4 below for illustrations)</p>
+<p><code>switch r/Patient</code><br>
+Switches over to display the patient&#8217;s database as shown in the figure below:</p>
 </li>
 </ul>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/AddCommandDoctorBefore.png" alt="AddCommandDoctorBefore" width="600">
+<img src="../images/switchPatient.png" alt="switchPatient" width="600">
 </div>
-<div class="title">Figure 3. Before adding a new doctor using add command</div>
+<div class="title">Figure 5. Upon switching to patient&#8217;s database</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>switch r/All</code><br>
+Switches over to display a combined view of both patient&#8217;s and doctor&#8217;s database, shown in figure below:</p>
+</li>
+</ul>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/AddCommandDoctorAfter.png" alt="AddCommandDoctorAfter" width="600">
+<img src="../images/switchAll.png" alt="switchAll" width="600">
 </div>
-<div class="title">Figure 4. After adding a new doctor using add command</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-When adding a new <code>Doctor</code> you have to to specify his/her <code>MedicalDepartment</code>.
-</td>
-</tr>
-</table>
+<div class="title">Figure 6. Upon switching to the combined database of both patient and doctor</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-all-relevant-personnel-code-list-code"><a class="link" href="#listing-all-relevant-personnel-code-list-code">4.2. Listing all relevant personnel : <code>list</code></a></h3>
-<div class="paragraph">
-<p>Shows a list of all of the people in the database.<br>
-Format: <code>list</code></p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">5. Contributions to the Developer Guide</a></h2>
-<div class="sectionbody">
+<h3 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">1.6. Contributions to the Developer Guide</a></h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 100%;">
@@ -239,13 +405,14 @@ Format: <code>list</code></p>
 </tr>
 </tbody>
 </table>
+</div>
 <div class="sect2">
-<h3 id="display-doctor-s-current-availability-feature"><a class="link" href="#display-doctor-s-current-availability-feature">5.1. Display doctor&#8217;s current availability feature</a></h3>
+<h3 id="display-doctor-s-current-availability-feature"><a class="link" href="#display-doctor-s-current-availability-feature">1.7. Display doctor&#8217;s current availability feature</a></h3>
 <div class="sect3">
-<h4 id="current-implementation"><a class="link" href="#current-implementation">5.1.1. Current implementation</a></h4>
+<h4 id="current-implementation"><a class="link" href="#current-implementation">1.7.1. Current implementation</a></h4>
 <div class="paragraph">
 <p>The display of each doctor&#8217;s current availability is facilitated by <code>PersonProfilePage</code>, <code>Doctor</code>, <code>AppointmentManager</code>.
-Given below is an example usage scenario and how the information is generated and propagated to be displayed in the
+Given below is an example usage scenario of how the information is generated and propagated to be displayed in the
 <code>PersonProfilePage</code> at the final stage.</p>
 </div>
 <div class="paragraph">
@@ -277,16 +444,17 @@ available.</p>
 providing real time update of the doctor&#8217;s availability at that point in time.</p>
 </div>
 <div class="paragraph">
-<p>The following activity diagram summarizes what happens when a user launches the application:</p>
+<p>The following sequence diagram summarizes what happens when a user launches the application:</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/DisplayDoctorAvailabilitySequenceDiagram.png" alt="DisplayDoctorAvailabilitySequenceDiagram" width="800">
 </div>
+<div class="title">Figure 7. Sequence diagram for displaying of doctor&#8217;s availability status feature</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">5.1.2. Design considerations</a></h4>
+<h4 id="design-considerations"><a class="link" href="#design-considerations">1.7.2. Design considerations</a></h4>
 <div class="paragraph">
 <p>This section describes the pros and cons of the current and other alternate implementations of the doctor&#8217;s availability feature.</p>
 </div>
@@ -300,10 +468,10 @@ availability.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Convenient for the user to refer to since the badge is always on the display.</p>
+<p>Pros: Provides convenience for the user to refer to since the badge is always on the display.</p>
 </li>
 <li>
-<p>Cons: Limited to only checking and viewing the availability status of one doctor at a time, thus will not be able
+<p>Cons: Limits to only checking and viewing the availability status of one doctor at a time, thus will not be able
 to get a consolidated list/view of all doctors who are available or busy at the moment.</p>
 </li>
 </ul>
@@ -314,12 +482,15 @@ to get a consolidated list/view of all doctors who are available or busy at the 
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Able to call this method repeatedly/when needed and will be provided with the latest information.</p>
+<p>Pros: Allows the user to call this method repeatedly/when needed and the user will be provided with the latest
+information.</p>
 </li>
 <li>
-<p>Cons: Need to have a separate command dedicated to this feature which may not be necessary and not as convenient as
-compared to having a badge that is on the display at all times. Also this adds on to the list of commands that the
-user has to get familiar with.</p>
+<p>Cons: Raises a need to have a separate command dedicated to this feature which may not be necessary and not as
+convenient as compared to having a badge that is on the display at all times and will auto-update itself. Also, this
+adds on to
+the list of
+commands that the user has to get familiar with.</p>
 </li>
 </ul>
 </div>
@@ -336,7 +507,21 @@ user has to get familiar with.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Provides accurate information and real time update on the doctor&#8217;s availability.</p>
+<p>Pros: Provides accurate information and real time update on the doctor&#8217;s availability and it is easy to implement.
+Given below is a code snippet of how this feature is implemented:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"> <span class="keyword">if</span> (person <span class="keyword">instanceof</span> Doctor) {
+     setAvailabilityOfDoctor();
+     animationTimer.start(); <span class="comment">// Updates availability badge of doctor every second</span>
+                             <span class="comment">// to reflect real time status.</span>
+ } <span class="keyword">else</span> {
+     <span class="keyword">assert</span> person <span class="keyword">instanceof</span> Patient;
+     animationTimer.stop();
+     hideDoctorFields();
+ }</code></pre>
+</div>
+</div>
 </li>
 <li>
 <p>Cons: Affects the performance of the application due to this function continuously running in the background.</p>
@@ -350,10 +535,10 @@ change in information stored in the database.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Implementation is easy.</p>
+<p>Pros: Offers an easier implementation method.</p>
 </li>
 <li>
-<p>Cons: Information is outdated as it does not truly reflect the doctor&#8217;s current availability.</p>
+<p>Cons: Does not auto-update the information and thus the information will be outdated and unreliable.</p>
 </li>
 </ul>
 </div>
@@ -364,13 +549,4 @@ change in information stored in the database.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="project-powerpointlabs"><a class="link" href="#project-powerpointlabs">6. PROJECT: PowerPointLabs</a></h2>
-<div class="sectionbody">
-<hr>
-<div class="paragraph">
-<p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
-</div>
-</div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 14:32:01 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 15:44:05 UTC</div></div></div></body></html>

@@ -33,10 +33,11 @@
 <li><a href="#schedule-command-feature">3.2. Schedule command feature</a></li>
 <li><a href="#intuitive-command-prompt">3.3. Intuitive command prompt</a></li>
 <li><a href="#display-doctor-s-current-availability-feature">3.4. Display doctor&#8217;s current availability feature</a></li>
-<li><a href="#update-command-feature">3.5. Update command feature</a></li>
-<li><a href="#find-command-feature">3.6. Find command feature</a></li>
-<li><a href="#logging">3.7. Logging</a></li>
-<li><a href="#Implementation-Configuration">3.8. Configuration</a></li>
+<li><a href="#switch-command-feature">3.5. Switch command feature</a></li>
+<li><a href="#update-command-feature">3.6. Update command feature</a></li>
+<li><a href="#find-command-feature">3.7. Find command feature</a></li>
+<li><a href="#logging">3.8. Logging</a></li>
+<li><a href="#Implementation-Configuration">3.9. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">4. Documentation</a>
@@ -1254,7 +1255,7 @@ as accordingly by the <code>ArgumentManager</code> as shown in the code snippet 
 <h4 id="current-implementation-4"><a class="link" href="#current-implementation-4">3.4.1. Current implementation</a></h4>
 <div class="paragraph">
 <p>The display of each doctor&#8217;s current availability is facilitated by <code>PersonProfilePage</code>, <code>Doctor</code>, <code>AppointmentManager</code>.
-Given below is an example usage scenario and how the information is generated and propagated to be displayed in the
+Given below is an example usage scenario of how the information is generated and propagated to be displayed in the
 <code>PersonProfilePage</code> at the final stage.</p>
 </div>
 <div class="paragraph">
@@ -1286,12 +1287,13 @@ available.</p>
 providing real time update of the doctor&#8217;s availability at that point in time.</p>
 </div>
 <div class="paragraph">
-<p>The following activity diagram summarizes what happens when a user launches the application:</p>
+<p>The following sequence diagram summarizes what happens when a user launches the application:</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/DisplayDoctorAvailabilitySequenceDiagram.png" alt="DisplayDoctorAvailabilitySequenceDiagram" width="800">
 </div>
+<div class="title">Figure 17. Sequence diagram for displaying of doctor&#8217;s availability status feature</div>
 </div>
 </div>
 <div class="sect3">
@@ -1309,10 +1311,10 @@ availability.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Convenient for the user to refer to since the badge is always on the display.</p>
+<p>Pros: Provides convenience for the user to refer to since the badge is always on the display.</p>
 </li>
 <li>
-<p>Cons: Limited to only checking and viewing the availability status of one doctor at a time, thus will not be able
+<p>Cons: Limits to only checking and viewing the availability status of one doctor at a time, thus will not be able
 to get a consolidated list/view of all doctors who are available or busy at the moment.</p>
 </li>
 </ul>
@@ -1323,12 +1325,15 @@ to get a consolidated list/view of all doctors who are available or busy at the 
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Able to call this method repeatedly/when needed and will be provided with the latest information.</p>
+<p>Pros: Allows the user to call this method repeatedly/when needed and the user will be provided with the latest
+information.</p>
 </li>
 <li>
-<p>Cons: Need to have a separate command dedicated to this feature which may not be necessary and not as convenient as
-compared to having a badge that is on the display at all times. Also this adds on to the list of commands that the
-user has to get familiar with.</p>
+<p>Cons: Raises a need to have a separate command dedicated to this feature which may not be necessary and not as
+convenient as compared to having a badge that is on the display at all times and will auto-update itself. Also, this
+adds on to
+the list of
+commands that the user has to get familiar with.</p>
 </li>
 </ul>
 </div>
@@ -1345,7 +1350,21 @@ user has to get familiar with.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Provides accurate information and real time update on the doctor&#8217;s availability.</p>
+<p>Pros: Provides accurate information and real time update on the doctor&#8217;s availability and it is easy to implement.
+Given below is a code snippet of how this feature is implemented:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"> <span class="keyword">if</span> (person <span class="keyword">instanceof</span> Doctor) {
+     setAvailabilityOfDoctor();
+     animationTimer.start(); <span class="comment">// Updates availability badge of doctor every second</span>
+                             <span class="comment">// to reflect real time status.</span>
+ } <span class="keyword">else</span> {
+     <span class="keyword">assert</span> person <span class="keyword">instanceof</span> Patient;
+     animationTimer.stop();
+     hideDoctorFields();
+ }</code></pre>
+</div>
+</div>
 </li>
 <li>
 <p>Cons: Affects the performance of the application due to this function continuously running in the background.</p>
@@ -1359,10 +1378,10 @@ change in information stored in the database.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Implementation is easy.</p>
+<p>Pros: Offers an easier implementation method.</p>
 </li>
 <li>
-<p>Cons: Information is outdated as it does not truly reflect the doctor&#8217;s current availability.</p>
+<p>Cons: Does not auto-update the information and thus the information will be outdated and unreliable.</p>
 </li>
 </ul>
 </div>
@@ -1373,9 +1392,104 @@ change in information stored in the database.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="update-command-feature"><a class="link" href="#update-command-feature">3.5. Update command feature</a></h3>
+<h3 id="switch-command-feature"><a class="link" href="#switch-command-feature">3.5. Switch command feature</a></h3>
 <div class="sect3">
 <h4 id="current-implementation-5"><a class="link" href="#current-implementation-5">3.5.1. Current implementation</a></h4>
+<div class="paragraph">
+<p>The switching of database functionality is facilitated by <code>SwitchCommand</code>, <code>SwitchCommandParser</code> and <code>ModelManager</code> and
+<code>DatabaseChangedEvent</code>. <code>DatabaseChangedEvent</code> extends from <code>Events</code>,<code>SwitchCommand</code> extends from <code>Command</code> and
+<code>SwitchCommandParser</code> extends from <code>Parser</code>.
+Given
+below is an example usage scenario of the database is segmented into the two different sub-databases, i.e. patient and doctor.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user switches over to view the doctor&#8217;s database. User enters the command <code>switch r/doctor</code>.<br></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Input parameter for <code>r/ROLE</code> is case-insensitive
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Step 2. This then calls the <code>SwitchCommandParser</code> and it will parse the inputs and creates a new <code>SwitchCommand</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 3. Next, this triggers the <code>ModelManager#changeDatabase</code> method, which then updates the <code>filteredPersons</code> in
+the <code>ModelManager</code>. At the same time, a new <code>DatabaseChangedEvent</code> is created that will trigger the relevant
+components in the <code>UI</code> that are subscribed to this event, updating those components base on this new change in the
+database.</p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram summarizes what happens when a user switches the database:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/switchCommandSequenceDiagram.png" alt="switchCommandSequenceDiagram" width="800">
+</div>
+<div class="title">Figure 18. Sequence diagram for switch command</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">3.5.2. Design considerations</a></h4>
+<div class="paragraph">
+<p>This section describes the pros and cons of the current and other alternate implementations the switch command feature.</p>
+</div>
+<div class="sect4">
+<h5 id="aspect-how-to-divide-the-database-into-two-different-sub-databases"><a class="link" href="#aspect-how-to-divide-the-database-into-two-different-sub-databases">Aspect: How to divide the database into two different sub-databases</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> An additional filter layered upon the database instead of having 2 different
+databases.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Offers an easier implementation method, because it only needs to implement a filter on the data. More
+importantly, there will be less issues with certain commands such as the <code>ScheduleCommand</code>. This is because such
+commands requires updating both the patient&#8217;s and the doctor&#8217;s data. As such, this implementation allows the system
+to still have access to both parties' data, since they are actually not stored in different places, facilitating the
+update of data on both side.</p>
+</li>
+<li>
+<p>Cons: Reduces the speed and efficiency of the system since there are more data being dealt with when it could have
+been halved (refer to Alternative 2).</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Two different databases to store patients' and doctors' data separately.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Improves the efficiency of the system since the data that is being dealt with and processed, is halved (i.e.
+there will only be patients' data, without the additional doctors' data, or vice versa)</p>
+</li>
+<li>
+<p>Cons: Creates issues for certain commands such as the <code>ScheduleCommand</code>. To elaborate, <code>ScheduleCommand</code> updates the
+data for both the doctor and the patient. However this implementation means that the system only has access to one particular
+database (i.e. either patient or doctor) and thus this will hinder and cause inconvience as it will create a need for
+ a method to propogate this information to the other database that is inactive at the moment.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="update-command-feature"><a class="link" href="#update-command-feature">3.6. Update command feature</a></h3>
+<div class="sect3">
+<h4 id="current-implementation-6"><a class="link" href="#current-implementation-6">3.6.1. Current implementation</a></h4>
 <div class="paragraph">
 <p>The updating medical record mechanism is facilitated by <code>UpdateCommandParser</code>, <code>UpdateCommand</code> and <code>MedicalRecord</code>.
 <code>UpdateCommand</code> extends from <code>Command</code> and <code>UpdateCommandParser</code> extends from <code>Parser</code>.
@@ -1459,11 +1573,11 @@ If no comment is given the default comment "-" is used.
 <div class="content">
 <img src="images/UpdateSequenceDiagram.png" alt="UpdateSequenceDiagram" width="800">
 </div>
-<div class="title">Figure 17. Sequence diagram for an update command</div>
+<div class="title">Figure 19. Sequence diagram for an update command</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">3.5.2. Design considerations</a></h4>
+<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">3.6.2. Design considerations</a></h4>
 <div class="paragraph">
 <p>This section describes the pros and cons of the current and other alternate implementations of updating medical records.</p>
 </div>
@@ -1512,9 +1626,9 @@ If no comment is given the default comment "-" is used.
 </div>
 </div>
 <div class="sect2">
-<h3 id="find-command-feature"><a class="link" href="#find-command-feature">3.6. Find command feature</a></h3>
+<h3 id="find-command-feature"><a class="link" href="#find-command-feature">3.7. Find command feature</a></h3>
 <div class="sect3">
-<h4 id="current-implementation-6"><a class="link" href="#current-implementation-6">3.6.1. Current implementation</a></h4>
+<h4 id="current-implementation-7"><a class="link" href="#current-implementation-7">3.7.1. Current implementation</a></h4>
 <div class="paragraph">
 <p>The find mechanism is facilitated by <code>FindCommand</code>, <code>FindCommandParser</code> and <code>PersonContainsKeywordPredicate</code>.
 <code>FindCommand</code> extends from <code>Command</code>, <code>FindCommandParser</code> implements <code>Parser</code> and <code>PersonContainsKeywordPredicate</code>
@@ -1567,7 +1681,7 @@ after the user input <code>find n/Alex n/Bernice t/friends</code>.</p>
 <div class="content">
 <img src="images/FindCommandDeveloperGuidePredicate.png" alt="FindCommandDeveloperGuidePredicate" width="600">
 </div>
-<div class="title">Figure 18. PersonContainsKeywordPredicate test result</div>
+<div class="title">Figure 20. PersonContainsKeywordPredicate test result</div>
 </div>
 <div class="ulist">
 <ul>
@@ -1605,11 +1719,11 @@ input search parameters.
 <div class="content">
 <img src="images/FindCommandDeveloperGuideSequenceDiagram.png" alt="FindCommandDeveloperGuideSequenceDiagram" width="800">
 </div>
-<div class="title">Figure 19. Find command sequence diagram</div>
+<div class="title">Figure 21. Find command sequence diagram</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">3.6.2. Design considerations</a></h4>
+<h4 id="design-considerations-6"><a class="link" href="#design-considerations-6">3.7.2. Design considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-to-input-search-fields"><a class="link" href="#aspect-how-to-input-search-fields">Aspect: How to input search fields</a></h5>
 <div class="ulist">
@@ -1650,14 +1764,14 @@ or an internet connection.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">3.7. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">3.8. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.8, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.9, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -1688,7 +1802,7 @@ or an internet connection.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.8. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.9. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g App name, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -1754,7 +1868,7 @@ Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows y
 <div class="content">
 <img src="images/chrome_save_as_pdf.png" alt="chrome save as pdf" width="300">
 </div>
-<div class="title">Figure 20. Saving documentation as PDF files in Chrome</div>
+<div class="title">Figure 22. Saving documentation as PDF files in Chrome</div>
 </div>
 </div>
 <div class="sect2">
@@ -3511,4 +3625,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 14:32:01 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 15:44:05 UTC</div></div></div></body></html>
